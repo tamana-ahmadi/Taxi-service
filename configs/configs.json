@@ -1,0 +1,30 @@
+{
+"auth":{
+    "jwt_secret_key":"taxicompanies"
+},
+"log_params":{
+    "log_directory":   "logs",
+	"log_info"       : "info.log",
+	"log_error"      : "error.log",
+	"log_warning"    : "warning.log",
+	"log_debug"      : "debug.log",
+	"max_size_mb"    : 25,
+	"max_backups" : 5,
+	"max_age"     : 30,
+	"compress"   : true,
+    "local_time"     : true
+},
+"postgres_params":{
+    "host":"localhost",
+    "port":"5432",
+    "user":"postgres",
+    "database":"test1"
+},
+"app_params":{
+    "gin_mode":"release",
+    "port_run":"8484",
+    "server_url":"localhost",
+    "server_name":"todo_list"
+}
+
+}

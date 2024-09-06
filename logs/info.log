@@ -1,0 +1,265 @@
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] GET    /ping                     --> Taxi_service/package/controllers.PingPong (3 handlers)
+[GIN-debug] POST   /auth/sign-up             --> Taxi_service/package/controllers.SignUp (3 handlers)
+[GIN-debug] POST   /auth/sign-in             --> Taxi_service/package/controllers.SignIn (3 handlers)
+[GIN-debug] POST   /users                    --> Taxi_service/package/controllers.AddUsers (4 handlers)
+[GIN-debug] GET    /users                    --> Taxi_service/package/controllers.PrintUsers (4 handlers)
+[GIN-debug] GET    /users                    --> Taxi_service/package/controllers.PrintDrivers (4 handlers)
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] GET    /ping                     --> Taxi_service/package/controllers.PingPong (3 handlers)
+[GIN-debug] POST   /auth/sign-up             --> Taxi_service/package/controllers.SignUp (3 handlers)
+[GIN-debug] POST   /auth/sign-in             --> Taxi_service/package/controllers.SignIn (3 handlers)
+[GIN-debug] POST   /users                    --> Taxi_service/package/controllers.AddUsers (3 handlers)
+[GIN-debug] GET    /users                    --> Taxi_service/package/controllers.PrintUsers (3 handlers)
+[GIN-debug] GET    /users                    --> Taxi_service/package/controllers.PrintDrivers (3 handlers)
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] GET    /ping                     --> Taxi_service/package/controllers.PingPong (3 handlers)
+[GIN-debug] POST   /auth/sign-up             --> Taxi_service/package/controllers.SignUp (3 handlers)
+[GIN-debug] POST   /auth/sign-in             --> Taxi_service/package/controllers.SignIn (3 handlers)
+[GIN-debug] POST   /users                    --> Taxi_service/package/controllers.AddUsers (3 handlers)
+[GIN-debug] GET    /users                    --> Taxi_service/package/controllers.PrintUsers (3 handlers)
+[GIN-debug] GET    /users                    --> Taxi_service/package/controllers.PrintDrivers (3 handlers)
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] GET    /ping                     --> Taxi_service/package/controllers.PingPong (3 handlers)
+[GIN-debug] POST   /auth/sign-up             --> Taxi_service/package/controllers.SignUp (3 handlers)
+[GIN-debug] POST   /auth/sign-in             --> Taxi_service/package/controllers.SignIn (3 handlers)
+[GIN-debug] POST   /users                    --> Taxi_service/package/controllers.AddUsers (3 handlers)
+[GIN-debug] GET    /users                    --> Taxi_service/package/controllers.PrintUsers (3 handlers)
+[GIN-debug] GET    /users                    --> Taxi_service/package/controllers.PrintDrivers (3 handlers)
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] GET    /ping                     --> Taxi_service/package/controllers.PingPong (3 handlers)
+[GIN-debug] POST   /auth/sign-up             --> Taxi_service/package/controllers.SignUp (3 handlers)
+[GIN-debug] POST   /auth/sign-in             --> Taxi_service/package/controllers.SignIn (3 handlers)
+[GIN-debug] POST   /users                    --> Taxi_service/package/controllers.AddUsers (3 handlers)
+[GIN-debug] GET    /users                    --> Taxi_service/package/controllers.PrintUsers (3 handlers)
+[GIN-debug] GET    /users                    --> Taxi_service/package/controllers.PrintDrivers (3 handlers)
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] GET    /ping                     --> Taxi_service/package/controllers.PingPong (3 handlers)
+[GIN-debug] POST   /auth/sign-up             --> Taxi_service/package/controllers.SignUp (3 handlers)
+[GIN-debug] POST   /auth/sign-in             --> Taxi_service/package/controllers.SignIn (3 handlers)
+[GIN-debug] POST   /users                    --> Taxi_service/package/controllers.AddUsers (3 handlers)
+[GIN-debug] GET    /users                    --> Taxi_service/package/controllers.PrintUsers (3 handlers)
+[GIN-debug] GET    /users                    --> Taxi_service/package/controllers.PrintDrivers (3 handlers)
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] GET    /ping                     --> Taxi_service/package/controllers.PingPong (3 handlers)
+[GIN-debug] POST   /auth/sign-up             --> Taxi_service/package/controllers.SignUp (3 handlers)
+[GIN-debug] POST   /auth/sign-in             --> Taxi_service/package/controllers.SignIn (3 handlers)
+[GIN-debug] POST   /users                    --> Taxi_service/package/controllers.AddUsers (4 handlers)
+[GIN-debug] GET    /users                    --> Taxi_service/package/controllers.PrintUsers (4 handlers)
+[GIN-debug] GET    /users                    --> Taxi_service/package/controllers.PrintDrivers (4 handlers)
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] GET    /ping                     --> Taxi_service/package/controllers.PingPong (3 handlers)
+[GIN-debug] POST   /auth/sign-up             --> Taxi_service/package/controllers.SignUp (3 handlers)
+[GIN-debug] POST   /auth/sign-in             --> Taxi_service/package/controllers.SignIn (3 handlers)
+[GIN-debug] POST   /users                    --> Taxi_service/package/controllers.AddUsers (4 handlers)
+[GIN-debug] GET    /users                    --> Taxi_service/package/controllers.PrintUsers (4 handlers)
+[GIN-debug] GET    /users                    --> Taxi_service/package/controllers.PrintDrivers (4 handlers)
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] GET    /ping                     --> Taxi_service/package/controllers.PingPong (3 handlers)
+[GIN-debug] POST   /auth/sign-up             --> Taxi_service/package/controllers.SignUp (3 handlers)
+[GIN-debug] POST   /auth/sign-in             --> Taxi_service/package/controllers.SignIn (3 handlers)
+[GIN-debug] POST   /users                    --> Taxi_service/package/controllers.AddUsers (3 handlers)
+[GIN-debug] GET    /users                    --> Taxi_service/package/controllers.PrintUsers (3 handlers)
+[GIN-debug] GET    /users                    --> Taxi_service/package/controllers.PrintDrivers (3 handlers)
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] GET    /ping                     --> Taxi_service/package/controllers.PingPong (3 handlers)
+[GIN-debug] POST   /auth/sign-up             --> Taxi_service/package/controllers.SignUp (3 handlers)
+[GIN-debug] POST   /auth/sign-in             --> Taxi_service/package/controllers.SignIn (3 handlers)
+[GIN-debug] POST   /users                    --> Taxi_service/package/controllers.AddUsers (3 handlers)
+[GIN-debug] GET    /users                    --> Taxi_service/package/controllers.PrintUsers (3 handlers)
+[GIN-debug] GET    /users/:id                --> Taxi_service/package/controllers.PrintUsersByID (3 handlers)
+[GIN-debug] PUT    /users/:id                --> Taxi_service/package/controllers.EditUsers (3 handlers)
+[GIN-debug] PATCH  /users/:id                --> Taxi_service/package/controllers.EditUsersPassword (3 handlers)
+[GIN-debug] DELETE /users/:id                --> Taxi_service/package/controllers.DeleteUsers (3 handlers)
+[GIN-debug] POST   /routes                   --> Taxi_service/package/controllers.AddRoute (4 handlers)
+[GIN-debug] GET    /routes                   --> Taxi_service/package/controllers.GetAllRoutes (4 handlers)
+[GIN-debug] GET    /routes/:id               --> Taxi_service/package/controllers.GetAllRoutesByID (4 handlers)
+[GIN-debug] PUT    /routes/:id               --> Taxi_service/package/controllers.UpdateRouteByID (4 handlers)
+[GIN-debug] PATCH  /routes/:id               --> Taxi_service/package/controllers.ChecksRouteasResponse (4 handlers)
+[GIN-debug] DELETE /routes/:id               --> Taxi_service/package/controllers.DeleteRouteByID (4 handlers)
+[GIN-debug] POST   /taxicomps                --> Taxi_service/package/controllers.AddTaxicomp (4 handlers)
+[GIN-debug] GET    /taxicomps                --> Taxi_service/package/controllers.GetAllTaxiComp (4 handlers)
+[GIN-debug] GET    /taxicomps/:id            --> Taxi_service/package/controllers.GetAllTaxiCompByID (4 handlers)
+[GIN-debug] PUT    /taxicomps/:id            --> Taxi_service/package/controllers.UpdateTaxiCompByID (4 handlers)
+[GIN-debug] DELETE /taxicomps/:id            --> Taxi_service/package/controllers.DeleteTaxiCompByID (4 handlers)
+[GIN-debug] POST   /orders                   --> Taxi_service/package/controllers.AddOrder (4 handlers)
+[GIN-debug] GET    /orders                   --> Taxi_service/package/controllers.GetAllOrder (4 handlers)
+[GIN-debug] GET    /orders                   --> Taxi_service/package/controllers.OrdersReport (4 handlers)
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] GET    /ping                     --> Taxi_service/package/controllers.PingPong (3 handlers)
+[GIN-debug] POST   /auth/sign-up             --> Taxi_service/package/controllers.SignUp (3 handlers)
+[GIN-debug] POST   /auth/sign-in             --> Taxi_service/package/controllers.SignIn (3 handlers)
+[GIN-debug] POST   /users                    --> Taxi_service/package/controllers.AddUsers (3 handlers)
+[GIN-debug] GET    /users                    --> Taxi_service/package/controllers.PrintUsers (3 handlers)
+[GIN-debug] GET    /users/:id                --> Taxi_service/package/controllers.PrintUsersByID (3 handlers)
+[GIN-debug] PUT    /users/:id                --> Taxi_service/package/controllers.EditUsers (3 handlers)
+[GIN-debug] PATCH  /users/:id                --> Taxi_service/package/controllers.EditUsersPassword (3 handlers)
+[GIN-debug] DELETE /users/:id                --> Taxi_service/package/controllers.DeleteUsers (3 handlers)
+[GIN-debug] POST   /routes                   --> Taxi_service/package/controllers.AddRoute (4 handlers)
+[GIN-debug] GET    /routes                   --> Taxi_service/package/controllers.GetAllRoutes (4 handlers)
+[GIN-debug] GET    /routes/:id               --> Taxi_service/package/controllers.GetAllRoutesByID (4 handlers)
+[GIN-debug] PUT    /routes/:id               --> Taxi_service/package/controllers.UpdateRouteByID (4 handlers)
+[GIN-debug] PATCH  /routes/:id               --> Taxi_service/package/controllers.ChecksRouteasResponse (4 handlers)
+[GIN-debug] DELETE /routes/:id               --> Taxi_service/package/controllers.DeleteRouteByID (4 handlers)
+[GIN-debug] POST   /taxicomps                --> Taxi_service/package/controllers.AddTaxicomp (4 handlers)
+[GIN-debug] GET    /taxicomps                --> Taxi_service/package/controllers.GetAllTaxiComp (4 handlers)
+[GIN-debug] GET    /taxicomps/:id            --> Taxi_service/package/controllers.GetAllTaxiCompByID (4 handlers)
+[GIN-debug] PUT    /taxicomps/:id            --> Taxi_service/package/controllers.UpdateTaxiCompByID (4 handlers)
+[GIN-debug] DELETE /taxicomps/:id            --> Taxi_service/package/controllers.DeleteTaxiCompByID (4 handlers)
+[GIN-debug] POST   /orders                   --> Taxi_service/package/controllers.AddOrder (4 handlers)
+[GIN-debug] GET    /orders                   --> Taxi_service/package/controllers.GetAllOrder (4 handlers)
+[GIN-debug] GET    /orders                   --> Taxi_service/package/controllers.OrdersReport (4 handlers)
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] GET    /ping                     --> Taxi_service/package/controllers.PingPong (3 handlers)
+[GIN-debug] POST   /auth/sign-up             --> Taxi_service/package/controllers.SignUp (3 handlers)
+[GIN-debug] POST   /auth/sign-in             --> Taxi_service/package/controllers.SignIn (3 handlers)
+[GIN-debug] POST   /users                    --> Taxi_service/package/controllers.AddUsers (3 handlers)
+[GIN-debug] GET    /users                    --> Taxi_service/package/controllers.PrintUsers (3 handlers)
+[GIN-debug] GET    /users/:id                --> Taxi_service/package/controllers.PrintUsersByID (3 handlers)
+[GIN-debug] PUT    /users/:id                --> Taxi_service/package/controllers.EditUsers (3 handlers)
+[GIN-debug] PATCH  /users/:id                --> Taxi_service/package/controllers.EditUsersPassword (3 handlers)
+[GIN-debug] DELETE /users/:id                --> Taxi_service/package/controllers.DeleteUsers (3 handlers)
+[GIN-debug] POST   /routes                   --> Taxi_service/package/controllers.AddRoute (4 handlers)
+[GIN-debug] GET    /routes                   --> Taxi_service/package/controllers.GetAllRoutes (4 handlers)
+[GIN-debug] GET    /routes/:id               --> Taxi_service/package/controllers.GetAllRoutesByID (4 handlers)
+[GIN-debug] PUT    /routes/:id               --> Taxi_service/package/controllers.UpdateRouteByID (4 handlers)
+[GIN-debug] PATCH  /routes/:id               --> Taxi_service/package/controllers.ChecksRouteasResponse (4 handlers)
+[GIN-debug] DELETE /routes/:id               --> Taxi_service/package/controllers.DeleteRouteByID (4 handlers)
+[GIN-debug] POST   /taxicomps                --> Taxi_service/package/controllers.AddTaxicomp (4 handlers)
+[GIN-debug] GET    /taxicomps                --> Taxi_service/package/controllers.GetAllTaxiComp (4 handlers)
+[GIN-debug] GET    /taxicomps/:id            --> Taxi_service/package/controllers.GetAllTaxiCompByID (4 handlers)
+[GIN-debug] PUT    /taxicomps/:id            --> Taxi_service/package/controllers.UpdateTaxiCompByID (4 handlers)
+[GIN-debug] DELETE /taxicomps/:id            --> Taxi_service/package/controllers.DeleteTaxiCompByID (4 handlers)
+[GIN-debug] POST   /orders                   --> Taxi_service/package/controllers.AddOrder (4 handlers)
+[GIN-debug] GET    /orders                   --> Taxi_service/package/controllers.OrdersReport (4 handlers)
+[GIN-debug] GET    /orders/:id               --> Taxi_service/package/controllers.GetAllOrdersByID (4 handlers)
+[GIN-debug] PUT    /orders/:id               --> Taxi_service/package/controllers.UpdateOrderByID (4 handlers)
+[GIN-debug] PATCH  /orders/:id               --> Taxi_service/package/controllers.ChecksOrderasDone (4 handlers)
+[GIN-debug] DELETE /orders/:id               --> Taxi_service/package/controllers.DeleteOrderByID (4 handlers)
+[GIN-debug] [WARNING] You trusted all proxies, this is NOT safe. We recommend you to set a value.
+Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-proxies for details.
+[GIN-debug] Listening and serving HTTP on localhost:8484
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] GET    /ping                     --> Taxi_service/package/controllers.PingPong (3 handlers)
+[GIN-debug] POST   /auth/sign-up             --> Taxi_service/package/controllers.SignUp (3 handlers)
+[GIN-debug] POST   /auth/sign-in             --> Taxi_service/package/controllers.SignIn (3 handlers)
+[GIN-debug] POST   /users                    --> Taxi_service/package/controllers.AddUsers (3 handlers)
+[GIN-debug] GET    /users                    --> Taxi_service/package/controllers.PrintUsers (3 handlers)
+[GIN-debug] GET    /users/:id                --> Taxi_service/package/controllers.PrintUsersByID (3 handlers)
+[GIN-debug] PUT    /users/:id                --> Taxi_service/package/controllers.EditUsers (3 handlers)
+[GIN-debug] PATCH  /users/:id                --> Taxi_service/package/controllers.EditUsersPassword (3 handlers)
+[GIN-debug] DELETE /users/:id                --> Taxi_service/package/controllers.DeleteUsers (3 handlers)
+[GIN-debug] POST   /routes                   --> Taxi_service/package/controllers.AddRoute (4 handlers)
+[GIN-debug] GET    /routes                   --> Taxi_service/package/controllers.GetAllRoutes (4 handlers)
+[GIN-debug] GET    /routes/:id               --> Taxi_service/package/controllers.GetAllRoutesByID (4 handlers)
+[GIN-debug] PUT    /routes/:id               --> Taxi_service/package/controllers.UpdateRouteByID (4 handlers)
+[GIN-debug] PATCH  /routes/:id               --> Taxi_service/package/controllers.ChecksRouteasResponse (4 handlers)
+[GIN-debug] DELETE /routes/:id               --> Taxi_service/package/controllers.DeleteRouteByID (4 handlers)
+[GIN-debug] POST   /taxicomps                --> Taxi_service/package/controllers.AddTaxicomp (4 handlers)
+[GIN-debug] GET    /taxicomps                --> Taxi_service/package/controllers.GetAllTaxiComp (4 handlers)
+[GIN-debug] GET    /taxicomps/:id            --> Taxi_service/package/controllers.GetAllTaxiCompByID (4 handlers)
+[GIN-debug] PUT    /taxicomps/:id            --> Taxi_service/package/controllers.UpdateTaxiCompByID (4 handlers)
+[GIN-debug] DELETE /taxicomps/:id            --> Taxi_service/package/controllers.DeleteTaxiCompByID (4 handlers)
+[GIN-debug] POST   /orders                   --> Taxi_service/package/controllers.AddOrder (4 handlers)
+[GIN-debug] GET    /orders                   --> Taxi_service/package/controllers.OrdersReport (4 handlers)
+[GIN-debug] GET    /orders/:id               --> Taxi_service/package/controllers.GetAllOrdersByID (4 handlers)
+[GIN-debug] PUT    /orders/:id               --> Taxi_service/package/controllers.UpdateOrderByID (4 handlers)
+[GIN-debug] PATCH  /orders/:id               --> Taxi_service/package/controllers.ChecksOrderasDone (4 handlers)
+[GIN-debug] DELETE /orders/:id               --> Taxi_service/package/controllers.DeleteOrderByID (4 handlers)
+[GIN] 2024/09/06 - 06:30:59 | 201 |      217.23ms |             ::1 | POST     "/auth/sign-up"
+[GIN] 2024/09/06 - 06:31:10 | 200 |       887.5µs |             ::1 | POST     "/auth/sign-in"
+[GIN] 2024/09/06 - 06:31:36 | 201 |      2.4433ms |             ::1 | POST     "/auth/sign-up"
+[GIN] 2024/09/06 - 06:31:45 | 200 |      1.3271ms |             ::1 | POST     "/auth/sign-in"
+[GIN] 2024/09/06 - 06:32:10 | 201 |      2.6651ms |             ::1 | POST     "/auth/sign-up"
+[GIN] 2024/09/06 - 06:32:18 | 200 |      1.7561ms |             ::1 | POST     "/auth/sign-in"
+[GIN] 2024/09/06 - 06:37:13 | 201 |      5.3625ms |             ::1 | POST     "/taxicomps"
+[GIN] 2024/09/06 - 06:37:48 | 403 |       308.9µs |             ::1 | POST     "/taxicomps"
+[GIN] 2024/09/06 - 06:47:32 | 200 |     94.7151ms |             ::1 | PUT      "/taxicomps/1"
+[GIN] 2024/09/06 - 06:49:19 | 200 |      1.5992ms |             ::1 | DELETE   "/taxicomps/1"
+[GIN] 2024/09/06 - 06:51:34 | 200 |      1.1412ms |             ::1 | DELETE   "/taxicomps/1"
+[GIN] 2024/09/06 - 06:53:14 | 200 |      1.4664ms |             ::1 | GET      "/taxicomps"
+[GIN] 2024/09/06 - 06:53:42 | 200 |      1.0374ms |             ::1 | GET      "/taxicomps"
+[GIN] 2024/09/06 - 06:54:35 | 200 |      1.0891ms |             ::1 | GET      "/taxicomps/1"
+[GIN] 2024/09/06 - 06:55:31 | 200 |       677.1µs |             ::1 | GET      "/taxicomps/1"
+[GIN] 2024/09/06 - 07:11:20 | 201 |      5.1089ms |             ::1 | POST     "/routes"
+[GIN] 2024/09/06 - 07:12:27 | 201 |      1.8435ms |             ::1 | POST     "/routes"
+[GIN] 2024/09/06 - 07:12:58 | 201 |       1.656ms |             ::1 | POST     "/routes"
+[GIN] 2024/09/06 - 07:16:00 | 200 |       667.3µs |             ::1 | POST     "/auth/sign-in"
+[GIN] 2024/09/06 - 07:18:05 | 200 |      1.2994ms |             ::1 | PUT      "/routes/3"
+[GIN] 2024/09/06 - 07:20:38 | 200 |       185.8µs |             ::1 | POST     "/auth/sign-in"
+[GIN] 2024/09/06 - 07:22:44 | 400 |       130.9µs |             ::1 | GET      "/users?role=driver"
+[GIN] 2024/09/06 - 07:26:58 | 400 |       503.9µs |             ::1 | GET      "/users?role=driver"
+[GIN] 2024/09/06 - 07:27:28 | 400 |            0s |             ::1 | GET      "/users?role=user"
+[GIN] 2024/09/06 - 07:29:20 | 400 |       516.8µs |             ::1 | GET      "/users?role=driver"
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN] 2024/09/06 - 07:32:10 | 400 |            0s |             ::1 | GET      "/users?role=driver"
