@@ -18,7 +18,7 @@ func InitRoutes() *gin.Engine {
 		auth.POST("/sign-up", SignUp)
 		auth.POST("/sign-in", SignIn)
 	}
-	usersG := router.Group("/users")
+	usersG := router.Group("/users", checkUserAuthentication)
 	{
 		usersG.POST("", AddUsers)
 		usersG.GET("", PrintUsers)

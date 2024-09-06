@@ -48,6 +48,7 @@ func checkUserAuthentication(c *gin.Context) {
 		return
 	}
 	fmt.Println(claims)
+	
 
 	c.Set(userIDCtx, claims.UserID)
 	c.Set(userRoleCtx, claims.Role)

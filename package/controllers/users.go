@@ -5,6 +5,7 @@ import (
 	"Taxi_service/logger"
 	"Taxi_service/models"
 	"Taxi_service/package/service"
+	"fmt"
 	"net/http"
 	"strconv"
 
@@ -125,6 +126,7 @@ func DeleteUsers(c *gin.Context) {
 }
 func PrintUsers(c *gin.Context) {
 	urole := c.GetString(userRoleCtx)
+	fmt.Println("Urole", urole)
 	if urole == "" {
 		HandleError(c, errs.ErrValidationFailed)
 		return
