@@ -359,3 +359,12 @@ Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-
 [GIN] 2024/09/07 - 14:11:21 | 400 |       877.5µs |             ::1 | GET      "/orders?is_done=false%20&%20is_response=false"
 [GIN] 2024/09/07 - 14:12:43 | 400 |     13.0118ms |             ::1 | GET      "/orders?is_done=false&is_response=false"
 [GIN] 2024/09/07 - 14:13:09 | 400 |       627.7µs |             ::1 | GET      "/orders?is_done=true%20&%20is_response=false"
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN] 2024/09/07 - 14:26:18 | 201 |      6.5553ms |             ::1 | POST     "/orders"
+[GIN] 2024/09/07 - 14:26:59 | 400 |       728.3µs |             ::1 | GET      "/orders?is_done=false%20&%20is_response=false"
+[GIN] 2024/09/07 - 14:27:34 | 400 |      4.7928ms |             ::1 | GET      "/orders?is_done=false&is_response=false"

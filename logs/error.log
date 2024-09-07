@@ -7,3 +7,4 @@ ERROR: 2024/09/06 17:48:22 users.go:83: [service.getuserbyusername]error in gett
 ERROR: 2024/09/06 17:48:29 users.go:83: [service.getuserbyusername]error in getting user by username  record not found
 ERROR: 2024/09/06 17:49:27 users.go:83: [service.getuserbyusername]error in getting user by username  record not found
 ERROR: 2024/09/07 14:12:43 orders.go:55: [repository.OrdersReport]error in  order report ERROR: syntax error at or near "COUNT" (SQLSTATE 42601)
+ERROR: 2024/09/07 14:27:34 orders.go:55: [repository.OrdersReport]error in  order report ERROR: syntax error at or near "COUNT" (SQLSTATE 42601)
