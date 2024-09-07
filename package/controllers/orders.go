@@ -184,7 +184,7 @@ func OrdersReport(c *gin.Context) {
 		HandleError(c, errs.ErrValidationFailed)
 		return
 	}
-	ords, err := service.ReportofOrder(isDone, false, isResp, true)
+	ords, err := service.ReportofOrder(isDone, false, false, false, isResp, false, false)
 	if err != nil {
 		HandleError(c, errs.ErrOrdersNotFound)
 		return

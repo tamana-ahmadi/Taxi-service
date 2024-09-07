@@ -44,8 +44,8 @@ func PrintAllOrderByID(isdeleted, isdone, isblocked bool, uid, oid uint) (ord []
 	return ord, nil
 }
 
-func ReportofOrder(isdone, isdeleted, isresp, isblocked bool) (ord []models.Order, err error) {
-	ord, err = repository.OrdersReport(isdone, isdeleted, isresp, isblocked)
+func ReportofOrder(isdone, isdeletedo, isdeletedt, isdeletedr, isresp, isblocked,isdeletedu bool) (ord []models.Order, err error) {
+	ord, err = repository.OrdersReport(isdone, isdeletedo, isdeletedt, isdeletedr, isresp, isblocked,isdeletedu)
 	if err != nil {
 		return ord, err
 	}
