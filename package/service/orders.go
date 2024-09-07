@@ -14,7 +14,7 @@ func AddOrder(ord models.Order) error {
 	return nil
 }
 func UpdateOrder(ord models.Order, id int) error {
-	err := repository.EditOrders(ord.RouteID, ord.UserID, ord.TaxicompID, id)
+	err := repository.EditOrders(ord.RouteID, ord.ClientID,ord.DriverID, ord.TaxicompID, id)
 	if err != nil {
 		fmt.Println(err)
 	}
