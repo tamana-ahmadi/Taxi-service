@@ -316,3 +316,26 @@ Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-
 [GIN] 2024/09/07 - 13:27:05 | 200 |       505.1µs |             ::1 | GET      "/ping"
 [GIN] 2024/09/07 - 13:28:14 | 200 |       5.381ms |             ::1 | POST     "/auth/sign-in"
 [GIN] 2024/09/07 - 13:29:52 | 200 |      3.7362ms |             ::1 | GET      "/users?role=user"
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN] 2024/09/07 - 13:33:09 | 200 |      6.5325ms |             ::1 | GET      "/users?role=user"
+[GIN] 2024/09/07 - 13:34:52 | 200 |      2.8439ms |             ::1 | GET      "/users?role=user"
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN] 2024/09/07 - 13:35:18 | 200 |      5.9185ms |             ::1 | GET      "/users?role=user"
+[GIN] 2024/09/07 - 13:36:14 | 200 |      2.8968ms |             ::1 | POST     "/auth/sign-in"
+[GIN] 2024/09/07 - 13:38:51 | 400 |       635.4µs |             ::1 | GET      "/orders?is_done=false%20&%20is_response=false"
+[GIN] 2024/09/07 - 13:43:07 | 200 |      1.9973ms |             ::1 | POST     "/auth/sign-in"
+[GIN] 2024/09/07 - 13:43:38 | 201 |     13.5396ms |             ::1 | POST     "/routes"
+[GIN] 2024/09/07 - 13:44:06 | 201 |      4.0523ms |             ::1 | POST     "/routes"
+[GIN] 2024/09/07 - 13:45:51 | 201 |      4.4684ms |             ::1 | POST     "/routes"
+[GIN] 2024/09/07 - 13:48:04 | 200 |      1.0208ms |             ::1 | POST     "/auth/sign-in"
+[GIN] 2024/09/07 - 13:49:05 | 200 |      6.7164ms |             ::1 | PATCH    "/routes/1"

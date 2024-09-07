@@ -18,7 +18,7 @@ func AddRoute(c *gin.Context) {
 		HandleError(c, errs.ErrValidationFailed)
 		return
 	}
-	if urole != "driver" {
+	if urole != "driver" && urole != "user" {
 		HandleError(c, errs.ErrPermissionDenied)
 		return
 	}
@@ -118,7 +118,7 @@ func UpdateRouteByID(c *gin.Context) {
 		HandleError(c, errs.ErrValidationFailed)
 		return
 	}
-	if urole != "driver" {
+	if urole != "driver" && urole != "admin" {
 		HandleError(c, errs.ErrPermissionDenied)
 		return
 	}
@@ -177,7 +177,7 @@ func DeleteRouteByID(c *gin.Context) {
 		HandleError(c, errs.ErrValidationFailed)
 		return
 	}
-	if urole != "driver" {
+	if urole != "driver" && urole != "admin" {
 		HandleError(c, errs.ErrPermissionDenied)
 		return
 	}
