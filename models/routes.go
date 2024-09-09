@@ -10,7 +10,7 @@ type Route struct {
 	Price      int       `gorm:"default false" json:"price"`
 	ClientID   int       `gorm:"references users(id)" json:"client_id"`
 	DriverID   int       `gorm:"references users(id)" json:"driver_id"`
-	IsResponse bool      `gorm:"default false" json:"is_response"`
+	IsResponse bool      `json:"is_response"`
 	IsDeleted  bool      `gorm:"default false" json:"is_deleted"`
 	CreatedAt  time.Time `json:"created_at" gorm:"autoCreateTime"`
 	UpdatedAt  time.Time `json:"updated_at" gorm:"autoUpdateTime"`
