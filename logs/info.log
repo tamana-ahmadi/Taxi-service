@@ -1176,3 +1176,9 @@ Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-
 [GIN] 2024/09/09 - 20:43:19 | 200 |       643.2µs |             ::1 | GET      "/routes?is_response=false&price=100"
 [GIN] 2024/09/09 - 20:43:37 | 200 |       522.7µs |             ::1 | GET      "/routes?is_response=true&price=100"
 [GIN] 2024/09/09 - 20:44:15 | 200 |            0s |             ::1 | GET      "/ping"
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
