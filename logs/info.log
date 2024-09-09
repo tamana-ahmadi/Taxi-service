@@ -1096,3 +1096,10 @@ Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-
 [GIN] 2024/09/09 - 18:41:15 | 400 |      2.5595ms |             ::1 | GET      "/routes/1"
 [GIN] 2024/09/09 - 18:42:54 | 400 |      4.2354ms |             ::1 | GET      "/routes/1"
 [GIN] 2024/09/09 - 18:43:04 | 400 |      1.6014ms |             ::1 | GET      "/routes/1"
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN] 2024/09/09 - 18:43:44 | 400 |    338.7786ms |             ::1 | GET      "/routes/1"
