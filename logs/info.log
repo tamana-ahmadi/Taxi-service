@@ -979,3 +979,4 @@ Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-
 [GIN] 2024/09/09 - 17:36:41 | 400 |      9.4962ms |             ::1 | GET      "/routes/1?is_response=false"
 [GIN] 2024/09/09 - 17:36:56 | 400 |       611.5µs |             ::1 | GET      "/routes?is_response=false/1"
 [GIN] 2024/09/09 - 17:38:47 | 400 |       533.1µs |             ::1 | GET      "/routes/1"
+[GIN] 2024/09/09 - 17:39:49 | 400 |       180.2µs |             ::1 | GET      "/routes/1"
