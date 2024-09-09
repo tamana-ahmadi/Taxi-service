@@ -40,3 +40,6 @@ ERROR: 2024/09/09 12:00:47 users.go:83: [service.getuserbyusername]error in gett
 ERROR: 2024/09/09 12:01:34 users.go:83: [service.getuserbyusername]error in getting user by username  record not found
 ERROR: 2024/09/09 12:02:39 users.go:83: [service.getuserbyusername]error in getting user by username  record not found
 ERROR: 2024/09/09 12:04:04 users.go:83: [service.getuserbyusername]error in getting user by username  record not found
+ERROR: 2024/09/09 12:05:53 users.go:83: [service.getuserbyusername]error in getting user by username  record not found
+ERROR: 2024/09/09 12:06:03 users.go:83: [service.getuserbyusername]error in getting user by username  record not found
+ERROR: 2024/09/09 12:06:12 users.go:83: [service.getuserbyusername]error in getting user by username  record not found

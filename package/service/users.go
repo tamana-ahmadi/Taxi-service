@@ -21,7 +21,7 @@ func CreateUser(user models.User) error {
 	return nil
 }
 func UpdateUser(user models.User, id int) error {
-	err := repository.EditUser(user.FullName, user.Username, id)
+	err := repository.EditUser(user.FullName, user.Username, user.Rating, id)
 	if err != nil {
 		fmt.Println(err)
 	}

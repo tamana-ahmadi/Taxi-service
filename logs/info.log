@@ -759,3 +759,18 @@ Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-
  - using code:	gin.SetMode(gin.ReleaseMode)
 
 [GIN] 2024/09/09 - 12:04:04 | 404 |     201.057ms |             ::1 | POST     "/auth/sign-in"
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN] 2024/09/09 - 12:05:53 | 201 |    209.1388ms |             ::1 | POST     "/auth/sign-up"
+[GIN] 2024/09/09 - 12:05:59 | 200 |      1.7313ms |             ::1 | POST     "/auth/sign-in"
+[GIN] 2024/09/09 - 12:06:03 | 201 |      3.0511ms |             ::1 | POST     "/auth/sign-up"
+[GIN] 2024/09/09 - 12:06:06 | 200 |      1.3892ms |             ::1 | POST     "/auth/sign-in"
+[GIN] 2024/09/09 - 12:06:12 | 201 |      2.4591ms |             ::1 | POST     "/auth/sign-up"
+[GIN] 2024/09/09 - 12:06:16 | 200 |       895.9µs |             ::1 | POST     "/auth/sign-in"
+[GIN] 2024/09/09 - 12:23:25 | 401 |            0s |             ::1 | PUT      "/users/1"
+[GIN] 2024/09/09 - 12:23:47 | 401 |            0s |             ::1 | PUT      "/users/1"
+[GIN] 2024/09/09 - 12:24:44 | 401 |       518.2µs |             ::1 | PUT      "/users/1"
