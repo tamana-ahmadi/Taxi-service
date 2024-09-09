@@ -19,3 +19,5 @@ ERROR: 2024/09/07 15:34:37 orders.go:55: [repository.OrdersReport]error in  orde
 ERROR: 2024/09/07 15:42:12 orders.go:55: [repository.OrdersReport]error in  order report ERROR: syntax error at or near "AND" (SQLSTATE 42601)
 ERROR: 2024/09/07 15:48:03 orders.go:55: [repository.OrdersReport]error in  order report ERROR: syntax error at or near "AND" (SQLSTATE 42601)
 ERROR: 2024/09/07 15:59:37 orders.go:55: [repository.OrdersReport]error in  order report ERROR: invalid reference to FROM-clause entry for table "routes" (SQLSTATE 42P01)
+ERROR: 2024/09/09 08:24:30 orders.go:54: [repository.OrdersReport]error in  order report ОШИБКА: ошибка синтаксиса (примерное положение: "AND") (SQLSTATE 42601)
+ERROR: 2024/09/09 08:26:01 orders.go:54: [repository.OrdersReport]error in  order report ОШИБКА: ошибка синтаксиса (примерное положение: "AND") (SQLSTATE 42601)
