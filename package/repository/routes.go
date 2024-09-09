@@ -29,16 +29,16 @@ func SoftDeleteRoutes(isdeleted bool, id int) error {
 	return nil
 }
 
-func GetAllRoutes(isdeleted, isresp, isblocked bool, price int, uid uint) (route []models.Route, err error) {
-	err = db.GetconnectDB().Joins("Join users ON users.id=routes.client_id OR users.id=routes.driver_id").Where("routes.is_response=? AND routes.is_deleted=? AND routes.price=?", isresp, isdeleted, price).Where("routes.client_id=? OR routes.driver_id=?", uid, uid).Where("users.is_blocked=? AND users.is_deleted=?", isblocked, isdeleted).Order("routes.id").Find(&route).Error
+func GetAllRoutes(isresp, isdeleted bool, price int) (route []models.Route, err error) {
+	err = db.GetconnectDB().Where("routes.is_response=? AND routes.is_deleted=? AND routes.price=?", isresp, isdeleted, price).Find(&route).Error
 	if err != nil {
 		logger.Error.Printf("[repository.GetAllRoutes]error in getting all orders %s\n", err.Error())
 		return route, err
 	}
 	return route, nil
 }
-func GetAllRoutesByID(isdeleted, isblocked bool, uid, rid uint) (route []models.Route, err error) {
-	err = db.GetconnectDB().Joins("Join users ON users.id=routes.client_id OR users.id=routes.driver_id ").Where("routes.is_deleted=?", isdeleted).Where("routes.id=?  OR (routes.client_id=? OR routes.driver_id=?)", rid, uid, uid).Where("users.is_blocked=? AND users.is_deleted=?", isblocked, isdeleted).Order("routes.id").Find(&route).Error
+func GetAllRoutesByID(isdeleted bool, id uint) (route []models.Route, err error) {
+	err = db.GetconnectDB().Where("routes.is_deleted=?", isdeleted).Where("routes.id=?", id).Find(&route).Error
 	if err != nil {
 		logger.Error.Printf("[repository.GetAllRoutesByID]error in getting all order by id %s\n", err.Error())
 		return route, err

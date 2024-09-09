@@ -35,16 +35,16 @@ func CheckRouteasResponse(isresp bool, cid, id int) error {
 	return nil
 }
 
-func PrintAllRoutes(isdeleted, isresp, isblocked bool, price int, uid uint) (route []models.Route, err error) {
-	route, err = repository.GetAllRoutes(isdeleted, isresp, isblocked, price, uid)
+func PrintAllRoutes(isresp, isdeleted bool, price int) (route []models.Route, err error) {
+	route, err = repository.GetAllRoutes(isresp, isdeleted, price)
 	if err != nil {
 
 		return route, err
 	}
 	return route, nil
 }
-func PrintAllRouteByID(isdeleted, isblocked bool, uid, rid uint) (route []models.Route, err error) {
-	route, err = repository.GetAllRoutesByID(isdeleted, isblocked, uid, rid)
+func PrintAllRouteByID(isdeleted bool, id uint) (route []models.Route, err error) {
+	route, err = repository.GetAllRoutesByID(isdeleted, id)
 	if err != nil {
 
 		return route, err

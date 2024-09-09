@@ -59,7 +59,7 @@ func GetAllRoutes(c *gin.Context) {
 		HandleError(c, errs.ErrValidationFailed)
 		return
 	}
-	routes, err := service.PrintAllRoutes(false, isResp, false, price, uint(userID))
+	routes, err := service.PrintAllRoutes(isResp, false, price)
 	if err != nil {
 		HandleError(c, errs.ErrRoutesNotFound)
 		return
@@ -79,7 +79,7 @@ func GetAllRoutesByID(c *gin.Context) {
 		HandleError(c, errs.ErrValidationFailed)
 		return
 	}
-	route, err := service.PrintAllRouteByID(false, false, uint(userID), uint(rid))
+	route, err := service.PrintAllRouteByID(false, uint(rid))
 	if err != nil {
 		HandleError(c, errs.ErrRoutesNotFound)
 		return
