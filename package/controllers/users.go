@@ -51,6 +51,15 @@ func EditUsers(c *gin.Context) {
 
 }
 func EditUsersPassword(c *gin.Context) {
+	urole := c.GetString(userRoleCtx)
+	if urole == "" {
+		HandleError(c, errs.ErrValidationFailed)
+		return
+	}
+	if urole != "admin" {
+		HandleError(c, errs.ErrPermissionDenied)
+		return
+	}
 	id, err := strconv.Atoi(c.Param("id"))
 	if err != nil {
 		HandleError(c, err)

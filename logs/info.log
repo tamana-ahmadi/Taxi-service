@@ -785,3 +785,5 @@ Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-
 [GIN] 2024/09/09 - 13:05:35 | 401 |            0s |             ::1 | PUT      "/users/3"
 [GIN] 2024/09/09 - 13:05:48 | 401 |       417.9µs |             ::1 | PUT      "/users/3"
 [GIN] 2024/09/09 - 13:06:42 | 401 |            0s |             ::1 | PUT      "/users/3"
+[GIN] 2024/09/09 - 13:08:58 | 401 |            0s |             ::1 | PUT      "/users/3"
+[GIN] 2024/09/09 - 13:10:29 | 401 |       312.5µs |             ::1 | PUT      "/users/1"
