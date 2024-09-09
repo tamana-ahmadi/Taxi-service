@@ -24,8 +24,8 @@ func InitRoutes() *gin.Engine {
 		usersG.GET("", PrintUsers)
 		usersG.GET("/:id", PrintUsersByID)
 		usersG.PUT("/:id", EditUsers)
-		usersG.PATCH("/:id", EditUsersPassword, BlockUsers)
-		usersG.DELETE("/:id", DeleteUsers)
+		usersG.PATCH("/:id", EditUsersPassword)
+		usersG.DELETE("/:id", DeleteUsers, BlockUsers)
 	}
 
 	routesG := router.Group("/routes", checkUserAuthentication)
@@ -45,15 +45,6 @@ func InitRoutes() *gin.Engine {
 		taxicompsG.GET("/:id", GetAllTaxiCompByID)
 		taxicompsG.PUT("/:id", UpdateTaxiCompByID)
 		taxicompsG.DELETE("/:id", DeleteTaxiCompByID)
-	}
-	ordersG := router.Group("/orders", checkUserAuthentication)
-	{
-		ordersG.POST("", AddOrder)
-		ordersG.GET("", OrdersReport)
-		ordersG.GET("/:id", GetAllOrdersByID)
-		ordersG.PUT("/:id", UpdateOrderByID)
-		ordersG.PATCH("/:id", ChecksOrderasDone)
-		ordersG.DELETE("/:id", DeleteOrderByID)
 	}
 
 	return router

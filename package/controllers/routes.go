@@ -163,7 +163,7 @@ func ChecksRouteasResponse(c *gin.Context) {
 		return
 	}
 
-	err = service.CheckOrderasDone(true, id)
+	err = service.CheckRouteasResponse(true, id)
 	if err != nil {
 		HandleError(c, errs.ErrRoutesNotFound)
 		return
