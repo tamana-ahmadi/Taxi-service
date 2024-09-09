@@ -23,3 +23,4 @@ ERROR: 2024/09/09 08:24:30 orders.go:54: [repository.OrdersReport]error in  orde
 ERROR: 2024/09/09 08:26:01 orders.go:54: [repository.OrdersReport]error in  order report ОШИБКА: ошибка синтаксиса (примерное положение: "AND") (SQLSTATE 42601)
 ERROR: 2024/09/09 08:32:56 orders.go:54: [repository.OrdersReport]error in  order report ОШИБКА: таблица "o" отсутствует в предложении FROM (SQLSTATE 42P01)
 ERROR: 2024/09/09 08:37:56 orders.go:54: [repository.OrdersReport]error in  order report ОШИБКА: таблица "t" отсутствует в предложении FROM (SQLSTATE 42P01)
+ERROR: 2024/09/09 08:42:36 orders.go:54: [repository.OrdersReport]error in  order report ОШИБКА: в элементе предложения FROM неверная ссылка на таблицу "routes" (SQLSTATE 42P01)

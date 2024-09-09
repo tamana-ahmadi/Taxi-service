@@ -539,3 +539,4 @@ Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-
  - using env:	export GIN_MODE=release
  - using code:	gin.SetMode(gin.ReleaseMode)
 
+[GIN] 2024/09/09 - 08:42:36 | 400 |    215.4141ms |             ::1 | GET      "/orders?is_done=false&is_response=false"
