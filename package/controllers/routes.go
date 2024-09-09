@@ -144,8 +144,12 @@ func ChecksRouteasResponse(c *gin.Context) {
 		return
 	}
 
-	var r models.User
-	err = service.CheckRouteasResponse(true, r.ID, id)
+	userID := c.GetUint(userIDCtx)
+	if userID == 0 {
+		HandleError(c, errs.ErrRecordNotFound)
+		return
+	}
+	err = service.CheckRouteasResponse(true, int(userID), id)
 	if err != nil {
 		HandleError(c, errs.ErrRoutesNotFound)
 		return
