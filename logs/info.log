@@ -1046,3 +1046,20 @@ Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-
  - using code:	gin.SetMode(gin.ReleaseMode)
 
 [GIN] 2024/09/09 - 18:11:49 | 201 |    216.7349ms |             ::1 | POST     "/routes"
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN] 2024/09/09 - 18:13:59 | 201 |    206.4885ms |             ::1 | POST     "/routes"
+[GIN] 2024/09/09 - 18:14:12 | 201 |      78.623ms |             ::1 | POST     "/routes"
+[GIN] 2024/09/09 - 18:14:22 | 201 |      2.0549ms |             ::1 | POST     "/routes"
+[GIN] 2024/09/09 - 18:14:41 | 201 |      1.6272ms |             ::1 | POST     "/routes"
+[GIN] 2024/09/09 - 18:15:25 | 201 |     18.8332ms |             ::1 | POST     "/routes"
+[GIN] 2024/09/09 - 18:15:55 | 201 |      1.8831ms |             ::1 | POST     "/routes"
+[GIN] 2024/09/09 - 18:16:43 | 200 |      1.0454ms |             ::1 | POST     "/auth/sign-in"
+[GIN] 2024/09/09 - 18:17:03 | 200 |      1.3094ms |             ::1 | GET      "/routes/1"
+[GIN] 2024/09/09 - 18:19:11 | 200 |      1.6222ms |             ::1 | GET      "/routes/1"
+[GIN] 2024/09/09 - 18:19:28 | 200 |      1.5015ms |             ::1 | GET      "/routes/1"
+[GIN] 2024/09/09 - 18:20:15 | 200 |      1.0433ms |             ::1 | GET      "/routes/1"
