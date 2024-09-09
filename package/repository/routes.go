@@ -30,7 +30,7 @@ func SoftDeleteRoutes(isdeleted bool, id int) error {
 }
 
 func GetAllRoutes(isdeleted, isresp, isblocked bool, price int, uid uint) (route []models.Route, err error) {
-	err = db.GetconnectDB().Preload("User").Joins("Join users ON users.id=routes.user_id OR users.id=routes.driver_id").Where("routes.is_response=? AND routes.is_deleted=? AND routes.price=?", isresp, isdeleted, price).Where("routes.user_id=?", uid).Order("routes.id").Where("users.is_blocked=? AND users.is_deleted=?", isblocked, isdeleted).Find(&route).Error
+	err = db.GetconnectDB().Preload("User").Joins("Join users ON users.id=routes.user_id OR users.id=routes.driver_id").Where("routes.is_response=? AND routes.is_deleted=? AND routes.price=?", isresp, isdeleted, price).Where("routes.client_id=?", uid).Order("routes.id").Where("users.is_blocked=? AND users.is_deleted=?", isblocked, isdeleted).Find(&route).Error
 	if err != nil {
 		logger.Error.Printf("[repository.GetAllRoutes]error in getting all orders %s\n", err.Error())
 		return route, err
