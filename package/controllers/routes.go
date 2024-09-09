@@ -149,7 +149,13 @@ func ChecksRouteasResponse(c *gin.Context) {
 		HandleError(c, errs.ErrValidationFailed)
 		return
 	}
-	err = service.CheckRouteasResponse(true, checkroute, id)
+	userID := c.GetUint(userIDCtx)
+	if userID == 0 {
+		HandleError(c, errs.ErrRecordNotFound)
+		return
+	}
+	checkroute.ClientID = int(userID)
+	err = service.CheckRouteasResponse(true, id)
 	if err != nil {
 		HandleError(c, errs.ErrRoutesNotFound)
 		return
