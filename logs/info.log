@@ -1182,3 +1182,19 @@ Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-
  - using env:	export GIN_MODE=release
  - using code:	gin.SetMode(gin.ReleaseMode)
 
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN] 2024/09/09 - 20:51:54 | 200 |      1.4557ms |             ::1 | POST     "/auth/sign-in"
+[GIN] 2024/09/09 - 20:52:27 | 201 |      6.8332ms |             ::1 | POST     "/routes"
+[GIN] 2024/09/09 - 20:52:58 | 201 |      1.9089ms |             ::1 | POST     "/routes"
+[GIN] 2024/09/09 - 20:54:24 | 201 |     75.9252ms |             ::1 | POST     "/routes"
+[GIN] 2024/09/09 - 20:54:46 | 201 |      1.6712ms |             ::1 | POST     "/routes"
+[GIN] 2024/09/09 - 20:55:25 | 201 |      1.6038ms |             ::1 | POST     "/routes"
+[GIN] 2024/09/09 - 20:56:22 | 201 |      1.3965ms |             ::1 | POST     "/routes"
+[GIN] 2024/09/09 - 20:56:47 | 200 |       859.3µs |             ::1 | POST     "/auth/sign-in"
+[GIN] 2024/09/09 - 20:57:08 | 200 |      4.8649ms |             ::1 | PATCH    "/routes/1"
+[GIN] 2024/09/09 - 21:00:12 | 200 |      1.6671ms |             ::1 | PATCH    "/routes/1"
