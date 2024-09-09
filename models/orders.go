@@ -5,14 +5,12 @@ import "time"
 type Order struct {
 	ID         int       `gorm:"primary_key"`
 	ClientID   int       `gorm:"references users(id)" json:"client_id"`
-	Client     User      `gorm:"foreignKey:ClientID" json:"client"`
 	DriverID   int       `gorm:"references users(id)" json:"driver_id"`
-	Driver     User      `gorm:"foreignKey:DriverID" json:"driver"`
 	RouteID    int       `gorm:"references routes(id)" json:"route_id"`
-	Distance   Route     `gorm:"foreignKey:RouteID" json:"distance"`
-	Price      Route     `gorm:"foreignKey:RouteID" json:"price"`
+	Distance   int       `gorm:"-" json:"distance"`
+	Price      int       `gorm:"-" json:"price"`
 	TaxicompID int       `gorm:"references taxicompanies(id)" json:"taxicomp_id"`
-	Comptitle  TaxiComp  `gorm:"foreignKey:TaxicompID" json:"comp_title"`
+	Comptitle  string    `gorm:"-" json:"comp_title"`
 	IsDone     bool      `gorm:"default false" json:"is_done"`
 	IsDeleted  bool      `gorm:"default false" json:"is_deleted"`
 	CreatedAt  time.Time `json:"created_at" gorm:"autoCreateTime"`
