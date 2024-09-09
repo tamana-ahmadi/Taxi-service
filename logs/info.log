@@ -751,3 +751,4 @@ Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-
  - using env:	export GIN_MODE=release
  - using code:	gin.SetMode(gin.ReleaseMode)
 
+[GIN] 2024/09/09 - 12:02:39 | 404 |    200.1109ms |             ::1 | POST     "/auth/sign-in"
