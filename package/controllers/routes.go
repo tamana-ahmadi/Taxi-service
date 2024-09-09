@@ -144,11 +144,6 @@ func ChecksRouteasResponse(c *gin.Context) {
 		return
 	}
 	var checkroute models.Route
-	err = c.BindJSON(&checkroute)
-	if err != nil {
-		HandleError(c, errs.ErrValidationFailed)
-		return
-	}
 	userID := c.GetUint(userIDCtx)
 	if userID == 0 {
 		HandleError(c, errs.ErrRecordNotFound)
