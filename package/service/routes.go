@@ -14,7 +14,7 @@ func AddRoute(routes models.Route) error {
 	return nil
 }
 func UpdateRoute(route models.Route, id int) error {
-	err := repository.EditRoutes(route.From, route.Into, route.UserID, route.Distance, route.Price, id)
+	err := repository.EditRoutes(route.From, route.Into, route.DriverID, route.Distance, route.Price, id)
 	if err != nil {
 		fmt.Println(err)
 	}
@@ -27,8 +27,8 @@ func DeleteRoute(isdeleted bool, id int) error {
 	}
 	return nil
 }
-func CheckRouteasResponse(isresp bool, id int) error {
-	err := repository.CheckRoutesAsResponse(isresp, id)
+func CheckRouteasResponse(isresp bool, cid, id int) error {
+	err := repository.CheckRoutesAsResponse(isresp, cid, id)
 	if err != nil {
 		fmt.Println(err)
 	}

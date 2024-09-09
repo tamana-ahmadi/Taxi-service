@@ -14,7 +14,7 @@ func InsertRoutes(route models.Route) error {
 	return nil
 }
 func EditRoutes(from, into string, userid, distance, price, id int) error {
-	err := db.GetconnectDB().Save(&models.Route{ID: id, From: from, Into: into, Distance: distance, Price: price, UserID: userid}).Error
+	err := db.GetconnectDB().Save(&models.Route{ID: id, From: from, Into: into, Distance: distance, Price: price, DriverID: userid}).Error
 	if err != nil {
 		logger.Error.Printf("[repository.EditRoutes]error in update route %s\n", err.Error())
 	}
@@ -46,9 +46,9 @@ func GetAllRoutesByID(isdeleted, isresp, isblocked bool, uid, rid uint) (route [
 	return route, nil
 }
 
-func CheckRoutesAsResponse(isresp bool, id int) error {
+func CheckRoutesAsResponse(isresp bool, cid, id int) error {
 	var route models.Route
-	err := db.GetconnectDB().Model(&route).Select("is_response").Where("id=?", id).Updates(models.Route{IsResponse: isresp}).Error
+	err := db.GetconnectDB().Model(&route).Select("is_response,client_id").Where("id=?", id).Updates(models.Route{IsResponse: isresp}).Error
 	if err != nil {
 		logger.Error.Printf("[repository.CheckRoutesAsResponse]error in checked route %s\n", err.Error())
 

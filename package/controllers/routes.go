@@ -18,7 +18,7 @@ func AddRoute(c *gin.Context) {
 		HandleError(c, errs.ErrValidationFailed)
 		return
 	}
-	if urole != "driver" && urole != "user" {
+	if urole != "driver" {
 		HandleError(c, errs.ErrPermissionDenied)
 		return
 	}
@@ -28,7 +28,7 @@ func AddRoute(c *gin.Context) {
 		HandleError(c, errs.ErrValidationFailed)
 		return
 	}
-	newroute.UserID = int(userID)
+	newroute.DriverID = int(userID)
 	logger.Info.Printf("[controllers.AddRoute] add route is succesful")
 
 	err = service.AddRoute(newroute)
@@ -41,16 +41,6 @@ func AddRoute(c *gin.Context) {
 }
 
 func GetAllRoutes(c *gin.Context) {
-
-	urole := c.GetString(userRoleCtx)
-	if urole == "" {
-		HandleError(c, errs.ErrValidationFailed)
-		return
-	}
-	if urole != "user" && urole != "driver" {
-		HandleError(c, errs.ErrPermissionDenied)
-		return
-	}
 	userID := c.GetUint(userIDCtx)
 	if userID == 0 {
 		HandleError(c, errs.ErrRoutesNotFound)
@@ -93,15 +83,6 @@ func GetAllRoutesByID(c *gin.Context) {
 	if err != nil {
 		logger.Error.Printf("[controllers.GetAllRoutesByID] invalid route_id path parameter: %s\n", c.Param("id"))
 		HandleError(c, errs.ErrValidationFailed)
-		return
-	}
-	urole := c.GetString(userRoleCtx)
-	if urole == "" {
-		HandleError(c, errs.ErrValidationFailed)
-		return
-	}
-	if urole != "user" && urole != "driver" {
-		HandleError(c, errs.ErrPermissionDenied)
 		return
 	}
 	route, err := service.PrintAllRouteByID(false, isResp, false, uint(userID), uint(rid))
@@ -162,8 +143,13 @@ func ChecksRouteasResponse(c *gin.Context) {
 		HandleError(c, errs.ErrValidationFailed)
 		return
 	}
+	userID := c.GetUint(userIDCtx)
+	if userID == 0 {
+		HandleError(c, errs.ErrRecordNotFound)
+		return
+	}
 
-	err = service.CheckRouteasResponse(true, id)
+	err = service.CheckRouteasResponse(true, int(userID), id)
 	if err != nil {
 		HandleError(c, errs.ErrRoutesNotFound)
 		return
