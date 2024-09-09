@@ -638,3 +638,13 @@ Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-
  - using code:	gin.SetMode(gin.ReleaseMode)
 
 [GIN] 2024/09/09 - 09:41:55 | 200 |      5.3259ms |             ::1 | GET      "/orders?is_done=false&is_response=false"
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN] 2024/09/09 - 09:44:35 | 200 |      1.7926ms |             ::1 | POST     "/auth/sign-in"
+[GIN] 2024/09/09 - 09:44:56 | 201 |      8.2888ms |             ::1 | POST     "/orders"
+[GIN] 2024/09/09 - 09:45:12 | 200 |      5.6841ms |             ::1 | PATCH    "/orders/1"
+[GIN] 2024/09/09 - 09:45:29 | 200 |      4.2782ms |             ::1 | GET      "/orders?is_done=false&is_response=false"
