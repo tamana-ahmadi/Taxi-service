@@ -6,15 +6,15 @@ import (
 	"fmt"
 )
 
-func AddOrder(ord models.Order) error {
+func AddOrder(ord models.Ord) error {
 	err := repository.InsertOrders(ord)
 	if err != nil {
 		fmt.Println(err)
 	}
 	return nil
 }
-func UpdateOrder(ord models.Order, id int) error {
-	err := repository.EditOrders(ord.RouteID, ord.ClientID,ord.DriverID, ord.TaxicompID, id)
+func UpdateOrder(ord models.Ord, id int) error {
+	err := repository.EditOrders(ord.RouteID, ord.ClientID, ord.DriverID, ord.TaxicompID, id)
 	if err != nil {
 		fmt.Println(err)
 	}
@@ -35,7 +35,7 @@ func CheckOrderasDone(isdone bool, id int) error {
 	return nil
 }
 
-func PrintAllOrderByID(isdeleted, isdone, isblocked bool, uid, oid uint) (ord []models.Order, err error) {
+func PrintAllOrderByID(isdeleted, isdone, isblocked bool, uid, oid uint) (ord []models.Ord, err error) {
 	ord, err = repository.GetAllOrdersByID(isdeleted, isdone, isblocked, uid, oid)
 	if err != nil {
 
@@ -44,8 +44,8 @@ func PrintAllOrderByID(isdeleted, isdone, isblocked bool, uid, oid uint) (ord []
 	return ord, nil
 }
 
-func ReportofOrder(isdone, isdeletedo, isdeletedt, isdeletedr, isresp, isblocked,isdeletedu bool) (ord []models.Order, err error) {
-	ord, err = repository.OrdersReport(isdone, isdeletedo, isdeletedt, isdeletedr, isresp, isblocked,isdeletedu)
+func ReportofOrder(isdone, isdeletedo, isdeletedt, isdeletedr, isresp, isblocked, isdeletedu bool) (ord []models.Ord, err error) {
+	ord, err = repository.OrdersReport(isdone, isdeletedo, isdeletedt, isdeletedr, isresp, isblocked, isdeletedu)
 	if err != nil {
 		return ord, err
 	}

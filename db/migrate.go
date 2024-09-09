@@ -6,7 +6,7 @@ import (
 )
 
 func Migrate() error {
-	err := conn.AutoMigrate(models.Route{}, models.Order{}, models.TaxiComp{}, models.User{})
+	err := conn.AutoMigrate(models.Route{}, models.Ord{}, models.TaxiComp{}, models.User{})
 	if err != nil {
 		return errors.New("Failed to begin transaction: " + err.Error())
 	}

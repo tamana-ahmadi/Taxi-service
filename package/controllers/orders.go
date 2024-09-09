@@ -21,7 +21,7 @@ func AddOrder(c *gin.Context) {
 		HandleError(c, errs.ErrPermissionDenied)
 		return
 	}
-	var neworder models.Order
+	var neworder models.Ord
 	err := c.BindJSON(&neworder)
 	if err != nil {
 		HandleError(c, errs.ErrValidationFailed)
@@ -90,7 +90,7 @@ func UpdateOrderByID(c *gin.Context) {
 		return
 	}
 
-	var ord models.Order
+	var ord models.Ord
 	err = c.BindJSON(&ord)
 	if err != nil {
 		HandleError(c, errs.ErrOrdersNotFound)
