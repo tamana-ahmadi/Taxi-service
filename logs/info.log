@@ -588,3 +588,10 @@ Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-
 
 [GIN] 2024/09/09 - 09:13:31 | 200 |      3.8994ms |             ::1 | POST     "/auth/sign-in"
 [GIN] 2024/09/09 - 09:13:52 | 400 |      5.3483ms |             ::1 | GET      "/orders?is_done=false&is_response=false"
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN] 2024/09/09 - 09:17:41 | 400 |    213.6045ms |             ::1 | GET      "/orders?is_done=false&is_response=false"
