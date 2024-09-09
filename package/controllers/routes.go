@@ -84,7 +84,7 @@ func GetAllRoutesByID(c *gin.Context) {
 		HandleError(c, errs.ErrRoutesNotFound)
 		return
 	}
-	c.JSON(http.StatusOK, gin.H{"order": route})
+	c.JSON(http.StatusOK, gin.H{"route": route})
 }
 
 func UpdateRouteByID(c *gin.Context) {
