@@ -148,12 +148,8 @@ func ChecksRouteasResponse(c *gin.Context) {
 		HandleError(c, errs.ErrRecordNotFound)
 		return
 	}
-	var route = models.Route{
-		ClientID:   int(userID),
-		IsResponse: true,
-	}
 
-	err = service.CheckRouteasResponse(route, id)
+	err = service.CheckRouteasResponse(true, int(userID), id)
 	if err != nil {
 		HandleError(c, errs.ErrRoutesNotFound)
 		return
