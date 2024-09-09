@@ -46,3 +46,4 @@ ERROR: 2024/09/09 12:06:12 users.go:83: [service.getuserbyusername]error in gett
 ERROR: 2024/09/09 17:36:41 routes.go:43: [repository.GetAllRoutesByID]error in getting all order by id ОШИБКА: столбец routes.user_id не существует (SQLSTATE 42703)
 ERROR: 2024/09/09 17:42:14 routes.go:43: [repository.GetAllRoutesByID]error in getting all order by id ОШИБКА: таблица "orders" отсутствует в предложении FROM (SQLSTATE 42P01)
 ERROR: 2024/09/09 17:43:08 routes.go:43: [repository.GetAllRoutesByID]error in getting all order by id ОШИБКА: таблица "orders" отсутствует в предложении FROM (SQLSTATE 42P01)
+ERROR: 2024/09/09 17:43:54 routes.go:43: [repository.GetAllRoutesByID]error in getting all order by id User: unsupported relations for schema Route
