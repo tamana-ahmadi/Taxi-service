@@ -5,7 +5,6 @@ import (
 	"Taxi_service/logger"
 	"Taxi_service/models"
 	"Taxi_service/package/service"
-	"fmt"
 	"net/http"
 	"strconv"
 
@@ -29,15 +28,6 @@ func AddUsers(c *gin.Context) {
 
 }
 func EditUsers(c *gin.Context) {
-	urole := c.GetString(userRoleCtx)
-	if urole == "" {
-		HandleError(c, errs.ErrValidationFailed)
-		return
-	}
-	if urole != "admin" {
-		HandleError(c, errs.ErrPermissionDenied)
-		return
-	}
 	id, err := strconv.Atoi(c.Param("id"))
 	if err != nil {
 		HandleError(c, err)
@@ -125,16 +115,6 @@ func DeleteUsers(c *gin.Context) {
 
 }
 func PrintUsers(c *gin.Context) {
-	urole := c.GetString(userRoleCtx)
-	fmt.Println("Urole", urole)
-	if urole == "" {
-		HandleError(c, errs.ErrValidationFailed)
-		return
-	}
-	if urole != "driver" && urole != "user" {
-		HandleError(c, errs.ErrPermissionDenied)
-		return
-	}
 	role := c.Query("role")
 	logger.Info.Printf("Client with ip: [%s] requested list of users\n", c.ClientIP())
 	users, err := service.PrintAllUsers(false, false, role)
