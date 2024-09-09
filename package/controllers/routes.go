@@ -128,7 +128,6 @@ func UpdateRouteByID(c *gin.Context) {
 }
 
 func ChecksRouteasResponse(c *gin.Context) {
-	var checkr models.Route
 	urole := c.GetString(userRoleCtx)
 	if urole == "" {
 		HandleError(c, errs.ErrValidationFailed)
@@ -149,8 +148,8 @@ func ChecksRouteasResponse(c *gin.Context) {
 		HandleError(c, errs.ErrRecordNotFound)
 		return
 	}
-	checkr.ClientID = int(userID)
-	err = service.CheckRouteasResponse(true, id)
+
+	err = service.CheckRouteasResponse(true, int(userID), id)
 	if err != nil {
 		HandleError(c, errs.ErrRoutesNotFound)
 		return
