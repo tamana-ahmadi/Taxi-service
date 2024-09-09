@@ -878,3 +878,4 @@ Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-
  - using env:	export GIN_MODE=release
  - using code:	gin.SetMode(gin.ReleaseMode)
 
+[GIN] 2024/09/09 - 14:36:33 | 200 |      5.7335ms |             ::1 | PATCH    "/routes/1"
