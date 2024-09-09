@@ -955,3 +955,9 @@ Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-
  - using code:	gin.SetMode(gin.ReleaseMode)
 
 [GIN] 2024/09/09 - 17:19:49 | 200 |      3.4759ms |             ::1 | PATCH    "/routes/1"
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
