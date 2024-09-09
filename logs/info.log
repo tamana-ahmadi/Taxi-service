@@ -736,3 +736,12 @@ Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-
  - using env:	export GIN_MODE=release
  - using code:	gin.SetMode(gin.ReleaseMode)
 
+[GIN] 2024/09/09 - 12:00:06 | 404 |      5.6288ms |             ::1 | POST     "/auth/sign-in"
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN] 2024/09/09 - 12:00:47 | 404 |      1.3994ms |             ::1 | POST     "/auth/sign-in"
+[GIN] 2024/09/09 - 12:01:34 | 404 |      1.5061ms |             ::1 | POST     "/auth/sign-in"

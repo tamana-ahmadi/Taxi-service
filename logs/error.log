@@ -35,3 +35,6 @@ ERROR: 2024/09/09 10:54:04 orders.go:54: [repository.OrdersReport]error in  orde
 ERROR: 2024/09/09 11:11:34 orders.go:54: [repository.OrdersReport]error in  order report Route: unsupported relations for schema Order
 ERROR: 2024/09/09 11:13:23 orders.go:54: [repository.OrdersReport]error in  order report Route: unsupported relations for schema Order
 ERROR: 2024/09/09 11:30:10 orders.go:54: [repository.OrdersReport]error in  order report Route: unsupported relations for schema Order
+ERROR: 2024/09/09 12:00:06 users.go:83: [service.getuserbyusername]error in getting user by username  record not found
+ERROR: 2024/09/09 12:00:47 users.go:83: [service.getuserbyusername]error in getting user by username  record not found
+ERROR: 2024/09/09 12:01:34 users.go:83: [service.getuserbyusername]error in getting user by username  record not found
