@@ -48,3 +48,4 @@ ERROR: 2024/09/09 17:42:14 routes.go:43: [repository.GetAllRoutesByID]error in g
 ERROR: 2024/09/09 17:43:08 routes.go:43: [repository.GetAllRoutesByID]error in getting all order by id ОШИБКА: таблица "orders" отсутствует в предложении FROM (SQLSTATE 42P01)
 ERROR: 2024/09/09 17:43:54 routes.go:43: [repository.GetAllRoutesByID]error in getting all order by id User: unsupported relations for schema Route
 ERROR: 2024/09/09 17:45:45 routes.go:43: [repository.GetAllRoutesByID]error in getting all order by id User: unsupported relations for schema Route
+ERROR: 2024/09/09 17:48:03 routes.go:43: [repository.GetAllRoutesByID]error in getting all order by id User: unsupported relations for schema Route
