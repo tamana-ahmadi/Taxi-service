@@ -657,3 +657,4 @@ Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-
  - using env:	export GIN_MODE=release
  - using code:	gin.SetMode(gin.ReleaseMode)
 
+[GIN] 2024/09/09 - 10:54:04 | 400 |    218.3255ms |             ::1 | GET      "/orders?is_done=true&is_response=false"
