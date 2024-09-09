@@ -62,3 +62,5 @@ ERROR: 2024/09/09 18:41:15 routes.go:43: [repository.GetAllRoutesByID]error in g
 ERROR: 2024/09/09 18:42:54 routes.go:43: [repository.GetAllRoutesByID]error in getting all order by id ОШИБКА: ошибка синтаксиса (примерное положение: ")") (SQLSTATE 42601)
 ERROR: 2024/09/09 18:43:04 routes.go:43: [repository.GetAllRoutesByID]error in getting all order by id ОШИБКА: ошибка синтаксиса (примерное положение: ")") (SQLSTATE 42601)
 ERROR: 2024/09/09 18:43:44 routes.go:43: [repository.GetAllRoutesByID]error in getting all order by id ОШИБКА: ошибка синтаксиса (примерное положение: ")") (SQLSTATE 42601)
+ERROR: 2024/09/09 18:45:57 routes.go:43: [repository.GetAllRoutesByID]error in getting all order by id ОШИБКА: ошибка синтаксиса (примерное положение: ")") (SQLSTATE 42601)
+ERROR: 2024/09/09 18:49:14 routes.go:35: [repository.GetAllRoutes]error in getting all orders ОШИБКА: ошибка синтаксиса (примерное положение: ")") (SQLSTATE 42601)
