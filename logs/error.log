@@ -52,3 +52,4 @@ ERROR: 2024/09/09 17:48:03 routes.go:43: [repository.GetAllRoutesByID]error in g
 ERROR: 2024/09/09 18:00:47 routes.go:12: [repository.InsertRoutes]error in added route ОШИБКА: INSERT или UPDATE в таблице "routes" нарушает ограничение внешнего ключа "fk_routes_client" (SQLSTATE 23503)
 ERROR: 2024/09/09 18:00:54 routes.go:12: [repository.InsertRoutes]error in added route ОШИБКА: INSERT или UPDATE в таблице "routes" нарушает ограничение внешнего ключа "fk_routes_client" (SQLSTATE 23503)
 ERROR: 2024/09/09 18:01:01 routes.go:12: [repository.InsertRoutes]error in added route ОШИБКА: INSERT или UPDATE в таблице "routes" нарушает ограничение внешнего ключа "fk_routes_client" (SQLSTATE 23503)
+ERROR: 2024/09/09 18:04:24 routes.go:12: [repository.InsertRoutes]error in added route ОШИБКА: INSERT или UPDATE в таблице "routes" нарушает ограничение внешнего ключа "fk_routes_client" (SQLSTATE 23503)
