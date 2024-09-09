@@ -96,7 +96,7 @@ func BlockUsers(c *gin.Context) {
 		HandleError(c, err)
 		return
 	}
-	c.JSON(http.StatusOK, gin.H{"message": "Deleted is succesfuly"})
+	c.JSON(http.StatusOK, gin.H{"message": "Blocked is succesfuly"})
 
 }
 
