@@ -46,7 +46,7 @@ func GetAllRoutesByID(isdeleted, isresp, isblocked bool, uid, rid uint) (route [
 	return route, nil
 }
 
-func CheckRoutesAsResponse(cid int, isresp bool, id int) error {
+func CheckRoutesAsResponse(isresp bool, cid, id int) error {
 	var route models.Route
 	err := db.GetconnectDB().Model(&route).Select("is_response,client_id").Where("id=?", id).Updates(models.Route{IsResponse: isresp, ClientID: cid}).Error
 	if err != nil {
