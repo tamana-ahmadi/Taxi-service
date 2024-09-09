@@ -149,7 +149,7 @@ func ChecksRouteasResponse(c *gin.Context) {
 		HandleError(c, errs.ErrValidationFailed)
 		return
 	}
-	if route.IsResponse == false {
+	if !route.IsResponse {
 		route.IsResponse = true
 	} else {
 		route.IsResponse = false
