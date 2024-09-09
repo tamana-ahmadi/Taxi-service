@@ -43,8 +43,8 @@ func PrintAllRoutes(isdeleted, isresp, isblocked bool, price int, uid uint) (rou
 	}
 	return route, nil
 }
-func PrintAllRouteByID(isdeleted, isresp, isblocked bool, uid, rid uint) (route []models.Route, err error) {
-	route, err = repository.GetAllRoutesByID(isdeleted, isresp, isblocked, uid, rid)
+func PrintAllRouteByID(isdeleted, isblocked bool, uid, rid uint) (route []models.Route, err error) {
+	route, err = repository.GetAllRoutesByID(isdeleted, isblocked, uid, rid)
 	if err != nil {
 
 		return route, err

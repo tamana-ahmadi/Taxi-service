@@ -37,8 +37,8 @@ func GetAllRoutes(isdeleted, isresp, isblocked bool, price int, uid uint) (route
 	}
 	return route, nil
 }
-func GetAllRoutesByID(isdeleted, isresp, isblocked bool, uid, rid uint) (route []models.Route, err error) {
-	err = db.GetconnectDB().Preload("User").Joins("Join users ON users.id=routes.user_id").Where("routes.is_response=? AND routes.is_deleted=?", isresp, isdeleted).Where("routes.id=?  AND orders.user_id=?", rid, uid).Order("routes.id").Where("users.is_blocked=? AND users.is_deleted=?", isblocked, isdeleted).Find(&route).Error
+func GetAllRoutesByID(isdeleted, isblocked bool, uid, rid uint) (route []models.Route, err error) {
+	err = db.GetconnectDB().Preload("User").Joins("Join users ON users.id=routes.user_id").Where("routes.is_deleted=?", isdeleted).Where("routes.id=?  AND orders.user_id=?", rid, uid).Order("routes.id").Where("users.is_blocked=? AND users.is_deleted=?", isblocked, isdeleted).Find(&route).Error
 	if err != nil {
 		logger.Error.Printf("[repository.GetAllRoutesByID]error in getting all order by id %s\n", err.Error())
 		return route, err

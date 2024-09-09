@@ -73,19 +73,13 @@ func GetAllRoutesByID(c *gin.Context) {
 		HandleError(c, errs.ErrRecordNotFound)
 		return
 	}
-	isRespStr := c.Query("is_response")
-	isResp, err := strconv.ParseBool(isRespStr)
-	if err != nil {
-		HandleError(c, errs.ErrValidationFailed)
-		return
-	}
 	rid, err := strconv.Atoi(c.Param("id"))
 	if err != nil {
 		logger.Error.Printf("[controllers.GetAllRoutesByID] invalid route_id path parameter: %s\n", c.Param("id"))
 		HandleError(c, errs.ErrValidationFailed)
 		return
 	}
-	route, err := service.PrintAllRouteByID(false, isResp, false, uint(userID), uint(rid))
+	route, err := service.PrintAllRouteByID(false, false, uint(userID), uint(rid))
 	if err != nil {
 		HandleError(c, errs.ErrRoutesNotFound)
 		return
