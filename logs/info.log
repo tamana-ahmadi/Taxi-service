@@ -913,3 +913,8 @@ Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-
  - using code:	gin.SetMode(gin.ReleaseMode)
 
 [GIN] 2024/09/09 - 15:17:15 | 200 |      4.1507ms |             ::1 | PATCH    "/routes/1"
+[GIN] 2024/09/09 - 15:18:50 | 200 |      1.6742ms |             ::1 | PATCH    "/routes/1"
+[GIN] 2024/09/09 - 15:19:54 | 200 |      2.4579ms |             ::1 | PATCH    "/routes/1"
+[GIN] 2024/09/09 - 16:40:08 | 401 |       403.9µs |             ::1 | PATCH    "/routes/1"
+[GIN] 2024/09/09 - 16:40:18 | 200 |      3.2262ms |             ::1 | POST     "/auth/sign-in"
+[GIN] 2024/09/09 - 16:40:38 | 200 |      2.2867ms |             ::1 | PATCH    "/routes/1"
