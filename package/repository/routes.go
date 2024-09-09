@@ -30,7 +30,7 @@ func SoftDeleteRoutes(isdeleted bool, id int) error {
 }
 
 func GetAllRoutes(isresp, isdeleted bool, price int) (route []models.Route, err error) {
-	err = db.GetconnectDB().Where("routes.is_response=? AND routes.is_deleted=? AND (price<=? OR price>=1", isresp, isdeleted, price).Find(&route).Error
+	err = db.GetconnectDB().Where("routes.is_response=? AND routes.is_deleted=? AND price<=?", isresp, isdeleted, price).Find(&route).Error
 	if err != nil {
 		logger.Error.Printf("[repository.GetAllRoutes]error in getting all orders %s\n", err.Error())
 		return route, err

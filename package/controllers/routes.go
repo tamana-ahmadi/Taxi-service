@@ -53,8 +53,13 @@ func GetAllRoutes(c *gin.Context) {
 		HandleError(c, errs.ErrValidationFailed)
 		return
 	}
-
-	routes, err := service.PrintAllRoutes(isResp, false, 100)
+	priceStr := c.Query("price")
+	price, err := strconv.Atoi(priceStr)
+	if err != nil {
+		HandleError(c, errs.ErrValidationFailed)
+		return
+	}
+	routes, err := service.PrintAllRoutes(isResp, false, price)
 	if err != nil {
 		HandleError(c, errs.ErrRoutesNotFound)
 		return
