@@ -28,3 +28,4 @@ ERROR: 2024/09/09 08:45:10 orders.go:54: [repository.OrdersReport]error in  orde
 ERROR: 2024/09/09 08:46:39 orders.go:54: [repository.OrdersReport]error in  order report ОШИБКА: таблица "t" отсутствует в предложении FROM (SQLSTATE 42P01)
 ERROR: 2024/09/09 08:48:12 orders.go:54: [repository.OrdersReport]error in  order report Route: unsupported relations for schema Ord
 ERROR: 2024/09/09 08:50:37 orders.go:54: [repository.OrdersReport]error in  order report Route: unsupported relations for schema Ord
+ERROR: 2024/09/09 09:01:09 orders.go:54: [repository.OrdersReport]error in  order report Route: unsupported relations for schema Order
