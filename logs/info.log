@@ -897,3 +897,12 @@ Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-
  - using env:	export GIN_MODE=release
  - using code:	gin.SetMode(gin.ReleaseMode)
 
+[GIN] 2024/09/09 - 15:01:53 | 200 |      1.3264ms |             ::1 | POST     "/auth/sign-in"
+[GIN] 2024/09/09 - 15:02:22 | 200 |      3.8233ms |             ::1 | PATCH    "/routes/1"
+[GIN] 2024/09/09 - 15:03:48 | 200 |       957.3µs |             ::1 | POST     "/auth/sign-in"
+[GIN] 2024/09/09 - 15:04:15 | 200 |      1.6852ms |             ::1 | PATCH    "/routes/1"
+[GIN] 2024/09/09 - 15:10:37 | 200 |      1.3308ms |             ::1 | PATCH    "/routes/1"
+[GIN] 2024/09/09 - 15:11:22 | 200 |      1.6754ms |             ::1 | PATCH    "/routes/1"
+[GIN] 2024/09/09 - 15:11:44 | 200 |       1.577ms |             ::1 | PATCH    "/routes/1"
+[GIN] 2024/09/09 - 15:12:33 | 200 |      1.4003ms |             ::1 | PATCH    "/routes/1"
+[GIN] 2024/09/09 - 15:16:38 | 200 |      1.6902ms |             ::1 | PATCH    "/routes/1"

@@ -32,6 +32,11 @@ func CheckRouteasResponse(route models.Route, id int) error {
 	if err != nil {
 		fmt.Println(err)
 	}
+	if !route.IsResponse {
+		route.IsResponse = true
+	} else {
+		route.IsResponse = false
+	}
 	return nil
 }
 
