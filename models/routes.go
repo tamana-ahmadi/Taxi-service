@@ -9,9 +9,7 @@ type Route struct {
 	Distance   int       `gorm:"not null" json:"distance"`
 	Price      int       `gorm:"default false" json:"price"`
 	ClientID   int       `gorm:"references users(id)" json:"client_id"`
-	Client     User      `gorm:"foreignKey:ClientID" json:"client"`
 	DriverID   int       `gorm:"references users(id)" json:"driver_id"`
-	Driver     User      `gorm:"foreignKey:DriverID" json:"driver"`
 	IsResponse bool      `gorm:"default false" json:"is_response"`
 	IsDeleted  bool      `gorm:"default false" json:"is_deleted"`
 	CreatedAt  time.Time `json:"created_at" gorm:"autoCreateTime"`
