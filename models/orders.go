@@ -2,7 +2,7 @@ package models
 
 import "time"
 
-type Ord struct {
+type Order struct {
 	ID         int       `gorm:"primary_key"`
 	ClientID   int       `gorm:"references users(id)" json:"client_id"`
 	DriverID   int       `gorm:"references users(id)" json:"driver_id"`
@@ -17,6 +17,6 @@ type Ord struct {
 	UpdatedAt  time.Time `json:"updated_at" gorm:"autoUpdateTime"`
 }
 
-func (Ord) TableName() string {
+func (Order) TableName() string {
 	return "orders"
 }
