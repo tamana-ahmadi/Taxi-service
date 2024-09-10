@@ -1313,3 +1313,6 @@ Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-
  - using env:	export GIN_MODE=release
  - using code:	gin.SetMode(gin.ReleaseMode)
 
+[GIN] 2024/09/10 - 07:38:54 | 200 |     78.5416ms |             ::1 | PATCH    "/users/3"
+[GIN] 2024/09/10 - 07:39:18 | 201 |     11.4715ms |             ::1 | POST     "/auth/sign-up"
+[GIN] 2024/09/10 - 07:39:42 | 404 |      1.6055ms |             ::1 | POST     "/auth/sign-in"
