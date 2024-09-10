@@ -4,6 +4,8 @@ import (
 	"Taxi_service/db"
 	"Taxi_service/logger"
 	"Taxi_service/models"
+
+	"golang.org/x/crypto/bcrypt"
 )
 
 func CreateUser(user models.User) error {
@@ -35,10 +37,16 @@ func DeleteUser(isdeleted bool, id int) error {
 	}
 	return nil
 }
-func EditUserRating(rating, id int) error {
-	err := db.GetconnectDB().Model(&models.User{}).Where("id=?", id).Update("rating", rating).Error
+func EditUserPassword(password string, id int) error {
+	passwordHash, err := bcrypt.GenerateFromPassword([]byte(password), bcrypt.DefaultCost)
 	if err != nil {
-		logger.Error.Printf("[repository.edituserpassword]error in updated user rating %s\n", err.Error())
+		logger.Error.Printf("[repository.edituserpassword]error in hashing password: %s\n", err.Error())
+		return err
+	}
+	err = db.GetconnectDB().Model(&models.User{}).Where("id=?", id).Update("password", passwordHash).Error
+	if err != nil {
+		logger.Error.Printf("[repository.edituserrating]error in updated user password %s\n", err.Error())
+		return nil
 	}
 	return nil
 }
