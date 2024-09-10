@@ -27,8 +27,8 @@ func UpdateUser(user models.User, id int) error {
 	}
 	return nil
 }
-func UpdateUserPassword(user models.User, id int) error {
-	err := repository.EditUserPassword(user.Password, id)
+func UpdateUserRating(user models.User, id int) error {
+	err := repository.EditUserRating(user.Rating, id)
 	if err != nil {
 		fmt.Println(err)
 	}

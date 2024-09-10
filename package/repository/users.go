@@ -35,15 +35,10 @@ func DeleteUser(isdeleted bool, id int) error {
 	}
 	return nil
 }
-func EditUserPassword(password string, id int) error {
-	// passwordHash, err := bcrypt.GenerateFromPassword([]byte(password), bcrypt.DefaultCost)
-	// if err != nil {
-	// 	logger.Error.Printf("[repository.edituserpassword]error in hashing password: %s\n", err.Error())
-	// 	return err
-	// }
-	err := db.GetconnectDB().Select("password").Where("id=?", id).Updates(models.User{Password: password}).Error
+func EditUserRating(rating, id int) error {
+	err := db.GetconnectDB().Select("rating").Where("id=?", id).Updates(models.User{Rating: rating}).Error
 	if err != nil {
-		logger.Error.Printf("[repository.edituserrating]error in updated user password %s\n", err.Error())
+		logger.Error.Printf("[repository.edituserrating]error in updated user rating %s\n", err.Error())
 		return nil
 	}
 	return nil

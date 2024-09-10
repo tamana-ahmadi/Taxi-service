@@ -66,7 +66,7 @@ func EditUsersRating(c *gin.Context) {
 		return
 	}
 	var user models.User
-	err = service.UpdateUserPassword(user, id)
+	err = service.UpdateUserRating(user, id)
 	if err != nil {
 		logger.Error.Printf("[controllers.EditUsersRating] invalid user_id path parameter: %s\n", c.Param("id"))
 		HandleError(c, err)

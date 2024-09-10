@@ -88,3 +88,6 @@ ERROR: 2024/09/10 07:07:28 users.go:84: [service.getuserbyusername]error in gett
 ERROR: 2024/09/10 07:39:18 users.go:84: [service.getuserbyusername]error in getting user by username  record not found
 ERROR: 2024/09/10 07:39:18 users.go:14: [repository.createuser]error in added user ОШИБКА: повторяющееся значение ключа нарушает ограничение уникальности "uni_users_username" (SQLSTATE 23505)
 ERROR: 2024/09/10 07:39:42 users.go:84: [service.getuserbyusername]error in getting user by username  record not found
+ERROR: 2024/09/10 07:43:26 users.go:84: [service.getuserbyusername]error in getting user by username  record not found
+ERROR: 2024/09/10 07:43:26 users.go:14: [repository.createuser]error in added user ОШИБКА: повторяющееся значение ключа нарушает ограничение уникальности "uni_users_username" (SQLSTATE 23505)
+ERROR: 2024/09/10 07:43:33 users.go:84: [service.getuserbyusername]error in getting user by username  record not found
