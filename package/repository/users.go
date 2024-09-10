@@ -38,7 +38,7 @@ func DeleteUser(isdeleted bool, id int) error {
 func EditUserRating(rating, id int) error {
 	err := db.GetconnectDB().Model(&models.User{}).Where("id=?", id).Update("rating", rating).Error
 	if err != nil {
-		logger.Error.Printf("[repository.edituserpassword]error in updated user password %s\n", err.Error())
+		logger.Error.Printf("[repository.edituserpassword]error in updated user rating %s\n", err.Error())
 	}
 	return nil
 }

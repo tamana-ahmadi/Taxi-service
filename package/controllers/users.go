@@ -68,11 +68,11 @@ func EditUsersRating(c *gin.Context) {
 	var user models.User
 	err = service.UpdateUserRating(user, id)
 	if err != nil {
-		logger.Error.Printf("[controllers.EditUsersPassword] invalid user_id path parameter: %s\n", c.Param("id"))
+		logger.Error.Printf("[controllers.EditUsers] invalid user_id path parameter: %s\n", c.Param("id"))
 		HandleError(c, err)
 		return
 	}
-	c.JSON(http.StatusOK, gin.H{"message": "Edit user`s password  is succesfuly"})
+	c.JSON(http.StatusOK, gin.H{"message": "Edit user`s rating  is succesfuly"})
 }
 func BlockUsers(c *gin.Context) {
 	urole := c.GetString(userRoleCtx)
