@@ -67,3 +67,16 @@ ERROR: 2024/09/09 18:49:14 routes.go:35: [repository.GetAllRoutes]error in getti
 ERROR: 2024/09/09 20:35:53 routes.go:35: [repository.GetAllRoutes]error in getting all orders ОШИБКА: ошибка синтаксиса (примерное положение: ")") (SQLSTATE 42601)
 ERROR: 2024/09/09 20:38:52 routes.go:35: [repository.GetAllRoutes]error in getting all orders ОШИБКА: ошибка синтаксиса в конце (SQLSTATE 42601)
 ERROR: 2024/09/09 20:39:31 routes.go:35: [repository.GetAllRoutes]error in getting all orders ОШИБКА: ошибка синтаксиса в конце (SQLSTATE 42601)
+ERROR: 2024/09/10 06:11:21 users.go:83: [service.getuserbyusername]error in getting user by username  record not found
+ERROR: 2024/09/10 06:12:17 users.go:83: [service.getuserbyusername]error in getting user by username  record not found
+ERROR: 2024/09/10 06:12:17 users.go:14: [repository.createuser]error in added user ОШИБКА: повторяющееся значение ключа нарушает ограничение уникальности "uni_users_username" (SQLSTATE 23505)
+ERROR: 2024/09/10 06:12:27 users.go:83: [service.getuserbyusername]error in getting user by username  record not found
+ERROR: 2024/09/10 06:13:18 users.go:83: [service.getuserbyusername]error in getting user by username  record not found
+ERROR: 2024/09/10 06:14:18 users.go:83: [service.getuserbyusername]error in getting user by username  record not found
+ERROR: 2024/09/10 06:20:20 users.go:83: [service.getuserbyusername]error in getting user by username  ОШИБКА: отношение "users" не существует (SQLSTATE 42P01)
+ERROR: 2024/09/10 06:20:20 users.go:14: [repository.createuser]error in added user ОШИБКА: отношение "users" не существует (SQLSTATE 42P01)
+ERROR: 2024/09/10 06:20:25 users.go:83: [service.getuserbyusername]error in getting user by username  ОШИБКА: отношение "users" не существует (SQLSTATE 42P01)
+ERROR: 2024/09/10 06:20:51 users.go:83: [service.getuserbyusername]error in getting user by username  ОШИБКА: отношение "users" не существует (SQLSTATE 42P01)
+ERROR: 2024/09/10 06:20:51 users.go:14: [repository.createuser]error in added user ОШИБКА: отношение "users" не существует (SQLSTATE 42P01)
+ERROR: 2024/09/10 06:20:59 users.go:83: [service.getuserbyusername]error in getting user by username  ОШИБКА: отношение "users" не существует (SQLSTATE 42P01)
+ERROR: 2024/09/10 06:22:22 users.go:83: [service.getuserbyusername]error in getting user by username  ОШИБКА: отношение "users" не существует (SQLSTATE 42P01)

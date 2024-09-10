@@ -1,4 +1,5 @@
 {
+
 "auth_params":{
     "jwt_secret_key":"taxicompanies",
     "jwt_ttl_minutes":60
@@ -27,5 +28,6 @@
     "server_url":"localhost",
     "server_name":"todo_list"
 }
+
 
 }
