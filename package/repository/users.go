@@ -43,7 +43,7 @@ func EditUserPassword(password string, id int) error {
 		logger.Error.Printf("[repository.edituserpassword]error in hashing password: %s\n", err.Error())
 		return err
 	}
-	err = db.GetconnectDB().Model(&models.User{}).Where("id=?", id).Update("password", passwordHash).Error
+	err = db.GetconnectDB().Model(&models.User{}).Where("id=?", id).Updates(models.User{Password: string(passwordHash)}).Error
 	if err != nil {
 		logger.Error.Printf("[repository.edituserrating]error in updated user password %s\n", err.Error())
 		return nil
