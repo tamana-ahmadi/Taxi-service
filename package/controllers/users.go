@@ -72,7 +72,7 @@ func EditUsersRating(c *gin.Context) {
 		HandleError(c, err)
 		return
 	}
-	c.JSON(http.StatusOK, gin.H{"message": "Edit user`s rating  is succesfuly"})
+	c.JSON(http.StatusOK, gin.H{"message": "Edit user`s password  is succesfuly"})
 }
 func BlockUsers(c *gin.Context) {
 	urole := c.GetString(userRoleCtx)
