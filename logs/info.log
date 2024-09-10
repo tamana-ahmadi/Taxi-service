@@ -1307,3 +1307,9 @@ Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-
 
 [GIN] 2024/09/10 - 07:07:02 | 200 |    127.9786ms |             ::1 | PATCH    "/users/3"
 [GIN] 2024/09/10 - 07:07:28 | 404 |      8.1537ms |             ::1 | POST     "/auth/sign-in"
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
