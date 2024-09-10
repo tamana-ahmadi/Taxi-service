@@ -13,8 +13,8 @@ func InsertRoutes(route models.Route) error {
 	}
 	return nil
 }
-func EditRoutes(from, into string, userid, distance, price, id int) error {
-	err := db.GetconnectDB().Save(&models.Route{ID: id, From: from, Into: into, Distance: distance, Price: price, DriverID: userid}).Error
+func EditRoutes(from, into string, userid, distance, price int, isresp bool, id int) error {
+	err := db.GetconnectDB().Save(&models.Route{ID: id, From: from, Into: into, Distance: distance, Price: price, DriverID: userid, IsResponse: isresp}).Error
 	if err != nil {
 		logger.Error.Printf("[repository.EditRoutes]error in update route %s\n", err.Error())
 	}
