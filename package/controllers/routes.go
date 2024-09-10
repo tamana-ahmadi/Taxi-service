@@ -88,6 +88,11 @@ func GetAllRoutesByID(c *gin.Context) {
 }
 
 func UpdateRouteByID(c *gin.Context) {
+	userID := c.GetUint(userIDCtx)
+	if userID == 0 {
+		HandleError(c, errs.ErrRecordNotFound)
+		return
+	}
 	urole := c.GetString(userRoleCtx)
 	if urole == "" {
 		HandleError(c, errs.ErrValidationFailed)
@@ -111,7 +116,7 @@ func UpdateRouteByID(c *gin.Context) {
 		return
 	}
 
-	err = service.UpdateRoute(route, id)
+	err = service.UpdateRoute(route, int(userID), id)
 	if err != nil {
 		HandleError(c, errs.ErrRoutesNotFound)
 		return
@@ -142,13 +147,7 @@ func ChecksRouteasResponse(c *gin.Context) {
 		HandleError(c, errs.ErrRecordNotFound)
 		return
 	}
-	var route models.Route
-	err = c.BindJSON(&route)
-	if err != nil {
-		HandleError(c, errs.ErrValidationFailed)
-		return
-	}
-	err = service.CheckRouteasResponse(route, int(userID), id)
+	err = service.CheckRouteasResponse(true, int(userID), id)
 	if err != nil {
 		HandleError(c, errs.ErrRoutesNotFound)
 		return
