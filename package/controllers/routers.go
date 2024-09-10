@@ -24,7 +24,7 @@ func InitRoutes() *gin.Engine {
 		usersG.GET("", PrintUsers)
 		usersG.GET("/:id", PrintUsersByID)
 		usersG.PUT("/:id", EditUsers)
-		usersG.PATCH("/:id", EditUsersPassword)
+		usersG.PATCH("/:id", EditUsersRating)
 		usersG.DELETE("/:id", DeleteUsers, BlockUsers)
 	}
 

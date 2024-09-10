@@ -50,7 +50,7 @@ func EditUsers(c *gin.Context) {
 	c.JSON(http.StatusOK, gin.H{"message": "Update is successful"})
 
 }
-func EditUsersPassword(c *gin.Context) {
+func EditUsersRating(c *gin.Context) {
 	urole := c.GetString(userRoleCtx)
 	if urole == "" {
 		HandleError(c, errs.ErrValidationFailed)
@@ -66,7 +66,7 @@ func EditUsersPassword(c *gin.Context) {
 		return
 	}
 	var user models.User
-	err = service.UpdateUserPassword(user, id)
+	err = service.UpdateUserRating(user, id)
 	if err != nil {
 		logger.Error.Printf("[controllers.EditUsersPassword] invalid user_id path parameter: %s\n", c.Param("id"))
 		HandleError(c, err)
