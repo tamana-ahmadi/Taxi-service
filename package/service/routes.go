@@ -27,8 +27,8 @@ func DeleteRoute(isdeleted bool, id int) error {
 	}
 	return nil
 }
-func CheckRouteasResponse(isresp bool, cid, id int) error {
-	err := repository.CheckRoutesAsResponse(isresp, cid, id)
+func CheckRouteasResponse(route models.Route, cid, id int) error {
+	err := repository.CheckRoutesAsResponse(route.IsResponse, cid, id)
 	if err != nil {
 		fmt.Println(err)
 	}

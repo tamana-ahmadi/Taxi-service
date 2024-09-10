@@ -1355,3 +1355,8 @@ Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-
  - using env:	export GIN_MODE=release
  - using code:	gin.SetMode(gin.ReleaseMode)
 
+[GIN] 2024/09/10 - 08:15:30 | 200 |     10.5709ms |             ::1 | PATCH    "/users/3"
+[GIN] 2024/09/10 - 08:15:53 | 200 |      1.5464ms |             ::1 | PATCH    "/users/2"
+[GIN] 2024/09/10 - 08:19:49 | 200 |      1.0011ms |             ::1 | POST     "/auth/sign-in"
+[GIN] 2024/09/10 - 08:20:23 | 200 |     94.5941ms |             ::1 | PATCH    "/routes/1"
+[GIN] 2024/09/10 - 08:24:01 | 200 |      1.8928ms |             ::1 | PATCH    "/routes/1"
