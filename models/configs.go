@@ -36,5 +36,6 @@ type PostgresParams struct {
 }
 
 type AuthParams struct {
-	JwtSecretKey string `json:"jwt_secret_key"`
+	JwtSecretKey  string `json:"jwt_secret_key"`
+	JwtTtlMinutes int    `json:"jwt_ttl_minutes"`
 }

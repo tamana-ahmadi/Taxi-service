@@ -1198,3 +1198,8 @@ Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-
 [GIN] 2024/09/09 - 20:56:47 | 200 |       859.3µs |             ::1 | POST     "/auth/sign-in"
 [GIN] 2024/09/09 - 20:57:08 | 200 |      4.8649ms |             ::1 | PATCH    "/routes/1"
 [GIN] 2024/09/09 - 21:00:12 | 200 |      1.6671ms |             ::1 | PATCH    "/routes/1"
+[GIN] 2024/09/09 - 21:04:40 | 200 |      1.4102ms |             ::1 | PATCH    "/routes/6"
+[GIN] 2024/09/09 - 21:05:05 | 200 |      1.0364ms |             ::1 | GET      "/routes?is_response=true&price=100"
+[GIN] 2024/09/09 - 21:06:24 | 200 |      4.8034ms |             ::1 | GET      "/routes?is_response=true&price=100"
+[GIN] 2024/09/09 - 21:07:03 | 200 |      1.0627ms |             ::1 | GET      "/routes?is_response=false&price=190"
+[GIN] 2024/09/09 - 21:07:27 | 200 |       719.7µs |             ::1 | GET      "/routes?is_response=true&price=190"
