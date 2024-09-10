@@ -80,3 +80,7 @@ ERROR: 2024/09/10 06:20:51 users.go:83: [service.getuserbyusername]error in gett
 ERROR: 2024/09/10 06:20:51 users.go:14: [repository.createuser]error in added user ОШИБКА: отношение "users" не существует (SQLSTATE 42P01)
 ERROR: 2024/09/10 06:20:59 users.go:83: [service.getuserbyusername]error in getting user by username  ОШИБКА: отношение "users" не существует (SQLSTATE 42P01)
 ERROR: 2024/09/10 06:22:22 users.go:83: [service.getuserbyusername]error in getting user by username  ОШИБКА: отношение "users" не существует (SQLSTATE 42P01)
+ERROR: 2024/09/10 06:25:34 users.go:76: [service.getuserbyusername]error in getting user by username  record not found
+ERROR: 2024/09/10 06:26:09 users.go:76: [service.getuserbyusername]error in getting user by username  record not found
+ERROR: 2024/09/10 06:26:26 users.go:76: [service.getuserbyusername]error in getting user by username  record not found
+ERROR: 2024/09/10 06:26:37 users.go:76: [service.getuserbyusername]error in getting user by username  record not found

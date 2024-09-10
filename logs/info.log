@@ -1227,3 +1227,23 @@ Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-
 [GIN] 2024/09/10 - 06:20:51 | 201 |      3.0048ms |             ::1 | POST     "/auth/sign-up"
 [GIN] 2024/09/10 - 06:20:59 | 500 |      1.7218ms |             ::1 | POST     "/auth/sign-in"
 [GIN] 2024/09/10 - 06:22:22 | 500 |      1.5216ms |             ::1 | POST     "/auth/sign-in"
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN] 2024/09/10 - 06:25:34 | 404 |    192.0385ms |             ::1 | POST     "/auth/sign-in"
+[GIN] 2024/09/10 - 06:26:09 | 201 |      6.0218ms |             ::1 | POST     "/auth/sign-up"
+[GIN] 2024/09/10 - 06:26:13 | 200 |       846.6µs |             ::1 | POST     "/auth/sign-in"
+[GIN] 2024/09/10 - 06:26:26 | 201 |       4.336ms |             ::1 | POST     "/auth/sign-up"
+[GIN] 2024/09/10 - 06:26:30 | 200 |      1.0167ms |             ::1 | POST     "/auth/sign-in"
+[GIN] 2024/09/10 - 06:26:37 | 201 |      3.3649ms |             ::1 | POST     "/auth/sign-up"
+[GIN] 2024/09/10 - 06:26:41 | 200 |       978.5µs |             ::1 | POST     "/auth/sign-in"
+[GIN] 2024/09/10 - 06:29:12 | 401 |            0s |             ::1 | PATCH    "/users/3"
+[GIN] 2024/09/10 - 06:29:29 | 200 |       531.7µs |             ::1 | POST     "/auth/sign-in"
+[GIN] 2024/09/10 - 06:29:56 | 401 |            0s |             ::1 | PATCH    "/users/3"
+[GIN] 2024/09/10 - 06:31:00 | 200 |       527.1µs |             ::1 | POST     "/auth/sign-in"
+[GIN] 2024/09/10 - 06:31:25 | 401 |       340.6µs |             ::1 | PATCH    "/users/3"
+[GIN] 2024/09/10 - 06:32:16 | 200 |       147.8µs |             ::1 | POST     "/auth/sign-in"
+[GIN] 2024/09/10 - 06:32:41 | 401 |            0s |             ::1 | PATCH    "/users/3"
