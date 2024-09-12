@@ -19,8 +19,6 @@ definitions:
     properties:
       client_id:
         type: integer
-      created_at:
-        type: string
       distance:
         type: integer
       driver_id:
@@ -31,14 +29,8 @@ definitions:
         type: integer
       into:
         type: string
-      is_deleted:
-        type: boolean
-      is_response:
-        type: boolean
       price:
         type: integer
-      updated_at:
-        type: string
     type: object
   models.SwagSignIn:
     properties:
@@ -62,14 +54,8 @@ definitions:
     properties:
       company_title:
         type: string
-      created_at:
-        type: string
       id:
         type: integer
-      is_deleted:
-        type: boolean
-      updated_at:
-        type: string
       user_id:
         type: integer
     type: object

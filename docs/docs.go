@@ -1041,9 +1041,6 @@ const docTemplate = `{
                 "client_id": {
                     "type": "integer"
                 },
-                "created_at": {
-                    "type": "string"
-                },
                 "distance": {
                     "type": "integer"
                 },
@@ -1059,17 +1056,8 @@ const docTemplate = `{
                 "into": {
                     "type": "string"
                 },
-                "is_deleted": {
-                    "type": "boolean"
-                },
-                "is_response": {
-                    "type": "boolean"
-                },
                 "price": {
                     "type": "integer"
-                },
-                "updated_at": {
-                    "type": "string"
                 }
             }
         },
@@ -1107,17 +1095,8 @@ const docTemplate = `{
                 "company_title": {
                     "type": "string"
                 },
-                "created_at": {
-                    "type": "string"
-                },
                 "id": {
                     "type": "integer"
-                },
-                "is_deleted": {
-                    "type": "boolean"
-                },
-                "updated_at": {
-                    "type": "string"
                 },
                 "user_id": {
                     "type": "integer"
