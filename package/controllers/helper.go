@@ -39,11 +39,11 @@ func HandleError(c *gin.Context, err error) {
 		errors.Is(err, errs.ErrRoutesNotFound) ||
 		errors.Is(err, errs.ErrTaxicompsNotFound) ||
 		errors.Is(err, errs.ErrValidationFailed) {
-		c.JSON(http.StatusBadRequest, newErrorResponse(err.Error()))
+		c.JSON(http.StatusBadRequest, newDefaultResponse(err.Error()))
 	} else if errors.Is(err, errs.ErrPermissionDenied) {
-		c.JSON(http.StatusForbidden, newErrorResponse(err.Error()))
+		c.JSON(http.StatusForbidden, newDefaultResponse(err.Error()))
 	} else if errors.Is(err, errs.ErrRecordNotFound) {
-		c.JSON(http.StatusNotFound, newErrorResponse(err.Error()))
+		c.JSON(http.StatusNotFound, newDefaultResponse(err.Error()))
 	} else {
 		c.JSON(http.StatusInternalServerError, newErrorResponse(errs.ErrSomethingWentWrong.Error()))
 	}
