@@ -178,7 +178,7 @@
                         "ApiKeyAuth": []
                     }
                 ],
-                "description": "update existed taxi company",
+                "description": "update existed user",
                 "consumes": [
                     "application/json"
                 ],
@@ -186,25 +186,25 @@
                     "application/json"
                 ],
                 "tags": [
-                    "taxi companies"
+                    "users"
                 ],
-                "summary": "Update taxi Company",
-                "operationId": "update-taxi-company",
+                "summary": "Update User",
+                "operationId": "update-user",
                 "parameters": [
                     {
                         "type": "integer",
-                        "description": "id of the taxi company",
+                        "description": "id of the user",
                         "name": "id",
                         "in": "path",
                         "required": true
                     },
                     {
-                        "description": "taxi company update info",
+                        "description": "user update info",
                         "name": "input",
                         "in": "body",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/models.TaxiComp"
+                            "$ref": "#/definitions/models.User"
                         }
                     }
                 ],
@@ -241,16 +241,16 @@
                         "ApiKeyAuth": []
                     }
                 ],
-                "description": "delete taxi company by ID",
+                "description": "delete route by ID",
                 "tags": [
-                    "taxi companies"
+                    "routes"
                 ],
-                "summary": "Delete Taxi Company By ID",
-                "operationId": "delete-taxi-company-by-id",
+                "summary": "Delete Route By ID",
+                "operationId": "delete-route-by-id",
                 "parameters": [
                     {
                         "type": "integer",
-                        "description": "id of the taxi company",
+                        "description": "id of the route",
                         "name": "id",
                         "in": "path",
                         "required": true
@@ -509,6 +509,392 @@
                         }
                     }
                 }
+            },
+            "put": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "description": "update existed taxi company",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "taxi companies"
+                ],
+                "summary": "Update taxi Company",
+                "operationId": "update-taxi-company",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "id of the taxi company",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
+                        "description": "taxi company update info",
+                        "name": "input",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.TaxiComp"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/controllers.defaultResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "type": "404"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/controllers.ErrorResponse"
+                        }
+                    },
+                    "default": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/controllers.ErrorResponse"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "description": "delete taxi company by ID",
+                "tags": [
+                    "taxi companies"
+                ],
+                "summary": "Delete Taxi Company By ID",
+                "operationId": "delete-taxi-company-by-id",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "id of the taxi company",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/controllers.defaultResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "type": "404"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/controllers.ErrorResponse"
+                        }
+                    },
+                    "default": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/controllers.ErrorResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/users": {
+            "get": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "description": "get list of all users",
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "users"
+                ],
+                "summary": "Get All Users",
+                "operationId": "get-all-users",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "fill if you need search",
+                        "name": "q",
+                        "in": "query"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/models.User"
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "type": "404"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/controllers.ErrorResponse"
+                        }
+                    },
+                    "default": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/controllers.ErrorResponse"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "description": "create new user",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "users"
+                ],
+                "summary": "Create User",
+                "operationId": "create-user",
+                "parameters": [
+                    {
+                        "description": "new route info",
+                        "name": "input",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.User"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/controllers.defaultResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "type": "404"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/controllers.ErrorResponse"
+                        }
+                    },
+                    "default": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/controllers.ErrorResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/users/{id}": {
+            "get": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "description": "get user by ID",
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "users"
+                ],
+                "summary": "Get user By ID",
+                "operationId": "get-user-by-id",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "id of the user",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.User"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "type": "404"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/controllers.ErrorResponse"
+                        }
+                    },
+                    "default": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/controllers.ErrorResponse"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "description": "delete user by ID",
+                "tags": [
+                    "users"
+                ],
+                "summary": "Delete User By ID",
+                "operationId": "delete-user-by-id",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "id of the user",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/controllers.defaultResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "type": "404"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/controllers.ErrorResponse"
+                        }
+                    },
+                    "default": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/controllers.ErrorResponse"
+                        }
+                    }
+                }
+            },
+            "patch": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "description": "edit  rating existed user",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "users"
+                ],
+                "summary": "edit user rating",
+                "operationId": "edit-users-rating",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "id of the user",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
+                        "description": "edit users rating",
+                        "name": "input",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.User"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/controllers.defaultResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "type": "404"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/controllers.ErrorResponse"
+                        }
+                    },
+                    "default": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/controllers.ErrorResponse"
+                        }
+                    }
+                }
             }
         },
         "/auth/sign-in": {
@@ -729,6 +1115,41 @@
                 },
                 "user_id": {
                     "type": "integer"
+                }
+            }
+        },
+        "models.User": {
+            "type": "object",
+            "properties": {
+                "created_at": {
+                    "type": "string"
+                },
+                "full_name": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "integer"
+                },
+                "is_blocked": {
+                    "type": "boolean"
+                },
+                "is_deleted": {
+                    "type": "boolean"
+                },
+                "password": {
+                    "type": "string"
+                },
+                "rating": {
+                    "type": "integer"
+                },
+                "role": {
+                    "type": "string"
+                },
+                "updated_at": {
+                    "type": "string"
+                },
+                "username": {
+                    "type": "string"
                 }
             }
         }

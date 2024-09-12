@@ -73,6 +73,29 @@ definitions:
       user_id:
         type: integer
     type: object
+  models.User:
+    properties:
+      created_at:
+        type: string
+      full_name:
+        type: string
+      id:
+        type: integer
+      is_blocked:
+        type: boolean
+      is_deleted:
+        type: boolean
+      password:
+        type: string
+      rating:
+        type: integer
+      role:
+        type: string
+      updated_at:
+        type: string
+      username:
+        type: string
+    type: object
 host: localhost:8484
 info:
   contact: {}
@@ -153,10 +176,10 @@ paths:
       - routes
   /api/routes/{id}:
     delete:
-      description: delete taxi company by ID
-      operationId: delete-taxi-company-by-id
+      description: delete route by ID
+      operationId: delete-route-by-id
       parameters:
-      - description: id of the taxi company
+      - description: id of the route
         in: path
         name: id
         required: true
@@ -180,9 +203,9 @@ paths:
             $ref: '#/definitions/controllers.ErrorResponse'
       security:
       - ApiKeyAuth: []
-      summary: Delete Taxi Company By ID
+      summary: Delete Route By ID
       tags:
-      - taxi companies
+      - routes
     get:
       description: get route by ID
       operationId: get-route-by-id
@@ -260,20 +283,20 @@ paths:
     put:
       consumes:
       - application/json
-      description: update existed taxi company
-      operationId: update-taxi-company
+      description: update existed user
+      operationId: update-user
       parameters:
-      - description: id of the taxi company
+      - description: id of the user
         in: path
         name: id
         required: true
         type: integer
-      - description: taxi company update info
+      - description: user update info
         in: body
         name: input
         required: true
         schema:
-          $ref: '#/definitions/models.TaxiComp'
+          $ref: '#/definitions/models.User'
       produces:
       - application/json
       responses:
@@ -295,9 +318,9 @@ paths:
             $ref: '#/definitions/controllers.ErrorResponse'
       security:
       - ApiKeyAuth: []
-      summary: Update taxi Company
+      summary: Update User
       tags:
-      - taxi companies
+      - users
   /api/taxicomps:
     get:
       description: get list of all taxi companies
@@ -370,6 +393,37 @@ paths:
       tags:
       - taxi companies
   /api/taxicomps/{id}:
+    delete:
+      description: delete taxi company by ID
+      operationId: delete-taxi-company-by-id
+      parameters:
+      - description: id of the taxi company
+        in: path
+        name: id
+        required: true
+        type: integer
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/controllers.defaultResponse'
+        "400":
+          description: Bad Request
+          schema:
+            type: "404"
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/controllers.ErrorResponse'
+        default:
+          description: ""
+          schema:
+            $ref: '#/definitions/controllers.ErrorResponse'
+      security:
+      - ApiKeyAuth: []
+      summary: Delete Taxi Company By ID
+      tags:
+      - taxi companies
     get:
       description: get taxi company by ID
       operationId: get-taxi-company-by-id
@@ -403,6 +457,224 @@ paths:
       summary: Get Taxi Company By ID
       tags:
       - taxi companies
+    put:
+      consumes:
+      - application/json
+      description: update existed taxi company
+      operationId: update-taxi-company
+      parameters:
+      - description: id of the taxi company
+        in: path
+        name: id
+        required: true
+        type: integer
+      - description: taxi company update info
+        in: body
+        name: input
+        required: true
+        schema:
+          $ref: '#/definitions/models.TaxiComp'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/controllers.defaultResponse'
+        "400":
+          description: Bad Request
+          schema:
+            type: "404"
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/controllers.ErrorResponse'
+        default:
+          description: ""
+          schema:
+            $ref: '#/definitions/controllers.ErrorResponse'
+      security:
+      - ApiKeyAuth: []
+      summary: Update taxi Company
+      tags:
+      - taxi companies
+  /api/users:
+    get:
+      description: get list of all users
+      operationId: get-all-users
+      parameters:
+      - description: fill if you need search
+        in: query
+        name: q
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/models.User'
+            type: array
+        "400":
+          description: Bad Request
+          schema:
+            type: "404"
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/controllers.ErrorResponse'
+        default:
+          description: ""
+          schema:
+            $ref: '#/definitions/controllers.ErrorResponse'
+      security:
+      - ApiKeyAuth: []
+      summary: Get All Users
+      tags:
+      - users
+    post:
+      consumes:
+      - application/json
+      description: create new user
+      operationId: create-user
+      parameters:
+      - description: new route info
+        in: body
+        name: input
+        required: true
+        schema:
+          $ref: '#/definitions/models.User'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/controllers.defaultResponse'
+        "400":
+          description: Bad Request
+          schema:
+            type: "404"
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/controllers.ErrorResponse'
+        default:
+          description: ""
+          schema:
+            $ref: '#/definitions/controllers.ErrorResponse'
+      security:
+      - ApiKeyAuth: []
+      summary: Create User
+      tags:
+      - users
+  /api/users/{id}:
+    delete:
+      description: delete user by ID
+      operationId: delete-user-by-id
+      parameters:
+      - description: id of the user
+        in: path
+        name: id
+        required: true
+        type: integer
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/controllers.defaultResponse'
+        "400":
+          description: Bad Request
+          schema:
+            type: "404"
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/controllers.ErrorResponse'
+        default:
+          description: ""
+          schema:
+            $ref: '#/definitions/controllers.ErrorResponse'
+      security:
+      - ApiKeyAuth: []
+      summary: Delete User By ID
+      tags:
+      - users
+    get:
+      description: get user by ID
+      operationId: get-user-by-id
+      parameters:
+      - description: id of the user
+        in: path
+        name: id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.User'
+        "400":
+          description: Bad Request
+          schema:
+            type: "404"
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/controllers.ErrorResponse'
+        default:
+          description: ""
+          schema:
+            $ref: '#/definitions/controllers.ErrorResponse'
+      security:
+      - ApiKeyAuth: []
+      summary: Get user By ID
+      tags:
+      - users
+    patch:
+      consumes:
+      - application/json
+      description: edit  rating existed user
+      operationId: edit-users-rating
+      parameters:
+      - description: id of the user
+        in: path
+        name: id
+        required: true
+        type: integer
+      - description: edit users rating
+        in: body
+        name: input
+        required: true
+        schema:
+          $ref: '#/definitions/models.User'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/controllers.defaultResponse'
+        "400":
+          description: Bad Request
+          schema:
+            type: "404"
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/controllers.ErrorResponse'
+        default:
+          description: ""
+          schema:
+            $ref: '#/definitions/controllers.ErrorResponse'
+      security:
+      - ApiKeyAuth: []
+      summary: edit user rating
+      tags:
+      - users
   /auth/sign-in:
     post:
       consumes:
