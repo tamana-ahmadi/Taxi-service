@@ -2,15 +2,19 @@ package controllers
 
 import (
 	"Taxi_service/configs"
+	_ "Taxi_service/docs"
 	"net/http"
 
 	"github.com/gin-gonic/gin"
+	swaggerFiles "github.com/swaggo/files"
+	ginSwagger "github.com/swaggo/gin-swagger"
 )
 
 func InitRoutes() *gin.Engine {
 
 	router := gin.Default()
 	gin.SetMode(configs.AppSettings.AppParams.GinMode)
+	router.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerFiles.Handler))
 	router.GET("/ping", PingPong)
 
 	auth := router.Group("/auth")
@@ -18,9 +22,10 @@ func InitRoutes() *gin.Engine {
 		auth.POST("/sign-up", SignUp)
 		auth.POST("/sign-in", SignIn)
 	}
-	usersG := router.Group("/users", checkUserAuthentication)
+	apiG := router.Group("/api", checkUserAuthentication)
+	usersG := apiG.Group("/users")
 	{
-		usersG.POST("", AddUsers)
+		usersG.POST("", CreateUsers)
 		usersG.GET("", PrintUsers)
 		usersG.GET("/:id", PrintUsersByID)
 		usersG.PUT("/:id", EditUsers)
@@ -28,9 +33,9 @@ func InitRoutes() *gin.Engine {
 		usersG.DELETE("/:id", DeleteUsers, BlockUsers)
 	}
 
-	routesG := router.Group("/routes", checkUserAuthentication)
+	routesG := apiG.Group("/routes")
 	{
-		routesG.POST("", AddRoute)
+		routesG.POST("", CreateRoute)
 		routesG.GET("", GetAllRoutes)
 		routesG.GET("/:id", GetAllRoutesByID)
 		routesG.PUT("/:id", UpdateRouteByID)
@@ -38,9 +43,9 @@ func InitRoutes() *gin.Engine {
 		routesG.DELETE("/:id", DeleteRouteByID)
 	}
 
-	taxicompsG := router.Group("/taxicomps", checkUserAuthentication)
+	taxicompsG := apiG.Group("/taxicomps")
 	{
-		taxicompsG.POST("", AddTaxicomp)
+		taxicompsG.POST("", CreateTaxicomp)
 		taxicompsG.GET("", GetAllTaxiComp)
 		taxicompsG.GET("/:id", GetAllTaxiCompByID)
 		taxicompsG.PUT("/:id", UpdateTaxiCompByID)

@@ -11,7 +11,21 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-func AddTaxicomp(c *gin.Context) {
+// CreateTaxicomp
+// @Summary Create Taxicomp
+// @Security ApiKeyAuth
+// @Tags taxi companies
+// @Description create new taxi company
+// @ID create-taxi-company
+// @Accept json
+// @Produce json
+// @Param input body models.TaxiComp true "new taxicomp info"
+// @Success 200 {object} defaultResponse
+// @Failure 400 404 {object} ErrorResponse
+// @Failure 500 {object} ErrorResponse
+// @Failure default {object} ErrorResponse
+// @Router /api/taxicomps [post]
+func CreateTaxicomp(c *gin.Context) {
 	urole := c.GetString(userRoleCtx)
 	if urole == "" {
 		HandleError(c, errs.ErrValidationFailed)
@@ -38,6 +52,19 @@ func AddTaxicomp(c *gin.Context) {
 
 }
 
+// GetAllTaxiComp
+// @Summary Get All Taxi Companies
+// @Security ApiKeyAuth
+// @Tags taxi companies
+// @Description get list of all taxi companies
+// @ID get-all-taxi-companies
+// @Produce json
+// @Param q query string false "fill if you need search"
+// @Success 200 {array} models.TaxiComp
+// @Failure 400 404 {object} ErrorResponse
+// @Failure 500 {object} ErrorResponse
+// @Failure default {object} ErrorResponse
+// @Router /api/taxicomps [get]
 func GetAllTaxiComp(c *gin.Context) {
 	userID := c.GetUint(userIDCtx)
 	if userID == 0 {
@@ -61,6 +88,19 @@ func GetAllTaxiComp(c *gin.Context) {
 	c.JSON(http.StatusOK, gin.H{"taxicompanies": txcms})
 }
 
+// GetAllTaxiCompByID
+// @Summary Get Taxi Company By ID
+// @Security ApiKeyAuth
+// @Tags taxi companies
+// @Description get taxi company by ID
+// @ID get-taxi-company-by-id
+// @Produce json
+// @Param id path integer true "id of the taxicomp"
+// @Success 200 {object} models.TaxiComp
+// @Failure 400 404 {object} ErrorResponse
+// @Failure 500 {object} ErrorResponse
+// @Failure default {object} ErrorResponse
+// @Router /api/taxicomps/{id} [get]
 func GetAllTaxiCompByID(c *gin.Context) {
 	userID := c.GetUint(userIDCtx)
 	if userID == 0 {
@@ -90,6 +130,21 @@ func GetAllTaxiCompByID(c *gin.Context) {
 	c.JSON(http.StatusOK, gin.H{"taxicompany": txcm})
 }
 
+// UpdateTaxiCompByID
+// @Summary Update taxi Company
+// @Security ApiKeyAuth
+// @Tags taxi companies
+// @Description update existed taxi company
+// @ID update-taxi-company
+// @Accept json
+// @Produce json
+// @Param id path integer true "id of the taxi company"
+// @Param input body models.TaxiComp true "taxi company update info"
+// @Success 200 {object} defaultResponse
+// @Failure 400 404 {object} ErrorResponse
+// @Failure 500 {object} ErrorResponse
+// @Failure default {object} ErrorResponse
+// @Router /api/routes/{id} [put]
 func UpdateTaxiCompByID(c *gin.Context) {
 	urole := c.GetString(userRoleCtx)
 	if urole == "" {
@@ -124,6 +179,18 @@ func UpdateTaxiCompByID(c *gin.Context) {
 
 }
 
+// DeleteTaxiCompByID
+// @Summary Delete Taxi Company By ID
+// @Security ApiKeyAuth
+// @Tags taxi companies
+// @Description delete taxi company by ID
+// @ID delete-taxi-company-by-id
+// @Param id path integer true "id of the taxi company"
+// @Success 200 {object} defaultResponse
+// @Failure 400 404 {object} ErrorResponse
+// @Failure 500 {object} ErrorResponse
+// @Failure default {object} ErrorResponse
+// @Router /api/routes/{id} [delete]
 func DeleteTaxiCompByID(c *gin.Context) {
 	urole := c.GetString(userRoleCtx)
 	if urole == "" {

@@ -1,0 +1,356 @@
+basePath: /
+definitions:
+  controllers.ErrorResponse:
+    properties:
+      error:
+        type: string
+    type: object
+  controllers.accessTokenResponse:
+    properties:
+      access_token:
+        type: string
+    type: object
+  controllers.defaultResponse:
+    properties:
+      message:
+        type: string
+    type: object
+  models.Route:
+    properties:
+      client_id:
+        type: integer
+      created_at:
+        type: string
+      distance:
+        type: integer
+      driver_id:
+        type: integer
+      from:
+        type: string
+      id:
+        type: integer
+      into:
+        type: string
+      is_deleted:
+        type: boolean
+      is_response:
+        type: boolean
+      price:
+        type: integer
+      updated_at:
+        type: string
+    type: object
+  models.SwagSignIn:
+    properties:
+      password:
+        type: string
+      username:
+        type: string
+    type: object
+  models.SwagSignUp:
+    properties:
+      full_name:
+        type: string
+      password:
+        type: string
+      role:
+        type: string
+      username:
+        type: string
+    type: object
+host: localhost:8484
+info:
+  contact: {}
+  description: API Server for Taxi service  Application
+  title: Taxi service API
+  version: "1.0"
+paths:
+  /api/routes:
+    get:
+      description: get list of all routes
+      operationId: get-all-routes
+      parameters:
+      - description: fill if you need search
+        in: query
+        name: q
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/models.Route'
+            type: array
+        "400":
+          description: Bad Request
+          schema:
+            type: "404"
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/controllers.ErrorResponse'
+        default:
+          description: ""
+          schema:
+            $ref: '#/definitions/controllers.ErrorResponse'
+      security:
+      - ApiKeyAuth: []
+      summary: Get All Routes
+      tags:
+      - routes
+    post:
+      consumes:
+      - application/json
+      description: create new route
+      operationId: create-route
+      parameters:
+      - description: new route info
+        in: body
+        name: input
+        required: true
+        schema:
+          $ref: '#/definitions/models.Route'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/controllers.defaultResponse'
+        "400":
+          description: Bad Request
+          schema:
+            type: "404"
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/controllers.ErrorResponse'
+        default:
+          description: ""
+          schema:
+            $ref: '#/definitions/controllers.ErrorResponse'
+      security:
+      - ApiKeyAuth: []
+      summary: Create Route
+      tags:
+      - routes
+  /api/routes/{id}:
+    delete:
+      description: delete route by ID
+      operationId: delete-route-by-id
+      parameters:
+      - description: id of the route
+        in: path
+        name: id
+        required: true
+        type: integer
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/controllers.defaultResponse'
+        "400":
+          description: Bad Request
+          schema:
+            type: "404"
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/controllers.ErrorResponse'
+        default:
+          description: ""
+          schema:
+            $ref: '#/definitions/controllers.ErrorResponse'
+      security:
+      - ApiKeyAuth: []
+      summary: Delete Route By ID
+      tags:
+      - routes
+    get:
+      description: get route by ID
+      operationId: get-route-by-id
+      parameters:
+      - description: id of the route
+        in: path
+        name: id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.Route'
+        "400":
+          description: Bad Request
+          schema:
+            type: "404"
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/controllers.ErrorResponse'
+        default:
+          description: ""
+          schema:
+            $ref: '#/definitions/controllers.ErrorResponse'
+      security:
+      - ApiKeyAuth: []
+      summary: Get Route By ID
+      tags:
+      - routes
+    patch:
+      consumes:
+      - application/json
+      description: check as response existed route
+      operationId: check-route-as-response
+      parameters:
+      - description: id of the route
+        in: path
+        name: id
+        required: true
+        type: integer
+      - description: ' check route as response info'
+        in: body
+        name: input
+        required: true
+        schema:
+          $ref: '#/definitions/models.Route'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/controllers.defaultResponse'
+        "400":
+          description: Bad Request
+          schema:
+            type: "404"
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/controllers.ErrorResponse'
+        default:
+          description: ""
+          schema:
+            $ref: '#/definitions/controllers.ErrorResponse'
+      security:
+      - ApiKeyAuth: []
+      summary: Check route as response
+      tags:
+      - routes
+    put:
+      consumes:
+      - application/json
+      description: update existed route
+      operationId: update-route
+      parameters:
+      - description: id of the route
+        in: path
+        name: id
+        required: true
+        type: integer
+      - description: route update info
+        in: body
+        name: input
+        required: true
+        schema:
+          $ref: '#/definitions/models.Route'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/controllers.defaultResponse'
+        "400":
+          description: Bad Request
+          schema:
+            type: "404"
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/controllers.ErrorResponse'
+        default:
+          description: ""
+          schema:
+            $ref: '#/definitions/controllers.ErrorResponse'
+      security:
+      - ApiKeyAuth: []
+      summary: Update Route
+      tags:
+      - routes
+  /auth/sign-in:
+    post:
+      consumes:
+      - application/json
+      description: sign in to account
+      operationId: sign-in-to-account
+      parameters:
+      - description: sign-in info
+        in: body
+        name: input
+        required: true
+        schema:
+          $ref: '#/definitions/models.SwagSignIn'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/controllers.accessTokenResponse'
+        "400":
+          description: Bad Request
+          schema:
+            type: "404"
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/controllers.ErrorResponse'
+        default:
+          description: ""
+          schema:
+            $ref: '#/definitions/controllers.ErrorResponse'
+      summary: SignIn
+      tags:
+      - auth
+  /auth/sign-up:
+    post:
+      consumes:
+      - application/json
+      description: create account
+      operationId: create-account
+      parameters:
+      - description: account info
+        in: body
+        name: input
+        required: true
+        schema:
+          $ref: '#/definitions/models.SwagSignUp'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/controllers.defaultResponse'
+        "400":
+          description: Bad Request
+          schema:
+            type: "404"
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/controllers.ErrorResponse'
+        default:
+          description: ""
+          schema:
+            $ref: '#/definitions/controllers.ErrorResponse'
+      summary: SignUp
+      tags:
+      - auth
+swagger: "2.0"

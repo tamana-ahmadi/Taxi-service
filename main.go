@@ -17,6 +17,17 @@ import (
 	"github.com/joho/godotenv"
 )
 
+// @title  Taxi service API
+// @version 1.0
+// @description API Server for Taxi service  Application
+
+// @host localhost:8484
+// @BasePath /
+
+// @securityDefinition.apikey ApiKeyAuth
+// @in header
+// @name Authorization
+
 func main() {
 	err := godotenv.Load(".env")
 	if err != nil {

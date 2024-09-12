@@ -11,7 +11,21 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-func AddRoute(c *gin.Context) {
+// CreateRoute
+// @Summary Create Route
+// @Security ApiKeyAuth
+// @Tags routes
+// @Description create new route
+// @ID create-route
+// @Accept json
+// @Produce json
+// @Param input body models.Route true "new route info"
+// @Success 200 {object} defaultResponse
+// @Failure 400 404 {object} ErrorResponse
+// @Failure 500 {object} ErrorResponse
+// @Failure default {object} ErrorResponse
+// @Router /api/routes [post]
+func CreateRoute(c *gin.Context) {
 	userID := c.GetUint(userIDCtx)
 	urole := c.GetString(userRoleCtx)
 	if urole == "" {
@@ -40,6 +54,19 @@ func AddRoute(c *gin.Context) {
 
 }
 
+// GetAllRoutes
+// @Summary Get All Routes
+// @Security ApiKeyAuth
+// @Tags routes
+// @Description get list of all routes
+// @ID get-all-routes
+// @Produce json
+// @Param q query string false "fill if you need search"
+// @Success 200 {array} models.Route
+// @Failure 400 404 {object} ErrorResponse
+// @Failure 500 {object} ErrorResponse
+// @Failure default {object} ErrorResponse
+// @Router /api/routes [get]
 func GetAllRoutes(c *gin.Context) {
 	userID := c.GetUint(userIDCtx)
 	if userID == 0 {
@@ -67,6 +94,19 @@ func GetAllRoutes(c *gin.Context) {
 	c.JSON(http.StatusOK, gin.H{"routes": routes})
 }
 
+// GetRoutesByID
+// @Summary Get Route By ID
+// @Security ApiKeyAuth
+// @Tags routes
+// @Description get route by ID
+// @ID get-route-by-id
+// @Produce json
+// @Param id path integer true "id of the route"
+// @Success 200 {object} models.Route
+// @Failure 400 404 {object} ErrorResponse
+// @Failure 500 {object} ErrorResponse
+// @Failure default {object} ErrorResponse
+// @Router /api/routes/{id} [get]
 func GetAllRoutesByID(c *gin.Context) {
 	userID := c.GetUint(userIDCtx)
 	if userID == 0 {
@@ -87,6 +127,21 @@ func GetAllRoutesByID(c *gin.Context) {
 	c.JSON(http.StatusOK, gin.H{"route": route})
 }
 
+// UpdateRouteByID
+// @Summary Update Route
+// @Security ApiKeyAuth
+// @Tags routes
+// @Description update existed route
+// @ID update-route
+// @Accept json
+// @Produce json
+// @Param id path integer true "id of the route"
+// @Param input body models.Route true "route update info"
+// @Success 200 {object} defaultResponse
+// @Failure 400 404 {object} ErrorResponse
+// @Failure 500 {object} ErrorResponse
+// @Failure default {object} ErrorResponse
+// @Router /api/routes/{id} [put]
 func UpdateRouteByID(c *gin.Context) {
 	userID := c.GetUint(userIDCtx)
 	if userID == 0 {
@@ -98,7 +153,7 @@ func UpdateRouteByID(c *gin.Context) {
 		HandleError(c, errs.ErrValidationFailed)
 		return
 	}
-	if urole != "driver" && urole != "admin" {
+	if urole != "driver" {
 		HandleError(c, errs.ErrPermissionDenied)
 		return
 	}
@@ -126,6 +181,21 @@ func UpdateRouteByID(c *gin.Context) {
 
 }
 
+// ChecksRouteasResponse
+// @Summary Check route as response
+// @Security ApiKeyAuth
+// @Tags routes
+// @Description  check as response existed route
+// @ID check-route-as-response
+// @Accept json
+// @Produce json
+// @Param id path integer true "id of the route"
+// @Param input body models.Route true " check route as response info"
+// @Success 200 {object} defaultResponse
+// @Failure 400 404 {object} ErrorResponse
+// @Failure 500 {object} ErrorResponse
+// @Failure default {object} ErrorResponse
+// @Router /api/routes/{id} [patch]
 func ChecksRouteasResponse(c *gin.Context) {
 	urole := c.GetString(userRoleCtx)
 	if urole == "" {
@@ -155,6 +225,19 @@ func ChecksRouteasResponse(c *gin.Context) {
 	c.JSON(http.StatusOK, gin.H{"message": "Check as response is succesfuly"})
 
 }
+
+// DeleteRouteByID
+// @Summary Delete Route By ID
+// @Security ApiKeyAuth
+// @Tags routes
+// @Description delete route by ID
+// @ID delete-route-by-id
+// @Param id path integer true "id of the route"
+// @Success 200 {object} defaultResponse
+// @Failure 400 404 {object} ErrorResponse
+// @Failure 500 {object} ErrorResponse
+// @Failure default {object} ErrorResponse
+// @Router /api/routes/{id} [delete]
 func DeleteRouteByID(c *gin.Context) {
 	urole := c.GetString(userRoleCtx)
 	if urole == "" {

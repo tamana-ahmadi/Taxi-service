@@ -11,7 +11,7 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-func AddUsers(c *gin.Context) {
+func CreateUsers(c *gin.Context) {
 	var newuser models.User
 	err := c.BindJSON(&newuser)
 	if err != nil {

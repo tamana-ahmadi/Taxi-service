@@ -18,3 +18,15 @@ type User struct {
 func (User) TableName() string {
 	return "users"
 }
+
+type SwagSignUp struct {
+	FullName string `json:"full_name"`
+	Username string `json:"username" gorm:"unique"`
+	Password string `json:"password" gorm:"not null"`
+	Role     string `json:"role"`
+}
+
+type SwagSignIn struct {
+	Username string `json:"username" gorm:"unique"`
+	Password string `json:"password" gorm:"not null"`
+}
