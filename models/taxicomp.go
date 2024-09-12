@@ -5,10 +5,10 @@ import "time"
 type TaxiComp struct {
 	ID        int       `gorm:"primary key"`
 	CompTitle string    `gorm:"not null" json:"company_title"`
-	IsDeleted bool      `gorm:"default false" json:"is_deleted"`
+	IsDeleted bool      `gorm:"default false" json:"-"`
 	UserID    int       `gorm:"references users(id)" json:"user_id"`
-	CreatedAt time.Time `json:"created_at" gorm:"autoCreateTime"`
-	UpdatedAt time.Time `json:"updated_at" gorm:"autoUpdateTime"`
+	CreatedAt time.Time `json:"-" gorm:"autoCreateTime"`
+	UpdatedAt time.Time `json:"-" gorm:"autoUpdateTime"`
 }
 
 func (TaxiComp) TableName() string {

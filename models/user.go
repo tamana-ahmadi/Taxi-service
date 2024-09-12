@@ -9,10 +9,10 @@ type User struct {
 	Password  string    `json:"password" gorm:"not null"`
 	Role      string    `json:"role"`
 	Rating    int       `json:"rating"`
-	IsBlocked bool      `json:"is_blocked" gorm:"default:false"`
-	IsDeleted bool      `json:"is_deleted" gorm:"default:false"`
-	CreatedAt time.Time `json:"created_at" gorm:"autoCreateTime"`
-	UpdatedAt time.Time `json:"updated_at" gorm:"autoUpdateTime"`
+	IsBlocked bool      `json:"-" gorm:"default:false"`
+	IsDeleted bool      `json:"-" gorm:"default:false"`
+	CreatedAt time.Time `json:"-" gorm:"autoCreateTime"`
+	UpdatedAt time.Time `json:"- gorm:"autoUpdateTime"`
 }
 
 func (User) TableName() string {
