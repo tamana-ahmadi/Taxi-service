@@ -19,7 +19,7 @@ const docTemplate = `{
             "get": {
                 "security": [
                     {
-                        "ApiKeyAuth": []
+                        "AKA": []
                     }
                 ],
                 "description": "get list of all routes",
@@ -72,7 +72,7 @@ const docTemplate = `{
             "post": {
                 "security": [
                     {
-                        "ApiKeyAuth": []
+                        "AKA": []
                     }
                 ],
                 "description": "create new route",
@@ -130,7 +130,7 @@ const docTemplate = `{
             "get": {
                 "security": [
                     {
-                        "ApiKeyAuth": []
+                        "AKA": []
                     }
                 ],
                 "description": "get route by ID",
@@ -181,7 +181,7 @@ const docTemplate = `{
             "put": {
                 "security": [
                     {
-                        "ApiKeyAuth": []
+                        "AKA": []
                     }
                 ],
                 "description": "update existed user",
@@ -244,7 +244,7 @@ const docTemplate = `{
             "delete": {
                 "security": [
                     {
-                        "ApiKeyAuth": []
+                        "AKA": []
                     }
                 ],
                 "description": "delete route by ID",
@@ -292,7 +292,7 @@ const docTemplate = `{
             "patch": {
                 "security": [
                     {
-                        "ApiKeyAuth": []
+                        "AKA": []
                     }
                 ],
                 "description": "check as response existed route",
@@ -357,7 +357,7 @@ const docTemplate = `{
             "get": {
                 "security": [
                     {
-                        "ApiKeyAuth": []
+                        "AKA": []
                     }
                 ],
                 "description": "get list of all taxi companies",
@@ -410,7 +410,7 @@ const docTemplate = `{
             "post": {
                 "security": [
                     {
-                        "ApiKeyAuth": []
+                        "AKA": []
                     }
                 ],
                 "description": "create new taxi company",
@@ -468,7 +468,7 @@ const docTemplate = `{
             "get": {
                 "security": [
                     {
-                        "ApiKeyAuth": []
+                        "AKA": []
                     }
                 ],
                 "description": "get taxi company by ID",
@@ -519,7 +519,7 @@ const docTemplate = `{
             "put": {
                 "security": [
                     {
-                        "ApiKeyAuth": []
+                        "AKA": []
                     }
                 ],
                 "description": "update existed taxi company",
@@ -582,7 +582,7 @@ const docTemplate = `{
             "delete": {
                 "security": [
                     {
-                        "ApiKeyAuth": []
+                        "AKA": []
                     }
                 ],
                 "description": "delete taxi company by ID",
@@ -632,7 +632,7 @@ const docTemplate = `{
             "get": {
                 "security": [
                     {
-                        "ApiKeyAuth": []
+                        "AKA": []
                     }
                 ],
                 "description": "get list of all users",
@@ -685,7 +685,7 @@ const docTemplate = `{
             "post": {
                 "security": [
                     {
-                        "ApiKeyAuth": []
+                        "AKA": []
                     }
                 ],
                 "description": "create new user",
@@ -743,7 +743,7 @@ const docTemplate = `{
             "get": {
                 "security": [
                     {
-                        "ApiKeyAuth": []
+                        "AKA": []
                     }
                 ],
                 "description": "get user by ID",
@@ -794,7 +794,7 @@ const docTemplate = `{
             "delete": {
                 "security": [
                     {
-                        "ApiKeyAuth": []
+                        "AKA": []
                     }
                 ],
                 "description": "delete user by ID",
@@ -842,7 +842,7 @@ const docTemplate = `{
             "patch": {
                 "security": [
                     {
-                        "ApiKeyAuth": []
+                        "AKA": []
                     }
                 ],
                 "description": "edit  rating existed user",

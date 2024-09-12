@@ -134,7 +134,7 @@ paths:
           schema:
             $ref: '#/definitions/controllers.ErrorResponse'
       security:
-      - ApiKeyAuth: []
+      - AKA: []
       summary: Get All Routes
       tags:
       - routes
@@ -170,7 +170,7 @@ paths:
           schema:
             $ref: '#/definitions/controllers.ErrorResponse'
       security:
-      - ApiKeyAuth: []
+      - AKA: []
       summary: Create Route
       tags:
       - routes
@@ -202,7 +202,7 @@ paths:
           schema:
             $ref: '#/definitions/controllers.ErrorResponse'
       security:
-      - ApiKeyAuth: []
+      - AKA: []
       summary: Delete Route By ID
       tags:
       - routes
@@ -235,7 +235,7 @@ paths:
           schema:
             $ref: '#/definitions/controllers.ErrorResponse'
       security:
-      - ApiKeyAuth: []
+      - AKA: []
       summary: Get Route By ID
       tags:
       - routes
@@ -276,7 +276,7 @@ paths:
           schema:
             $ref: '#/definitions/controllers.ErrorResponse'
       security:
-      - ApiKeyAuth: []
+      - AKA: []
       summary: Check route as response
       tags:
       - routes
@@ -317,7 +317,7 @@ paths:
           schema:
             $ref: '#/definitions/controllers.ErrorResponse'
       security:
-      - ApiKeyAuth: []
+      - AKA: []
       summary: Update User
       tags:
       - users
@@ -352,7 +352,7 @@ paths:
           schema:
             $ref: '#/definitions/controllers.ErrorResponse'
       security:
-      - ApiKeyAuth: []
+      - AKA: []
       summary: Get All Taxi Companies
       tags:
       - taxi companies
@@ -388,7 +388,7 @@ paths:
           schema:
             $ref: '#/definitions/controllers.ErrorResponse'
       security:
-      - ApiKeyAuth: []
+      - AKA: []
       summary: Create Taxicomp
       tags:
       - taxi companies
@@ -420,7 +420,7 @@ paths:
           schema:
             $ref: '#/definitions/controllers.ErrorResponse'
       security:
-      - ApiKeyAuth: []
+      - AKA: []
       summary: Delete Taxi Company By ID
       tags:
       - taxi companies
@@ -453,7 +453,7 @@ paths:
           schema:
             $ref: '#/definitions/controllers.ErrorResponse'
       security:
-      - ApiKeyAuth: []
+      - AKA: []
       summary: Get Taxi Company By ID
       tags:
       - taxi companies
@@ -494,7 +494,7 @@ paths:
           schema:
             $ref: '#/definitions/controllers.ErrorResponse'
       security:
-      - ApiKeyAuth: []
+      - AKA: []
       summary: Update taxi Company
       tags:
       - taxi companies
@@ -529,7 +529,7 @@ paths:
           schema:
             $ref: '#/definitions/controllers.ErrorResponse'
       security:
-      - ApiKeyAuth: []
+      - AKA: []
       summary: Get All Users
       tags:
       - users
@@ -565,7 +565,7 @@ paths:
           schema:
             $ref: '#/definitions/controllers.ErrorResponse'
       security:
-      - ApiKeyAuth: []
+      - AKA: []
       summary: Create User
       tags:
       - users
@@ -597,7 +597,7 @@ paths:
           schema:
             $ref: '#/definitions/controllers.ErrorResponse'
       security:
-      - ApiKeyAuth: []
+      - AKA: []
       summary: Delete User By ID
       tags:
       - users
@@ -630,7 +630,7 @@ paths:
           schema:
             $ref: '#/definitions/controllers.ErrorResponse'
       security:
-      - ApiKeyAuth: []
+      - AKA: []
       summary: Get user By ID
       tags:
       - users
@@ -671,7 +671,7 @@ paths:
           schema:
             $ref: '#/definitions/controllers.ErrorResponse'
       security:
-      - ApiKeyAuth: []
+      - AKA: []
       summary: edit user rating
       tags:
       - users

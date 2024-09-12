@@ -13,7 +13,7 @@ import (
 
 // CreateTaxicomp
 // @Summary Create Taxicomp
-// @Security ApiKeyAuth
+// @Security AKA
 // @Tags taxi companies
 // @Description create new taxi company
 // @ID create-taxi-company
@@ -54,7 +54,7 @@ func CreateTaxicomp(c *gin.Context) {
 
 // GetAllTaxiComp
 // @Summary Get All Taxi Companies
-// @Security ApiKeyAuth
+// @Security AKA
 // @Tags taxi companies
 // @Description get list of all taxi companies
 // @ID get-all-taxi-companies
@@ -90,7 +90,7 @@ func GetAllTaxiComp(c *gin.Context) {
 
 // GetAllTaxiCompByID
 // @Summary Get Taxi Company By ID
-// @Security ApiKeyAuth
+// @Security AKA
 // @Tags taxi companies
 // @Description get taxi company by ID
 // @ID get-taxi-company-by-id
@@ -132,7 +132,7 @@ func GetAllTaxiCompByID(c *gin.Context) {
 
 // UpdateTaxiCompByID
 // @Summary Update taxi Company
-// @Security ApiKeyAuth
+// @Security AKA
 // @Tags taxi companies
 // @Description update existed taxi company
 // @ID update-taxi-company
@@ -181,7 +181,7 @@ func UpdateTaxiCompByID(c *gin.Context) {
 
 // DeleteTaxiCompByID
 // @Summary Delete Taxi Company By ID
-// @Security ApiKeyAuth
+// @Security AKA
 // @Tags taxi companies
 // @Description delete taxi company by ID
 // @ID delete-taxi-company-by-id

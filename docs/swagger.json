@@ -13,7 +13,7 @@
             "get": {
                 "security": [
                     {
-                        "ApiKeyAuth": []
+                        "AKA": []
                     }
                 ],
                 "description": "get list of all routes",
@@ -66,7 +66,7 @@
             "post": {
                 "security": [
                     {
-                        "ApiKeyAuth": []
+                        "AKA": []
                     }
                 ],
                 "description": "create new route",
@@ -124,7 +124,7 @@
             "get": {
                 "security": [
                     {
-                        "ApiKeyAuth": []
+                        "AKA": []
                     }
                 ],
                 "description": "get route by ID",
@@ -175,7 +175,7 @@
             "put": {
                 "security": [
                     {
-                        "ApiKeyAuth": []
+                        "AKA": []
                     }
                 ],
                 "description": "update existed user",
@@ -238,7 +238,7 @@
             "delete": {
                 "security": [
                     {
-                        "ApiKeyAuth": []
+                        "AKA": []
                     }
                 ],
                 "description": "delete route by ID",
@@ -286,7 +286,7 @@
             "patch": {
                 "security": [
                     {
-                        "ApiKeyAuth": []
+                        "AKA": []
                     }
                 ],
                 "description": "check as response existed route",
@@ -351,7 +351,7 @@
             "get": {
                 "security": [
                     {
-                        "ApiKeyAuth": []
+                        "AKA": []
                     }
                 ],
                 "description": "get list of all taxi companies",
@@ -404,7 +404,7 @@
             "post": {
                 "security": [
                     {
-                        "ApiKeyAuth": []
+                        "AKA": []
                     }
                 ],
                 "description": "create new taxi company",
@@ -462,7 +462,7 @@
             "get": {
                 "security": [
                     {
-                        "ApiKeyAuth": []
+                        "AKA": []
                     }
                 ],
                 "description": "get taxi company by ID",
@@ -513,7 +513,7 @@
             "put": {
                 "security": [
                     {
-                        "ApiKeyAuth": []
+                        "AKA": []
                     }
                 ],
                 "description": "update existed taxi company",
@@ -576,7 +576,7 @@
             "delete": {
                 "security": [
                     {
-                        "ApiKeyAuth": []
+                        "AKA": []
                     }
                 ],
                 "description": "delete taxi company by ID",
@@ -626,7 +626,7 @@
             "get": {
                 "security": [
                     {
-                        "ApiKeyAuth": []
+                        "AKA": []
                     }
                 ],
                 "description": "get list of all users",
@@ -679,7 +679,7 @@
             "post": {
                 "security": [
                     {
-                        "ApiKeyAuth": []
+                        "AKA": []
                     }
                 ],
                 "description": "create new user",
@@ -737,7 +737,7 @@
             "get": {
                 "security": [
                     {
-                        "ApiKeyAuth": []
+                        "AKA": []
                     }
                 ],
                 "description": "get user by ID",
@@ -788,7 +788,7 @@
             "delete": {
                 "security": [
                     {
-                        "ApiKeyAuth": []
+                        "AKA": []
                     }
                 ],
                 "description": "delete user by ID",
@@ -836,7 +836,7 @@
             "patch": {
                 "security": [
                     {
-                        "ApiKeyAuth": []
+                        "AKA": []
                     }
                 ],
                 "description": "edit  rating existed user",

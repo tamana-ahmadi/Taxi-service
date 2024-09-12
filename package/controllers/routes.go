@@ -13,7 +13,7 @@ import (
 
 // CreateRoute
 // @Summary Create Route
-// @Security ApiKeyAuth
+// @Security AKA
 // @Tags routes
 // @Description create new route
 // @ID create-route
@@ -56,7 +56,7 @@ func CreateRoute(c *gin.Context) {
 
 // GetAllRoutes
 // @Summary Get All Routes
-// @Security ApiKeyAuth
+// @Security AKA
 // @Tags routes
 // @Description get list of all routes
 // @ID get-all-routes
@@ -96,7 +96,7 @@ func GetAllRoutes(c *gin.Context) {
 
 // GetRoutesByID
 // @Summary Get Route By ID
-// @Security ApiKeyAuth
+// @Security AKA
 // @Tags routes
 // @Description get route by ID
 // @ID get-route-by-id
@@ -129,7 +129,7 @@ func GetAllRoutesByID(c *gin.Context) {
 
 // UpdateRouteByID
 // @Summary Update Route
-// @Security ApiKeyAuth
+// @Security AKA
 // @Tags routes
 // @Description update existed route
 // @ID update-route
@@ -183,7 +183,7 @@ func UpdateRouteByID(c *gin.Context) {
 
 // ChecksRouteasResponse
 // @Summary Check route as response
-// @Security ApiKeyAuth
+// @Security AKA
 // @Tags routes
 // @Description  check as response existed route
 // @ID check-route-as-response
@@ -228,7 +228,7 @@ func ChecksRouteasResponse(c *gin.Context) {
 
 // DeleteRouteByID
 // @Summary Delete Route By ID
-// @Security ApiKeyAuth
+// @Security AKA
 // @Tags routes
 // @Description delete route by ID
 // @ID delete-route-by-id

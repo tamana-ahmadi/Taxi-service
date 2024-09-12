@@ -13,7 +13,7 @@ import (
 
 // CreateUser
 // @Summary Create User
-// @Security ApiKeyAuth
+// @Security AKA
 // @Tags users
 // @Description create new user
 // @ID create-user
@@ -44,7 +44,7 @@ func CreateUsers(c *gin.Context) {
 
 // UpdateUserByID
 // @Summary Update User
-// @Security ApiKeyAuth
+// @Security AKA
 // @Tags users
 // @Description update existed user
 // @ID update-user
@@ -83,7 +83,7 @@ func EditUsers(c *gin.Context) {
 
 // EditUsersRating
 // @Summary edit user rating
-// @Security ApiKeyAuth
+// @Security AKA
 // @Tags users
 // @Description  edit  rating existed user
 // @ID edit-users-rating
@@ -128,7 +128,7 @@ func EditUsersRating(c *gin.Context) {
 
 // BlockUsers
 // @Summary Block User By ID
-// @Security ApiKeyAuth
+// @Security AKA
 // @Tags users
 // @Description block user by ID
 // @ID block-user-by-id
@@ -165,7 +165,7 @@ func BlockUsers(c *gin.Context) {
 
 // DeleteUsers
 // @Summary Delete User By ID
-// @Security ApiKeyAuth
+// @Security AKA
 // @Tags users
 // @Description delete user by ID
 // @ID delete-user-by-id
@@ -202,7 +202,7 @@ func DeleteUsers(c *gin.Context) {
 
 // PrintUsers
 // @Summary Get All Users
-// @Security ApiKeyAuth
+// @Security AKA
 // @Tags users
 // @Description get list of all users
 // @ID get-all-users
@@ -228,7 +228,7 @@ func PrintUsers(c *gin.Context) {
 
 // PrintUsersByID
 // @Summary Get user By ID
-// @Security ApiKeyAuth
+// @Security AKA
 // @Tags users
 // @Description get user by ID
 // @ID get-user-by-id
