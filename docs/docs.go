@@ -1038,13 +1038,7 @@ const docTemplate = `{
         "models.Route": {
             "type": "object",
             "properties": {
-                "client_id": {
-                    "type": "integer"
-                },
                 "distance": {
-                    "type": "integer"
-                },
-                "driver_id": {
                     "type": "integer"
                 },
                 "from": {
@@ -1096,9 +1090,6 @@ const docTemplate = `{
                     "type": "string"
                 },
                 "id": {
-                    "type": "integer"
-                },
-                "user_id": {
                     "type": "integer"
                 }
             }
