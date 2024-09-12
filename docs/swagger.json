@@ -178,7 +178,7 @@
                         "ApiKeyAuth": []
                     }
                 ],
-                "description": "update existed route",
+                "description": "update existed taxi company",
                 "consumes": [
                     "application/json"
                 ],
@@ -186,25 +186,25 @@
                     "application/json"
                 ],
                 "tags": [
-                    "routes"
+                    "taxi companies"
                 ],
-                "summary": "Update Route",
-                "operationId": "update-route",
+                "summary": "Update taxi Company",
+                "operationId": "update-taxi-company",
                 "parameters": [
                     {
                         "type": "integer",
-                        "description": "id of the route",
+                        "description": "id of the taxi company",
                         "name": "id",
                         "in": "path",
                         "required": true
                     },
                     {
-                        "description": "route update info",
+                        "description": "taxi company update info",
                         "name": "input",
                         "in": "body",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/models.Route"
+                            "$ref": "#/definitions/models.TaxiComp"
                         }
                     }
                 ],
@@ -241,16 +241,16 @@
                         "ApiKeyAuth": []
                     }
                 ],
-                "description": "delete route by ID",
+                "description": "delete taxi company by ID",
                 "tags": [
-                    "routes"
+                    "taxi companies"
                 ],
-                "summary": "Delete Route By ID",
-                "operationId": "delete-route-by-id",
+                "summary": "Delete Taxi Company By ID",
+                "operationId": "delete-taxi-company-by-id",
                 "parameters": [
                     {
                         "type": "integer",
-                        "description": "id of the route",
+                        "description": "id of the taxi company",
                         "name": "id",
                         "in": "path",
                         "required": true
@@ -324,6 +324,170 @@
                         "description": "OK",
                         "schema": {
                             "$ref": "#/definitions/controllers.defaultResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "type": "404"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/controllers.ErrorResponse"
+                        }
+                    },
+                    "default": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/controllers.ErrorResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/taxicomps": {
+            "get": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "description": "get list of all taxi companies",
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "taxi companies"
+                ],
+                "summary": "Get All Taxi Companies",
+                "operationId": "get-all-taxi-companies",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "fill if you need search",
+                        "name": "q",
+                        "in": "query"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/models.TaxiComp"
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "type": "404"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/controllers.ErrorResponse"
+                        }
+                    },
+                    "default": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/controllers.ErrorResponse"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "description": "create new taxi company",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "taxi companies"
+                ],
+                "summary": "Create Taxicomp",
+                "operationId": "create-taxi-company",
+                "parameters": [
+                    {
+                        "description": "new taxicomp info",
+                        "name": "input",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.TaxiComp"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/controllers.defaultResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "type": "404"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/controllers.ErrorResponse"
+                        }
+                    },
+                    "default": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/controllers.ErrorResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/taxicomps/{id}": {
+            "get": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "description": "get taxi company by ID",
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "taxi companies"
+                ],
+                "summary": "Get Taxi Company By ID",
+                "operationId": "get-taxi-company-by-id",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "id of the taxicomp",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.TaxiComp"
                         }
                     },
                     "400": {
@@ -542,6 +706,29 @@
                 },
                 "username": {
                     "type": "string"
+                }
+            }
+        },
+        "models.TaxiComp": {
+            "type": "object",
+            "properties": {
+                "company_title": {
+                    "type": "string"
+                },
+                "created_at": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "integer"
+                },
+                "is_deleted": {
+                    "type": "boolean"
+                },
+                "updated_at": {
+                    "type": "string"
+                },
+                "user_id": {
+                    "type": "integer"
                 }
             }
         }

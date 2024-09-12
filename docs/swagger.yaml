@@ -58,6 +58,21 @@ definitions:
       username:
         type: string
     type: object
+  models.TaxiComp:
+    properties:
+      company_title:
+        type: string
+      created_at:
+        type: string
+      id:
+        type: integer
+      is_deleted:
+        type: boolean
+      updated_at:
+        type: string
+      user_id:
+        type: integer
+    type: object
 host: localhost:8484
 info:
   contact: {}
@@ -138,10 +153,10 @@ paths:
       - routes
   /api/routes/{id}:
     delete:
-      description: delete route by ID
-      operationId: delete-route-by-id
+      description: delete taxi company by ID
+      operationId: delete-taxi-company-by-id
       parameters:
-      - description: id of the route
+      - description: id of the taxi company
         in: path
         name: id
         required: true
@@ -165,9 +180,9 @@ paths:
             $ref: '#/definitions/controllers.ErrorResponse'
       security:
       - ApiKeyAuth: []
-      summary: Delete Route By ID
+      summary: Delete Taxi Company By ID
       tags:
-      - routes
+      - taxi companies
     get:
       description: get route by ID
       operationId: get-route-by-id
@@ -245,20 +260,20 @@ paths:
     put:
       consumes:
       - application/json
-      description: update existed route
-      operationId: update-route
+      description: update existed taxi company
+      operationId: update-taxi-company
       parameters:
-      - description: id of the route
+      - description: id of the taxi company
         in: path
         name: id
         required: true
         type: integer
-      - description: route update info
+      - description: taxi company update info
         in: body
         name: input
         required: true
         schema:
-          $ref: '#/definitions/models.Route'
+          $ref: '#/definitions/models.TaxiComp'
       produces:
       - application/json
       responses:
@@ -280,9 +295,114 @@ paths:
             $ref: '#/definitions/controllers.ErrorResponse'
       security:
       - ApiKeyAuth: []
-      summary: Update Route
+      summary: Update taxi Company
       tags:
-      - routes
+      - taxi companies
+  /api/taxicomps:
+    get:
+      description: get list of all taxi companies
+      operationId: get-all-taxi-companies
+      parameters:
+      - description: fill if you need search
+        in: query
+        name: q
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/models.TaxiComp'
+            type: array
+        "400":
+          description: Bad Request
+          schema:
+            type: "404"
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/controllers.ErrorResponse'
+        default:
+          description: ""
+          schema:
+            $ref: '#/definitions/controllers.ErrorResponse'
+      security:
+      - ApiKeyAuth: []
+      summary: Get All Taxi Companies
+      tags:
+      - taxi companies
+    post:
+      consumes:
+      - application/json
+      description: create new taxi company
+      operationId: create-taxi-company
+      parameters:
+      - description: new taxicomp info
+        in: body
+        name: input
+        required: true
+        schema:
+          $ref: '#/definitions/models.TaxiComp'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/controllers.defaultResponse'
+        "400":
+          description: Bad Request
+          schema:
+            type: "404"
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/controllers.ErrorResponse'
+        default:
+          description: ""
+          schema:
+            $ref: '#/definitions/controllers.ErrorResponse'
+      security:
+      - ApiKeyAuth: []
+      summary: Create Taxicomp
+      tags:
+      - taxi companies
+  /api/taxicomps/{id}:
+    get:
+      description: get taxi company by ID
+      operationId: get-taxi-company-by-id
+      parameters:
+      - description: id of the taxicomp
+        in: path
+        name: id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.TaxiComp'
+        "400":
+          description: Bad Request
+          schema:
+            type: "404"
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/controllers.ErrorResponse'
+        default:
+          description: ""
+          schema:
+            $ref: '#/definitions/controllers.ErrorResponse'
+      security:
+      - ApiKeyAuth: []
+      summary: Get Taxi Company By ID
+      tags:
+      - taxi companies
   /auth/sign-in:
     post:
       consumes:
