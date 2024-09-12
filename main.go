@@ -67,7 +67,7 @@ func main() {
 	if err != nil {
 		err = sqlDB.Close()
 		if err != nil {
-			log.Fatal("Ошибка при закрытии соединения с БД: %s", err)
+			log.Fatalf("Ошибка при закрытии соединения с БД: %s", err)
 		}
 	} else {
 		log.Fatalf("Ошибка при получении *sql.DB из GORM: %s", err)

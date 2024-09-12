@@ -144,7 +144,7 @@ func GetAllTaxiCompByID(c *gin.Context) {
 // @Failure 400 404 {object} ErrorResponse
 // @Failure 500 {object} ErrorResponse
 // @Failure default {object} ErrorResponse
-// @Router /api/routes/{id} [put]
+// @Router /api/taxicomps/{id} [put]
 func UpdateTaxiCompByID(c *gin.Context) {
 	urole := c.GetString(userRoleCtx)
 	if urole == "" {
@@ -190,7 +190,7 @@ func UpdateTaxiCompByID(c *gin.Context) {
 // @Failure 400 404 {object} ErrorResponse
 // @Failure 500 {object} ErrorResponse
 // @Failure default {object} ErrorResponse
-// @Router /api/routes/{id} [delete]
+// @Router /api/taxicomps/{id} [delete]
 func DeleteTaxiCompByID(c *gin.Context) {
 	urole := c.GetString(userRoleCtx)
 	if urole == "" {

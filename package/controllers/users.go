@@ -11,6 +11,20 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
+// CreateUser
+// @Summary Create User
+// @Security ApiKeyAuth
+// @Tags users
+// @Description create new user
+// @ID create-user
+// @Accept json
+// @Produce json
+// @Param input body models.User true "new route info"
+// @Success 200 {object} defaultResponse
+// @Failure 400 404 {object} ErrorResponse
+// @Failure 500 {object} ErrorResponse
+// @Failure default {object} ErrorResponse
+// @Router /api/users [post]
 func CreateUsers(c *gin.Context) {
 	var newuser models.User
 	err := c.BindJSON(&newuser)
@@ -27,6 +41,22 @@ func CreateUsers(c *gin.Context) {
 	c.JSON(http.StatusCreated, gin.H{"message": "Succesful created"})
 
 }
+
+// UpdateUserByID
+// @Summary Update User
+// @Security ApiKeyAuth
+// @Tags users
+// @Description update existed user
+// @ID update-user
+// @Accept json
+// @Produce json
+// @Param id path integer true "id of the user"
+// @Param input body models.User true "user update info"
+// @Success 200 {object} defaultResponse
+// @Failure 400 404 {object} ErrorResponse
+// @Failure 500 {object} ErrorResponse
+// @Failure default {object} ErrorResponse
+// @Router /api/routes/{id} [put]
 func EditUsers(c *gin.Context) {
 	id, err := strconv.Atoi(c.Param("id"))
 	if err != nil {
@@ -50,6 +80,22 @@ func EditUsers(c *gin.Context) {
 	c.JSON(http.StatusOK, gin.H{"message": "Update is successful"})
 
 }
+
+// EditUsersRating
+// @Summary edit user rating
+// @Security ApiKeyAuth
+// @Tags users
+// @Description  edit  rating existed user
+// @ID edit-users-rating
+// @Accept json
+// @Produce json
+// @Param id path integer true "id of the user"
+// @Param input body models.User true "edit users rating"
+// @Success 200 {object} defaultResponse
+// @Failure 400 404 {object} ErrorResponse
+// @Failure 500 {object} ErrorResponse
+// @Failure default {object} ErrorResponse
+// @Router /api/users/{id} [patch]
 func EditUsersRating(c *gin.Context) {
 	urole := c.GetString(userRoleCtx)
 	if urole == "" {
@@ -79,6 +125,19 @@ func EditUsersRating(c *gin.Context) {
 	}
 	c.JSON(http.StatusOK, gin.H{"message": "Edit user`s password  is succesfuly"})
 }
+
+// BlockUsers
+// @Summary Block User By ID
+// @Security ApiKeyAuth
+// @Tags users
+// @Description block user by ID
+// @ID block-user-by-id
+// @Param id path integer true "id of the user"
+// @Success 200 {object} defaultResponse
+// @Failure 400 404 {object} ErrorResponse
+// @Failure 500 {object} ErrorResponse
+// @Failure default {object} ErrorResponse
+// @Router /api/users/{id} [delete]
 func BlockUsers(c *gin.Context) {
 	urole := c.GetString(userRoleCtx)
 	if urole == "" {
@@ -104,6 +163,18 @@ func BlockUsers(c *gin.Context) {
 
 }
 
+// DeleteUsers
+// @Summary Delete User By ID
+// @Security ApiKeyAuth
+// @Tags users
+// @Description delete user by ID
+// @ID delete-user-by-id
+// @Param id path integer true "id of the user"
+// @Success 200 {object} defaultResponse
+// @Failure 400 404 {object} ErrorResponse
+// @Failure 500 {object} ErrorResponse
+// @Failure default {object} ErrorResponse
+// @Router /api/users/{id} [delete]
 func DeleteUsers(c *gin.Context) {
 	urole := c.GetString(userRoleCtx)
 	if urole == "" {
@@ -128,6 +199,20 @@ func DeleteUsers(c *gin.Context) {
 	c.JSON(http.StatusOK, gin.H{"message": "Deleted is succesfuly"})
 
 }
+
+// PrintUsers
+// @Summary Get All Users
+// @Security ApiKeyAuth
+// @Tags users
+// @Description get list of all users
+// @ID get-all-users
+// @Produce json
+// @Param q query string false "fill if you need search"
+// @Success 200 {array} models.User
+// @Failure 400 404 {object} ErrorResponse
+// @Failure 500 {object} ErrorResponse
+// @Failure default {object} ErrorResponse
+// @Router /api/users [get]
 func PrintUsers(c *gin.Context) {
 	role := c.Query("role")
 	logger.Info.Printf("Client with ip: [%s] requested list of users\n", c.ClientIP())
@@ -141,6 +226,19 @@ func PrintUsers(c *gin.Context) {
 	logger.Info.Printf("Client with ip: [%s] got list of users\n", c.ClientIP())
 }
 
+// PrintUsersByID
+// @Summary Get user By ID
+// @Security ApiKeyAuth
+// @Tags users
+// @Description get user by ID
+// @ID get-user-by-id
+// @Produce json
+// @Param id path integer true "id of the user"
+// @Success 200 {object} models.User
+// @Failure 400 404 {object} ErrorResponse
+// @Failure 500 {object} ErrorResponse
+// @Failure default {object} ErrorResponse
+// @Router /api/users/{id} [get]
 func PrintUsersByID(c *gin.Context) {
 	id, err := strconv.Atoi(c.Param("id"))
 	if err != nil {
