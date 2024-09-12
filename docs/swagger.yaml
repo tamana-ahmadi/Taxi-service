@@ -745,4 +745,9 @@ paths:
       summary: SignUp
       tags:
       - auth
+securityDefinitions:
+  AKA:
+    in: header
+    name: Authorization
+    type: apiKey
 swagger: "2.0"
