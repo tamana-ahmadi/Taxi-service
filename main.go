@@ -24,7 +24,7 @@ import (
 // @host localhost:8484
 // @BasePath /
 
-// @securityDefinition.apikey ApiKeyAuth
+// @securityDefinition.apikey AKA
 // @in header
 // @name Authorization
 
