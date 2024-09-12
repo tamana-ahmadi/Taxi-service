@@ -21,8 +21,6 @@ definitions:
         type: integer
       from:
         type: string
-      id:
-        type: integer
       into:
         type: string
       price:
@@ -50,7 +48,7 @@ definitions:
     properties:
       company_title:
         type: string
-      id:
+      driver_id:
         type: integer
     type: object
   models.User:

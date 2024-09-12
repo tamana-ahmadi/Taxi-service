@@ -3,7 +3,7 @@ package models
 import "time"
 
 type Route struct {
-	ID         int       `gorm:"primary key"`
+	ID         int       `gorm:"primary key" json:"-"`
 	From       string    `gorm:"not null" json:"from"`
 	Into       string    `gorm:"not null" json:"into"`
 	Distance   int       `gorm:"not null" json:"distance"`

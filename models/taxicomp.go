@@ -3,10 +3,10 @@ package models
 import "time"
 
 type TaxiComp struct {
-	ID        int       `gorm:"primary key"`
+	ID        int       `gorm:"primary key" json:"-"`
 	CompTitle string    `gorm:"not null" json:"company_title"`
 	IsDeleted bool      `gorm:"default false" json:"-"`
-	UserID    int       `gorm:"references users(id)" json:"-"`
+	DriverID  int       `gorm:"references users(id)" json:"driver_id"`
 	CreatedAt time.Time `json:"-" gorm:"autoCreateTime"`
 	UpdatedAt time.Time `json:"-" gorm:"autoUpdateTime"`
 }

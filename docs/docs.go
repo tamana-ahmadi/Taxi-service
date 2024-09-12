@@ -1044,9 +1044,6 @@ const docTemplate = `{
                 "from": {
                     "type": "string"
                 },
-                "id": {
-                    "type": "integer"
-                },
                 "into": {
                     "type": "string"
                 },
@@ -1089,7 +1086,7 @@ const docTemplate = `{
                 "company_title": {
                     "type": "string"
                 },
-                "id": {
+                "driver_id": {
                     "type": "integer"
                 }
             }
