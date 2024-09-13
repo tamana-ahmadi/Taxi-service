@@ -178,7 +178,7 @@
                         "AKA": []
                     }
                 ],
-                "description": "update existed user",
+                "description": "update existed route",
                 "consumes": [
                     "application/json"
                 ],
@@ -186,25 +186,25 @@
                     "application/json"
                 ],
                 "tags": [
-                    "users"
+                    "routes"
                 ],
-                "summary": "Update User",
-                "operationId": "update-user",
+                "summary": "Update Route",
+                "operationId": "update-route",
                 "parameters": [
                     {
                         "type": "integer",
-                        "description": "id of the user",
+                        "description": "id of the route",
                         "name": "id",
                         "in": "path",
                         "required": true
                     },
                     {
-                        "description": "user update info",
+                        "description": "route update info",
                         "name": "input",
                         "in": "body",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/models.User"
+                            "$ref": "#/definitions/models.Route"
                         }
                     }
                 ],
@@ -763,6 +763,69 @@
                         "description": "OK",
                         "schema": {
                             "$ref": "#/definitions/models.User"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "type": "404"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/controllers.ErrorResponse"
+                        }
+                    },
+                    "default": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/controllers.ErrorResponse"
+                        }
+                    }
+                }
+            },
+            "put": {
+                "security": [
+                    {
+                        "AKA": []
+                    }
+                ],
+                "description": "update existed user",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "users"
+                ],
+                "summary": "Update User",
+                "operationId": "update-user",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "id of the user",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
+                        "description": "user update info",
+                        "name": "input",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.User"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/controllers.defaultResponse"
                         }
                     },
                     "400": {

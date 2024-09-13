@@ -261,20 +261,20 @@ paths:
     put:
       consumes:
       - application/json
-      description: update existed user
-      operationId: update-user
+      description: update existed route
+      operationId: update-route
       parameters:
-      - description: id of the user
+      - description: id of the route
         in: path
         name: id
         required: true
         type: integer
-      - description: user update info
+      - description: route update info
         in: body
         name: input
         required: true
         schema:
-          $ref: '#/definitions/models.User'
+          $ref: '#/definitions/models.Route'
       produces:
       - application/json
       responses:
@@ -296,9 +296,9 @@ paths:
             $ref: '#/definitions/controllers.ErrorResponse'
       security:
       - AKA: []
-      summary: Update User
+      summary: Update Route
       tags:
-      - users
+      - routes
   /api/taxicomps:
     get:
       description: get list of all taxi companies
@@ -651,6 +651,47 @@ paths:
       security:
       - AKA: []
       summary: edit user rating
+      tags:
+      - users
+    put:
+      consumes:
+      - application/json
+      description: update existed user
+      operationId: update-user
+      parameters:
+      - description: id of the user
+        in: path
+        name: id
+        required: true
+        type: integer
+      - description: user update info
+        in: body
+        name: input
+        required: true
+        schema:
+          $ref: '#/definitions/models.User'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/controllers.defaultResponse'
+        "400":
+          description: Bad Request
+          schema:
+            type: "404"
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/controllers.ErrorResponse'
+        default:
+          description: ""
+          schema:
+            $ref: '#/definitions/controllers.ErrorResponse'
+      security:
+      - AKA: []
+      summary: Update User
       tags:
       - users
   /auth/sign-in:

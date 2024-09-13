@@ -56,7 +56,7 @@ func CreateUsers(c *gin.Context) {
 // @Failure 400 404 {object} ErrorResponse
 // @Failure 500 {object} ErrorResponse
 // @Failure default {object} ErrorResponse
-// @Router /api/routes/{id} [put]
+// @Router /api/users/{id} [put]
 func EditUsers(c *gin.Context) {
 	id, err := strconv.Atoi(c.Param("id"))
 	if err != nil {
