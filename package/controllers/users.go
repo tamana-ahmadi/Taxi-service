@@ -208,6 +208,7 @@ func DeleteUsers(c *gin.Context) {
 // @ID get-all-users
 // @Produce json
 // @Param q query string false "fill if you need search"
+// @Param role query string true "fill if you need search"
 // @Success 200 {array} models.User
 // @Failure 400 404 {object} ErrorResponse
 // @Failure 500 {object} ErrorResponse

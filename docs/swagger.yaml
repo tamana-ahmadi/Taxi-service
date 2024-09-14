@@ -90,6 +90,15 @@ paths:
         in: query
         name: q
         type: string
+      - description: fill if you need search
+        in: query
+        name: is_response
+        type: boolean
+      - description: fill if you need search
+        in: query
+        name: price
+        required: true
+        type: integer
       produces:
       - application/json
       responses:
@@ -484,6 +493,11 @@ paths:
       - description: fill if you need search
         in: query
         name: q
+        type: string
+      - description: fill if you need search
+        in: query
+        name: role
+        required: true
         type: string
       produces:
       - application/json

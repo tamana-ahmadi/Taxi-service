@@ -62,6 +62,8 @@ func CreateRoute(c *gin.Context) {
 // @ID get-all-routes
 // @Produce json
 // @Param q query string false "fill if you need search"
+// @Param is_response query bool false "fill if you need search"
+// @Param price query int true "fill if you need search"
 // @Success 200 {array} models.Route
 // @Failure 400 404 {object} ErrorResponse
 // @Failure 500 {object} ErrorResponse

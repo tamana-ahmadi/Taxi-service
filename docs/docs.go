@@ -37,6 +37,19 @@ const docTemplate = `{
                         "description": "fill if you need search",
                         "name": "q",
                         "in": "query"
+                    },
+                    {
+                        "type": "boolean",
+                        "description": "fill if you need search",
+                        "name": "is_response",
+                        "in": "query"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "fill if you need search",
+                        "name": "price",
+                        "in": "query",
+                        "required": true
                     }
                 ],
                 "responses": {
@@ -650,6 +663,13 @@ const docTemplate = `{
                         "description": "fill if you need search",
                         "name": "q",
                         "in": "query"
+                    },
+                    {
+                        "type": "string",
+                        "description": "fill if you need search",
+                        "name": "role",
+                        "in": "query",
+                        "required": true
                     }
                 ],
                 "responses": {
