@@ -15,6 +15,11 @@ definitions:
       message:
         type: string
     type: object
+  models.Rating:
+    properties:
+      rating:
+        type: integer
+    type: object
   models.Route:
     properties:
       distance:
@@ -23,6 +28,8 @@ definitions:
         type: string
       into:
         type: string
+      is_response:
+        type: boolean
       price:
         type: integer
     type: object
@@ -93,6 +100,7 @@ paths:
       - description: fill if you need search
         in: query
         name: is_response
+        required: true
         type: boolean
       - description: fill if you need search
         in: query
@@ -642,7 +650,7 @@ paths:
         name: input
         required: true
         schema:
-          $ref: '#/definitions/models.User'
+          $ref: '#/definitions/models.Rating'
       produces:
       - application/json
       responses:

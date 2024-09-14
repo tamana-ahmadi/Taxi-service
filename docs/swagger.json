@@ -36,7 +36,8 @@
                         "type": "boolean",
                         "description": "fill if you need search",
                         "name": "is_response",
-                        "in": "query"
+                        "in": "query",
+                        "required": true
                     },
                     {
                         "type": "integer",
@@ -948,7 +949,7 @@
                         "in": "body",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/models.User"
+                            "$ref": "#/definitions/models.Rating"
                         }
                     }
                 ],
@@ -1112,6 +1113,14 @@
                 }
             }
         },
+        "models.Rating": {
+            "type": "object",
+            "properties": {
+                "rating": {
+                    "type": "integer"
+                }
+            }
+        },
         "models.Route": {
             "type": "object",
             "properties": {
@@ -1123,6 +1132,9 @@
                 },
                 "into": {
                     "type": "string"
+                },
+                "is_response": {
+                    "type": "boolean"
                 },
                 "price": {
                     "type": "integer"

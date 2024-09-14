@@ -42,7 +42,8 @@ const docTemplate = `{
                         "type": "boolean",
                         "description": "fill if you need search",
                         "name": "is_response",
-                        "in": "query"
+                        "in": "query",
+                        "required": true
                     },
                     {
                         "type": "integer",
@@ -954,7 +955,7 @@ const docTemplate = `{
                         "in": "body",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/models.User"
+                            "$ref": "#/definitions/models.Rating"
                         }
                     }
                 ],
@@ -1118,6 +1119,14 @@ const docTemplate = `{
                 }
             }
         },
+        "models.Rating": {
+            "type": "object",
+            "properties": {
+                "rating": {
+                    "type": "integer"
+                }
+            }
+        },
         "models.Route": {
             "type": "object",
             "properties": {
@@ -1129,6 +1138,9 @@ const docTemplate = `{
                 },
                 "into": {
                     "type": "string"
+                },
+                "is_response": {
+                    "type": "boolean"
                 },
                 "price": {
                     "type": "integer"

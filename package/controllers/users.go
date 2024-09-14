@@ -90,7 +90,7 @@ func EditUsers(c *gin.Context) {
 // @Accept json
 // @Produce json
 // @Param id path integer true "id of the user"
-// @Param input body models.User true "edit users rating"
+// @Param input body models.Rating true "edit users rating"
 // @Success 200 {object} defaultResponse
 // @Failure 400 404 {object} ErrorResponse
 // @Failure 500 {object} ErrorResponse
@@ -123,7 +123,7 @@ func EditUsersRating(c *gin.Context) {
 		HandleError(c, err)
 		return
 	}
-	c.JSON(http.StatusOK, gin.H{"message": "Edit user`s password  is succesfuly"})
+	c.JSON(http.StatusOK, gin.H{"message": "Edit user`s rating  is succesfuly"})
 }
 
 // BlockUsers
