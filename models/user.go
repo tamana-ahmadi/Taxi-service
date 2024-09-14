@@ -1,6 +1,8 @@
 package models
 
-import "time"
+import (
+	"time"
+)
 
 type User struct {
 	ID        int       `json:"id" gorm:"primary_key"`
@@ -8,7 +10,7 @@ type User struct {
 	Username  string    `json:"username" gorm:"unique"`
 	Password  string    `json:"password" gorm:"not null"`
 	Role      string    `json:"role"`
-	Rating    int       `json:"rating" gorm:"check(rating<=10)"`
+	Rating    int       `json:"rating"`
 	IsBlocked bool      `json:"is_blocked" gorm:"default:false"`
 	IsDeleted bool      `json:"is_deleted" gorm:"default:false"`
 	CreatedAt time.Time `json:"created_at" gorm:"autoCreateTime"`
@@ -32,5 +34,5 @@ type SwagSignIn struct {
 }
 
 type Rating struct {
-	Rating int `json:"rating" gorm:"check(rating<=10)"`
+	Rating int `json:"rating"`
 }
