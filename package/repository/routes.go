@@ -54,3 +54,12 @@ func CheckRoutesAsResponse(isresp bool, cid, id int) error {
 	}
 	return nil
 }
+
+func OrdersReport()(report[]models.OrdersReport, err error){
+	err=db.GetconnectDB().Raw(`SELECT t.co`).Scan(&report).Error
+	if err!=nil{
+		logger.Error.Printf("[repository.OrdersReport]error in checked route %s\n", err.Error())
+		return report,err
+	}
+	return report,nil
+}
