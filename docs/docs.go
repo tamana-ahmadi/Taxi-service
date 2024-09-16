@@ -335,7 +335,7 @@ const docTemplate = `{
                         "in": "body",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/models.Route"
+                            "$ref": "#/definitions/models.Checkresponse"
                         }
                     }
                 ],
@@ -1116,6 +1116,14 @@ const docTemplate = `{
             "properties": {
                 "message": {
                     "type": "string"
+                }
+            }
+        },
+        "models.Checkresponse": {
+            "type": "object",
+            "properties": {
+                "is_response": {
+                    "type": "boolean"
                 }
             }
         },

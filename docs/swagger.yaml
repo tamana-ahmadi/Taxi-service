@@ -15,6 +15,11 @@ definitions:
       message:
         type: string
     type: object
+  models.Checkresponse:
+    properties:
+      is_response:
+        type: boolean
+    type: object
   models.GetRoutes:
     properties:
       all_price:
@@ -261,7 +266,7 @@ paths:
         name: input
         required: true
         schema:
-          $ref: '#/definitions/models.Route'
+          $ref: '#/definitions/models.Checkresponse'
       produces:
       - application/json
       responses:

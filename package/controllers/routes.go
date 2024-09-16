@@ -193,7 +193,7 @@ func UpdateRouteByID(c *gin.Context) {
 // @Accept json
 // @Produce json
 // @Param id path integer true "id of the route"
-// @Param input body models.Route true " check route as response info"
+// @Param input body models.Checkresponse true " check route as response info"
 // @Success 200 {object} defaultResponse
 // @Failure 400 404 {object} ErrorResponse
 // @Failure 500 {object} ErrorResponse
