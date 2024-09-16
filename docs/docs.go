@@ -15,68 +15,6 @@ const docTemplate = `{
     "host": "{{.Host}}",
     "basePath": "{{.BasePath}}",
     "paths": {
-        "/api/ordersreports": {
-            "get": {
-                "security": [
-                    {
-                        "AKA": []
-                    }
-                ],
-                "description": "get list of all orders report",
-                "produces": [
-                    "application/json"
-                ],
-                "tags": [
-                    "ordersreports"
-                ],
-                "summary": "Get report from orders",
-                "operationId": "get-all-orders-report",
-                "parameters": [
-                    {
-                        "type": "string",
-                        "description": "fill if you need search",
-                        "name": "q",
-                        "in": "query"
-                    },
-                    {
-                        "type": "boolean",
-                        "description": "fill if you need search",
-                        "name": "is_response",
-                        "in": "query",
-                        "required": true
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "OK",
-                        "schema": {
-                            "type": "array",
-                            "items": {
-                                "$ref": "#/definitions/models.OrdersReport"
-                            }
-                        }
-                    },
-                    "400": {
-                        "description": "Bad Request",
-                        "schema": {
-                            "type": "404"
-                        }
-                    },
-                    "500": {
-                        "description": "Internal Server Error",
-                        "schema": {
-                            "$ref": "#/definitions/controllers.ErrorResponse"
-                        }
-                    },
-                    "default": {
-                        "description": "",
-                        "schema": {
-                            "$ref": "#/definitions/controllers.ErrorResponse"
-                        }
-                    }
-                }
-            }
-        },
         "/api/routes": {
             "get": {
                 "security": [
@@ -110,7 +48,7 @@ const docTemplate = `{
                     {
                         "type": "integer",
                         "description": "fill if you need search",
-                        "name": "price",
+                        "name": "all_price",
                         "in": "query",
                         "required": true
                     }
@@ -121,7 +59,7 @@ const docTemplate = `{
                         "schema": {
                             "type": "array",
                             "items": {
-                                "$ref": "#/definitions/models.Route"
+                                "$ref": "#/definitions/models.GetRoutes"
                             }
                         }
                     },
@@ -1181,17 +1119,17 @@ const docTemplate = `{
                 }
             }
         },
-        "models.OrdersReport": {
+        "models.GetRoutes": {
             "type": "object",
             "properties": {
+                "all_price": {
+                    "type": "integer"
+                },
                 "distance": {
                     "type": "integer"
                 },
                 "from": {
                     "type": "string"
-                },
-                "incomes": {
-                    "type": "integer"
                 },
                 "into": {
                     "type": "string"
@@ -1199,7 +1137,7 @@ const docTemplate = `{
                 "is_response": {
                     "type": "boolean"
                 },
-                "price": {
+                "price_km": {
                     "type": "integer"
                 }
             }
@@ -1223,12 +1161,6 @@ const docTemplate = `{
                 },
                 "into": {
                     "type": "string"
-                },
-                "is_response": {
-                    "type": "boolean"
-                },
-                "price": {
-                    "type": "integer"
                 }
             }
         },

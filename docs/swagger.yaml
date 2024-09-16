@@ -15,19 +15,19 @@ definitions:
       message:
         type: string
     type: object
-  models.OrdersReport:
+  models.GetRoutes:
     properties:
+      all_price:
+        type: integer
       distance:
         type: integer
       from:
         type: string
-      incomes:
-        type: integer
       into:
         type: string
       is_response:
         type: boolean
-      price:
+      price_km:
         type: integer
     type: object
   models.Rating:
@@ -43,10 +43,6 @@ definitions:
         type: string
       into:
         type: string
-      is_response:
-        type: boolean
-      price:
-        type: integer
     type: object
   models.SwagSignIn:
     properties:
@@ -103,46 +99,6 @@ info:
   title: Taxi service API
   version: "1.0"
 paths:
-  /api/ordersreports:
-    get:
-      description: get list of all orders report
-      operationId: get-all-orders-report
-      parameters:
-      - description: fill if you need search
-        in: query
-        name: q
-        type: string
-      - description: fill if you need search
-        in: query
-        name: is_response
-        required: true
-        type: boolean
-      produces:
-      - application/json
-      responses:
-        "200":
-          description: OK
-          schema:
-            items:
-              $ref: '#/definitions/models.OrdersReport'
-            type: array
-        "400":
-          description: Bad Request
-          schema:
-            type: "404"
-        "500":
-          description: Internal Server Error
-          schema:
-            $ref: '#/definitions/controllers.ErrorResponse'
-        default:
-          description: ""
-          schema:
-            $ref: '#/definitions/controllers.ErrorResponse'
-      security:
-      - AKA: []
-      summary: Get report from orders
-      tags:
-      - ordersreports
   /api/routes:
     get:
       description: get list of all routes
@@ -159,7 +115,7 @@ paths:
         type: boolean
       - description: fill if you need search
         in: query
-        name: price
+        name: all_price
         required: true
         type: integer
       produces:
@@ -169,7 +125,7 @@ paths:
           description: OK
           schema:
             items:
-              $ref: '#/definitions/models.Route'
+              $ref: '#/definitions/models.GetRoutes'
             type: array
         "400":
           description: Bad Request
