@@ -36,7 +36,7 @@ func InitRoutes() *gin.Engine {
 	routesG := apiG.Group("/routes")
 	{
 		routesG.POST("", CreateRoute)
-		routesG.GET("", GetAllRoutes, OrdersReport)
+		routesG.GET("", GetAllRoutes)
 		routesG.GET("/:id", GetAllRoutesByID)
 		routesG.PUT("/:id", UpdateRouteByID)
 		routesG.PATCH("/:id", ChecksRouteasResponse)
@@ -50,6 +50,10 @@ func InitRoutes() *gin.Engine {
 		taxicompsG.GET("/:id", GetAllTaxiCompByID)
 		taxicompsG.PUT("/:id", UpdateTaxiCompByID)
 		taxicompsG.DELETE("/:id", DeleteTaxiCompByID)
+	}
+	ordersreportG := apiG.Group("/ordersreports")
+	{
+		ordersreportG.GET("", OrdersReport)
 	}
 
 	return router
