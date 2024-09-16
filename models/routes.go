@@ -34,3 +34,7 @@ type GetRoutes struct {
 	CreatedAt  time.Time `json:"-" gorm:"autoCreateTime"`
 	UpdatedAt  time.Time `json:"-" gorm:"autoUpdateTime"`
 }
+
+type Checkresponse struct {
+	IsResponse bool `gorm:"default false" json:"is_response"`
+}
