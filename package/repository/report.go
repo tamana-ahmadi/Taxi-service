@@ -6,7 +6,7 @@ import (
 	"Taxi_service/models"
 )
 
-func OrdersReport(isresp, isdeletedr, isblocku, isdeletedu, isdeletedt bool) (report []models.OrdersReport, err error) {
+func OrdersReport(isresp, isdeletedr, isblocku, isdeletedu, isdeletedt bool) (report []models.Route, err error) {
 	err = db.GetconnectDB().Select(`taxicompanies.comp_title as comp_title, routes.is_response as is_response,
 	COUNT(DISTINCT CASE WHEN users.role='user' THEN users.id END) as count_clients,
 	COUNT(DISTINCT CASE WHEN users.role='driver' THEN users.id END) as count_drivers,
