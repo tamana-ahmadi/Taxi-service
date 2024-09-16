@@ -32,7 +32,7 @@ definitions:
         type: string
       is_response:
         type: boolean
-      price_km:
+      pricekm:
         type: integer
     type: object
   models.Rating:

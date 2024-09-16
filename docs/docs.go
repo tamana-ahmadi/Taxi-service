@@ -1145,7 +1145,7 @@ const docTemplate = `{
                 "is_response": {
                     "type": "boolean"
                 },
-                "price_km": {
+                "pricekm": {
                     "type": "integer"
                 }
             }
