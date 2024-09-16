@@ -51,3 +51,11 @@ func PrintAllRouteByID(isdeleted bool, id uint) (route []models.Route, err error
 	}
 	return route, nil
 }
+
+func OrdersReport(isresp, isdeletedr, isblocku, isdeletedu, isdeletedt bool) (rep []models.OrdersReport, err error) {
+	rep, err = repository.OrdersReport(isresp, isdeletedr, isblocku, isdeletedu, isdeletedt)
+	if err != nil {
+		return rep, err
+	}
+	return rep, nil
+}

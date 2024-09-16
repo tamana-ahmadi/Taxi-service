@@ -26,6 +26,5 @@ type OrdersReport struct {
 	IsResponse   bool     `json:"is_response"`
 	CountClients int      `json:"count_clients"`
 	CountDrivers int      `json:"count_drivers"`
-	SumDistance  int      `json:"sum_distance"`
-	SumPrice     int      `json:"sum_price"`
+	InCome       int      `json:"incomes"`
 }

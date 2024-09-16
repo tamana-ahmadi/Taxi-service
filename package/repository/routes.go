@@ -55,11 +55,21 @@ func CheckRoutesAsResponse(isresp bool, cid, id int) error {
 	return nil
 }
 
-func OrdersReport()(report[]models.OrdersReport, err error){
-	err=db.GetconnectDB().Raw(`SELECT t.co`).Scan(&report).Error
-	if err!=nil{
+func OrdersReport(isresp, isdeletedr, isblocku, isdeletedu, isdeletedt bool) (report []models.OrdersReport, err error) {
+	err = db.GetconnectDB().Raw(`SELECT t.comp_title as comp_title, r.is_response as is_response,
+	COUNT(DISTINCT CASE WHEN u.role='user' THEN u.id END) as count_clients,
+	COUNT(DISTINCT CASE WHEN u.role='driver' THEN u.id END) as count_drivers
+	SUM(r.distance*r.price) as incomes
+	FROM routes r, taxicompanies t,users u
+	WHERE r.client_id=u.id AND t.user_id=u.id AND 
+	r.is_response=? AND r.is_deleted=?
+	u.is_blocked=? AND u.is_deleted=? 
+	AND t.is_deleted=?
+	GROUP BY comp_title,is_response
+	 ORDER BY incomes DESC`, isresp, isdeletedr, isblocku, isdeletedu, isdeletedt).Scan(&report).Error
+	if err != nil {
 		logger.Error.Printf("[repository.OrdersReport]error in checked route %s\n", err.Error())
-		return report,err
+		return report, err
 	}
-	return report,nil
+	return report, nil
 }

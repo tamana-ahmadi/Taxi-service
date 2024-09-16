@@ -263,3 +263,26 @@ func DeleteRouteByID(c *gin.Context) {
 	}
 	c.JSON(http.StatusOK, gin.H{"message": "Deleted is succesfuly"})
 }
+func OrdersReport(c *gin.Context) {
+	urole := c.GetString(userRoleCtx)
+	if urole == "" {
+		HandleError(c, errs.ErrValidationFailed)
+		return
+	}
+	if urole != "admin" {
+		HandleError(c, errs.ErrPermissionDenied)
+		return
+	}
+	isRespStr := c.Query("is_response")
+	isResp, err := strconv.ParseBool(isRespStr)
+	if err != nil {
+		HandleError(c, errs.ErrValidationFailed)
+		return
+	}
+	rep, err := service.OrdersReport(isResp, false, false, false, false)
+	if err != nil {
+		HandleError(c, errs.ErrRoutesNotFound)
+		return
+	}
+	c.JSON(http.StatusOK, gin.H{"orders_report": rep})
+}
