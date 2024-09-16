@@ -43,6 +43,8 @@ definitions:
         type: string
       into:
         type: string
+      price_km:
+        type: integer
     type: object
   models.SwagSignIn:
     properties:

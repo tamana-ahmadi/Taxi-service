@@ -1155,6 +1155,9 @@
                 },
                 "into": {
                     "type": "string"
+                },
+                "price_km": {
+                    "type": "integer"
                 }
             }
         },
