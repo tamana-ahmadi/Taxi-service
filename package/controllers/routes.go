@@ -263,3 +263,48 @@ func DeleteRouteByID(c *gin.Context) {
 	}
 	c.JSON(http.StatusOK, gin.H{"message": "Deleted is succesfuly"})
 }
+
+// OrdersReport
+// @Summary Get report from orders
+// @Security AKA
+// @Tags ordersreports
+// @Description get list of all orders report
+// @ID get-all-orders-report
+// @Produce json
+// @Param q query string false "fill if you need search"
+// @Param is_response query bool true "fill if you need search"
+// @Success 200 {array} models.OrdersReport
+// @Failure 400 404 {object} ErrorResponse
+// @Failure 500 {object} ErrorResponse
+// @Failure default {object} ErrorResponse
+// @Router /api/ordersreports [get]
+func OrdersReport(c *gin.Context) {
+	userID := c.GetUint(userIDCtx)
+	urole := c.GetString(userRoleCtx)
+	if userID == 0 {
+		HandleError(c, errs.ErrRoutesNotFound)
+		return
+	}
+	if urole == "" {
+		HandleError(c, errs.ErrValidationFailed)
+		return
+	}
+	if urole != "admin" {
+		HandleError(c, errs.ErrPermissionDenied)
+		return
+	}
+	isRespStr := c.Query("is_response")
+	isResp, err := strconv.ParseBool(isRespStr)
+	if err != nil {
+		HandleError(c, errs.ErrValidationFailed)
+		return
+	}
+
+	rep, err := service.OrdersReport(isResp, false, false, false)
+	if err != nil {
+
+		HandleError(c, errs.ErrRoutesNotFound)
+		return
+	}
+	c.JSON(http.StatusOK, gin.H{"routereport": rep})
+}

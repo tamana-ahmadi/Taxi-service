@@ -19,3 +19,14 @@ type Route struct {
 func (Route) TableName() string {
 	return "routes"
 }
+
+type OrdersReport struct {
+	From       string `gorm:"not null" json:"from"`
+	Into       string `gorm:"not null" json:"into"`
+	Distance   int    `gorm:"not null" json:"distance"`
+	Price      int    `gorm:"default false" json:"price"`
+	ClientID   int    `gorm:"references users(id)" json:"-"`
+	DriverID   int    `gorm:"references users(id)" json:"-"`
+	IsResponse bool   `gorm:"default false" json:"is_response"`
+	Income     int    `gorm:"-" json:"incomes"`
+}

@@ -17,16 +17,18 @@ definitions:
     type: object
   models.OrdersReport:
     properties:
-      comp_title:
-        $ref: '#/definitions/models.TaxiComp'
-      count_clients:
+      distance:
         type: integer
-      count_drivers:
-        type: integer
+      from:
+        type: string
       incomes:
         type: integer
+      into:
+        type: string
       is_response:
         type: boolean
+      price:
+        type: integer
     type: object
   models.Rating:
     properties:
@@ -103,8 +105,8 @@ info:
 paths:
   /api/ordersreports:
     get:
-      description: get report about orders
-      operationId: orders-report
+      description: get list of all orders report
+      operationId: get-all-orders-report
       parameters:
       - description: fill if you need search
         in: query
@@ -138,9 +140,9 @@ paths:
             $ref: '#/definitions/controllers.ErrorResponse'
       security:
       - AKA: []
-      summary: Orders Report
+      summary: Get report from orders
       tags:
-      - report
+      - ordersreports
   /api/routes:
     get:
       description: get list of all routes

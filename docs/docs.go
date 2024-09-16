@@ -22,15 +22,15 @@ const docTemplate = `{
                         "AKA": []
                     }
                 ],
-                "description": "get report about orders",
+                "description": "get list of all orders report",
                 "produces": [
                     "application/json"
                 ],
                 "tags": [
-                    "report"
+                    "ordersreports"
                 ],
-                "summary": "Orders Report",
-                "operationId": "orders-report",
+                "summary": "Get report from orders",
+                "operationId": "get-all-orders-report",
                 "parameters": [
                     {
                         "type": "string",
@@ -1184,20 +1184,23 @@ const docTemplate = `{
         "models.OrdersReport": {
             "type": "object",
             "properties": {
-                "comp_title": {
-                    "$ref": "#/definitions/models.TaxiComp"
-                },
-                "count_clients": {
+                "distance": {
                     "type": "integer"
                 },
-                "count_drivers": {
-                    "type": "integer"
+                "from": {
+                    "type": "string"
                 },
                 "incomes": {
                     "type": "integer"
                 },
+                "into": {
+                    "type": "string"
+                },
                 "is_response": {
                     "type": "boolean"
+                },
+                "price": {
+                    "type": "integer"
                 }
             }
         },

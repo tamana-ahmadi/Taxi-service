@@ -51,6 +51,10 @@ func InitRoutes() *gin.Engine {
 		taxicompsG.PUT("/:id", UpdateTaxiCompByID)
 		taxicompsG.DELETE("/:id", DeleteTaxiCompByID)
 	}
+	ordersreportG := apiG.Group("/ordersreports")
+	{
+		ordersreportG.GET("", OrdersReport)
+	}
 
 	return router
 }
