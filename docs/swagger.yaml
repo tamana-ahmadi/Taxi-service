@@ -142,7 +142,7 @@ paths:
       - AKA: []
       summary: Orders Report
       tags:
-      - routes
+      - report
   /api/routes:
     get:
       description: get list of all routes

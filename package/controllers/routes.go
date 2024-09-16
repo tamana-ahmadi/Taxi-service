@@ -267,7 +267,7 @@ func DeleteRouteByID(c *gin.Context) {
 // OrdersReport
 // @Summary Orders Report
 // @Security AKA
-// @Tags routes
+// @Tags report
 // @Description get report about orders
 // @ID orders-report
 // @Produce json

@@ -22,7 +22,7 @@ func (Route) TableName() string {
 
 type OrdersReport struct {
 	CompTitle    TaxiComp `json:"comp_title" gorm:"foreignKey:TaxicompID; references taxicompanies(id)"`
-	TaxiCompID   int      `json:""`
+	TaxiCompID   int      `json:"-"`
 	IsResponse   bool     `json:"is_response"`
 	CountClients int      `json:"count_clients"`
 	CountDrivers int      `json:"count_drivers"`

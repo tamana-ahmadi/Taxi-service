@@ -27,7 +27,7 @@ const docTemplate = `{
                     "application/json"
                 ],
                 "tags": [
-                    "routes"
+                    "report"
                 ],
                 "summary": "Orders Report",
                 "operationId": "orders-report",
