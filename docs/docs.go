@@ -1161,9 +1161,6 @@ const docTemplate = `{
                 },
                 "into": {
                     "type": "string"
-                },
-                "price_km": {
-                    "type": "integer"
                 }
             }
         },

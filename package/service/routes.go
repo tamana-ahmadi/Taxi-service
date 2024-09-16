@@ -8,7 +8,6 @@ import (
 
 func AddRoute(routes models.Route) error {
 	err := repository.InsertRoutes(routes)
-	routes.Pricekm = 10
 	if err != nil {
 		fmt.Println(err)
 	}
