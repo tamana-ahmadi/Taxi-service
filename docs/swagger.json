@@ -9,7 +9,7 @@
     "host": "localhost:8484",
     "basePath": "/",
     "paths": {
-        "/api/routes": {
+        "/api/ordersreports": {
             "get": {
                 "security": [
                     {
@@ -47,6 +47,75 @@
                             "type": "array",
                             "items": {
                                 "$ref": "#/definitions/models.OrdersReport"
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "type": "404"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/controllers.ErrorResponse"
+                        }
+                    },
+                    "default": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/controllers.ErrorResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/routes": {
+            "get": {
+                "security": [
+                    {
+                        "AKA": []
+                    }
+                ],
+                "description": "get list of all routes",
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "routes"
+                ],
+                "summary": "Get All Routes",
+                "operationId": "get-all-routes",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "fill if you need search",
+                        "name": "q",
+                        "in": "query"
+                    },
+                    {
+                        "type": "boolean",
+                        "description": "fill if you need search",
+                        "name": "is_response",
+                        "in": "query",
+                        "required": true
+                    },
+                    {
+                        "type": "integer",
+                        "description": "fill if you need search",
+                        "name": "price",
+                        "in": "query",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/models.Route"
                             }
                         }
                     },
