@@ -22,15 +22,15 @@ const docTemplate = `{
                         "AKA": []
                     }
                 ],
-                "description": "get list of all routes",
+                "description": "get report about orders",
                 "produces": [
                     "application/json"
                 ],
                 "tags": [
                     "routes"
                 ],
-                "summary": "Get All Routes",
-                "operationId": "get-all-routes",
+                "summary": "Orders Report",
+                "operationId": "orders-report",
                 "parameters": [
                     {
                         "type": "string",
@@ -49,8 +49,7 @@ const docTemplate = `{
                         "type": "integer",
                         "description": "fill if you need search",
                         "name": "price",
-                        "in": "query",
-                        "required": true
+                        "in": "query"
                     }
                 ],
                 "responses": {
@@ -59,7 +58,7 @@ const docTemplate = `{
                         "schema": {
                             "type": "array",
                             "items": {
-                                "$ref": "#/definitions/models.Route"
+                                "$ref": "#/definitions/models.OrdersReport"
                             }
                         }
                     },
@@ -1116,6 +1115,29 @@ const docTemplate = `{
             "properties": {
                 "message": {
                     "type": "string"
+                }
+            }
+        },
+        "models.OrdersReport": {
+            "type": "object",
+            "properties": {
+                "comp_title": {
+                    "$ref": "#/definitions/models.TaxiComp"
+                },
+                "count_clients": {
+                    "type": "integer"
+                },
+                "count_drivers": {
+                    "type": "integer"
+                },
+                "incomes": {
+                    "type": "integer"
+                },
+                "is_response": {
+                    "type": "boolean"
+                },
+                "taxiCompID": {
+                    "type": "integer"
                 }
             }
         },

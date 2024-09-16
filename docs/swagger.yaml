@@ -15,6 +15,21 @@ definitions:
       message:
         type: string
     type: object
+  models.OrdersReport:
+    properties:
+      comp_title:
+        $ref: '#/definitions/models.TaxiComp'
+      count_clients:
+        type: integer
+      count_drivers:
+        type: integer
+      incomes:
+        type: integer
+      is_response:
+        type: boolean
+      taxiCompID:
+        type: integer
+    type: object
   models.Rating:
     properties:
       rating:
@@ -90,8 +105,8 @@ info:
 paths:
   /api/routes:
     get:
-      description: get list of all routes
-      operationId: get-all-routes
+      description: get report about orders
+      operationId: orders-report
       parameters:
       - description: fill if you need search
         in: query
@@ -105,7 +120,6 @@ paths:
       - description: fill if you need search
         in: query
         name: price
-        required: true
         type: integer
       produces:
       - application/json
@@ -114,7 +128,7 @@ paths:
           description: OK
           schema:
             items:
-              $ref: '#/definitions/models.Route'
+              $ref: '#/definitions/models.OrdersReport'
             type: array
         "400":
           description: Bad Request
@@ -130,7 +144,7 @@ paths:
             $ref: '#/definitions/controllers.ErrorResponse'
       security:
       - AKA: []
-      summary: Get All Routes
+      summary: Orders Report
       tags:
       - routes
     post:
