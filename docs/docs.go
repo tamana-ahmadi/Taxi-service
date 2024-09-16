@@ -1198,9 +1198,6 @@ const docTemplate = `{
                 },
                 "is_response": {
                     "type": "boolean"
-                },
-                "taxiCompID": {
-                    "type": "integer"
                 }
             }
         },

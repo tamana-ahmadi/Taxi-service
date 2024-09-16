@@ -27,8 +27,6 @@ definitions:
         type: integer
       is_response:
         type: boolean
-      taxiCompID:
-        type: integer
     type: object
   models.Rating:
     properties:
