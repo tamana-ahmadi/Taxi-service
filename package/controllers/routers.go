@@ -36,7 +36,7 @@ func InitRoutes() *gin.Engine {
 	routesG := apiG.Group("/routes")
 	{
 		routesG.POST("", CreateRoute)
-		routesG.GET("", GetAllRoutes)
+		routesG.GET("", GetAllRoutes, OrdersReport)
 		routesG.GET("/:id", GetAllRoutesByID)
 		routesG.PUT("/:id", UpdateRouteByID)
 		routesG.PATCH("/:id", ChecksRouteasResponse)
