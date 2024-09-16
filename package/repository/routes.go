@@ -14,7 +14,7 @@ func InsertRoutes(route models.Route) error {
 	return nil
 }
 func EditRoutes(from, into string, distance, price int, isresp bool, userid int, id int) error {
-	err := db.GetconnectDB().Where("id=?", id).Save(&models.Route{ID: id, From: from, Into: into, Distance: distance, Price: price, IsResponse: isresp, DriverID: userid}).Error
+	err := db.GetconnectDB().Where("id=?", id).Save(&models.Route{ID: id, From: from, Into: into, Distance: distance, Pricekm: price, IsResponse: isresp, DriverID: userid}).Error
 	if err != nil {
 		logger.Error.Printf("[repository.EditRoutes]error in update route %s\n", err.Error())
 	}
@@ -30,9 +30,9 @@ func SoftDeleteRoutes(isdeleted bool, id int) error {
 }
 
 func GetAllRoutes(isresp, isdeleted bool, price int) (route []models.Route, err error) {
-	err = db.GetconnectDB().Where("routes.is_response=? AND routes.is_deleted=? AND price<=?", isresp, isdeleted, price).Find(&route).Error
+	err = db.GetconnectDB().Raw("Select r.from, r.into, r.distance, r.price_km,(r.distance*r.price_km) as all_price, r.client_id, r.driver_id,r.is_response FROM routes r Where r.is_response=? AND r.is_deleted=? AND all_price<=?", isresp, isdeleted, price).Scan(&route).Error
 	if err != nil {
-		logger.Error.Printf("[repository.GetAllRoutes]error in getting all orders %s\n", err.Error())
+		logger.Error.Printf("[repository.GetAllRoutes]error in getting all routes %s\n", err.Error())
 		return route, err
 	}
 	return route, nil

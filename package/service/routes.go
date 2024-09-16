@@ -14,7 +14,7 @@ func AddRoute(routes models.Route) error {
 	return nil
 }
 func UpdateRoute(route models.Route, did, id int) error {
-	err := repository.EditRoutes(route.From, route.Into, route.Distance, route.Price, route.IsResponse, did, id)
+	err := repository.EditRoutes(route.From, route.Into, route.Distance, route.Pricekm, route.IsResponse, did, id)
 	if err != nil {
 		fmt.Println(err)
 	}
@@ -50,12 +50,4 @@ func PrintAllRouteByID(isdeleted bool, id uint) (route []models.Route, err error
 		return route, err
 	}
 	return route, nil
-}
-
-func OrdersReport(isresp, isdeletedr, isblocku, isdeletedu bool) (rep []models.Route, err error) {
-	rep, err = repository.OrdersReport(isresp, isdeletedr, isblocku, isdeletedu)
-	if err != nil {
-		return rep, err
-	}
-	return rep, nil
 }
