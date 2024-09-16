@@ -277,7 +277,7 @@ func DeleteRouteByID(c *gin.Context) {
 // @Failure 400 404 {object} ErrorResponse
 // @Failure 500 {object} ErrorResponse
 // @Failure default {object} ErrorResponse
-// @Router /api/routes [get]
+// @Router /api/ordersreports [get]
 func OrdersReport(c *gin.Context) {
 	urole := c.GetString(userRoleCtx)
 	if urole == "" {
