@@ -1185,7 +1185,7 @@ const docTemplate = `{
             "type": "object",
             "properties": {
                 "comp_title": {
-                    "$ref": "#/definitions/models.TaxiComp"
+                    "type": "string"
                 },
                 "count_clients": {
                     "type": "integer"

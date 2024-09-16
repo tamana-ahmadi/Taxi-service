@@ -18,7 +18,7 @@ definitions:
   models.OrdersReport:
     properties:
       comp_title:
-        $ref: '#/definitions/models.TaxiComp'
+        type: string
       count_clients:
         type: integer
       count_drivers:
