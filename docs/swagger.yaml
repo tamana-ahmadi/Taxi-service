@@ -117,10 +117,6 @@ paths:
         name: is_response
         required: true
         type: boolean
-      - description: fill if you need search
-        in: query
-        name: price
-        type: integer
       produces:
       - application/json
       responses:

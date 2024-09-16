@@ -44,12 +44,6 @@ const docTemplate = `{
                         "name": "is_response",
                         "in": "query",
                         "required": true
-                    },
-                    {
-                        "type": "integer",
-                        "description": "fill if you need search",
-                        "name": "price",
-                        "in": "query"
                     }
                 ],
                 "responses": {
