@@ -30,7 +30,7 @@ func SoftDeleteRoutes(isdeleted bool, id int) error {
 }
 
 func GetAllRoutes(isresp, isdeletedr, isblocked, isdeletedu bool, price int) (route []models.GetRoutes, err error) {
-	err = db.GetconnectDB().Raw("Select r.from, r.into, r.is_response, COUNT(DISTINCT r.distance) as distance ,COUNT(DISTINCT r.pricekm) as pricekm, r.all_price as all_price, COUNT(DISTINCT CASE WHEN u.role='user' THEN u.id END) as client_id, COUNT(DISTINCT CASE WHEN u.role='driver' THEN u.id END) as driver_id FROM routes r, users u Where r.client_id=u.id OR r.driver_id=u.id AND r.is_response=? AND r.is_deleted=? AND u.is_blocked=? AND u.is_deleted=? AND all_price<=? GROUP BY r.from,r.into,r.is_response ORDER BY distance DESC", isresp, isdeletedr, isblocked, isdeletedu, price).Scan(&route).Error
+	err = db.GetconnectDB().Raw("Select r.from, r.into, r.is_response, r.all_price, COUNT(DISTINCT r.distance) as distance ,COUNT(DISTINCT r.pricekm) as pricekm, COUNT(DISTINCT CASE WHEN u.role='user' THEN u.id END) as client_id, COUNT(DISTINCT CASE WHEN u.role='driver' THEN u.id END) as driver_id FROM routes r, users u Where r.client_id=u.id OR r.driver_id=u.id AND r.is_response=? AND r.is_deleted=? AND u.is_blocked=? AND u.is_deleted=? AND all_price<=? GROUP BY r.from,r.into,r.is_response,r.all_price ORDER BY distance DESC", isresp, isdeletedr, isblocked, isdeletedu, price).Scan(&route).Error
 	if err != nil {
 		logger.Error.Printf("[repository.GetAllRoutes]error in getting all routes %s\n", err.Error())
 		return route, err
