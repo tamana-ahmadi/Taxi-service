@@ -31,7 +31,7 @@ func SoftDeleteTaxicomps(isdeleted bool, id int) error {
 }
 
 func GetAllTaxicomps(isdeletedt, isblocked, isdeletedu bool) (txcm []models.GetAllTaxicomp, err error) {
-	err = db.GetconnectDB().Raw("Select t.comp_title,t.isdeleted,u.full_name FROM taxicompanies t, users u Where t.driver_id=u.id AND t.is_deleted=? AND u.is_blocked=? AND u.is_deleted=?", isdeletedt, isblocked, isdeletedu).Scan(&txcm).Error
+	err = db.GetconnectDB().Raw("Select t.comp_title,t.is_deleted,u.full_name FROM taxicompanies t, users u Where t.driver_id=u.id AND t.is_deleted=? AND u.is_blocked=? AND u.is_deleted=?", isdeletedt, isblocked, isdeletedu).Scan(&txcm).Error
 	if err != nil {
 		logger.Error.Printf("[repository.getalltaxicomps]error in getting all taxi companies %s\n", err.Error())
 		return txcm, err
