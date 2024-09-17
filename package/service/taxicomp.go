@@ -36,8 +36,8 @@ func PrintAllTaxiComps(isdeletedt, isblocked, isdeletedu bool) (txcms []models.T
 	}
 	return txcms, nil
 }
-func PrintAllTaxiCompByID(isdeleted bool, id int) (txcm []models.TaxiComp, err error) {
-	txcm, err = repository.GetAllTaxicompsByID(isdeleted, id)
+func PrintAllTaxiCompByID(isdeleted, isblocked, isdeletedu bool, id int) (txcm []models.TaxiComp, err error) {
+	txcm, err = repository.GetAllTaxicompsByID(isdeleted, isblocked, isdeletedu, id)
 	if err != nil {
 
 		return txcm, err

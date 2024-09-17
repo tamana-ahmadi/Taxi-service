@@ -38,8 +38,8 @@ func GetAllTaxicomps(isdeletedt, isblocked, isdeletedu bool) (txcm []models.Taxi
 	}
 	return txcm, nil
 }
-func GetAllTaxicompsByID(isdeleted bool, id int) (txcm []models.TaxiComp, err error) {
-	err = db.GetconnectDB().Where("taxicompanies.is_deleted=?", isdeleted).Where("taxicompanies.id=?", id).Find(&txcm).Error
+func GetAllTaxicompsByID(isdeleted, isblocked, isdeletedu bool, id int) (txcm []models.TaxiComp, err error) {
+	err = db.GetconnectDB().Preload("User").Joins("Join users ON users.id=taxicompanies.driver_id").Where("taxicompanies.is_deleted=?", isdeleted).Where("taxicompanies.id=?", id).Where("users.is_blocked=? AND users.is_deleted=?", isblocked, isdeletedu).Find(&txcm).Error
 	if err != nil {
 		logger.Error.Printf("[repository.getalltaxicompsbyid]error in getting all taxi company by id %s\n", err.Error())
 		return txcm, err

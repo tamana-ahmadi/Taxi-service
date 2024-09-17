@@ -122,7 +122,7 @@ func GetAllTaxiCompByID(c *gin.Context) {
 		HandleError(c, errs.ErrValidationFailed)
 		return
 	}
-	txcm, err := service.PrintAllTaxiCompByID(false, id)
+	txcm, err := service.PrintAllTaxiCompByID(false, false, false, id)
 	if err != nil {
 		HandleError(c, errs.ErrTaxicompsNotFound)
 		return

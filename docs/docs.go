@@ -1215,11 +1215,11 @@ const docTemplate = `{
                 "company_title": {
                     "type": "string"
                 },
-                "driver": {
-                    "$ref": "#/definitions/models.User"
-                },
                 "driver_id": {
                     "type": "integer"
+                },
+                "user": {
+                    "$ref": "#/definitions/models.User"
                 }
             }
         },
