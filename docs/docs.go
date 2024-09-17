@@ -1133,7 +1133,13 @@ const docTemplate = `{
                 "all_price": {
                     "type": "integer"
                 },
+                "client_id": {
+                    "type": "integer"
+                },
                 "distance": {
+                    "type": "integer"
+                },
+                "driver_id": {
                     "type": "integer"
                 },
                 "from": {

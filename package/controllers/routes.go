@@ -43,7 +43,8 @@ func CreateRoute(c *gin.Context) {
 		return
 	}
 	newroute.DriverID = int(userID)
-	newroute.Pricekm = 10
+	newroute.Pricekm = 1
+	newroute.AllPrice = newroute.Distance * newroute.Pricekm
 	logger.Info.Printf("[controllers.AddRoute] add route is succesful")
 
 	err = service.AddRoute(newroute)

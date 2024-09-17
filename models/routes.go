@@ -27,8 +27,8 @@ type GetRoutes struct {
 	Distance   int       `gorm:"not null" json:"distance"`
 	Pricekm    int       `gorm:"default 0" json:"pricekm"`
 	AllPrice   int       `json:"all_price"`
-	ClientID   int       `gorm:"references users(id)" json:"-"`
-	DriverID   int       `gorm:"references users(id)" json:"-"`
+	ClientID   int       `gorm:"references users(id)" json:"client_id"`
+	DriverID   int       `gorm:"references users(id)" json:"driver_id"`
 	IsResponse bool      `gorm:"default false" json:"is_response"`
 	IsDeleted  bool      `gorm:"default false" json:"-"`
 	CreatedAt  time.Time `json:"-" gorm:"autoCreateTime"`
