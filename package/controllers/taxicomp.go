@@ -60,7 +60,7 @@ func CreateTaxicomp(c *gin.Context) {
 // @ID get-all-taxi-companies
 // @Produce json
 // @Param q query string false "fill if you need search"
-// @Success 200 {array} models.GetAllTaxicomp
+// @Success 200 {array} models.TaxiComp
 // @Failure 400 404 {object} ErrorResponse
 // @Failure 500 {object} ErrorResponse
 // @Failure default {object} ErrorResponse
