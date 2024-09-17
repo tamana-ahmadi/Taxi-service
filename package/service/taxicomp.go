@@ -28,8 +28,8 @@ func DeleteTaxiComp(isdeleted bool, id int) error {
 	return nil
 }
 
-func PrintAllTaxiComps(isdeletedt bool) (txcms []models.TaxiComp, err error) {
-	txcms, err = repository.GetAllTaxicomps(isdeletedt)
+func PrintAllTaxiComps(isdeletedt, isblocked, isdeletedu bool) (txcms []models.TaxiCompanies, err error) {
+	txcms, err = repository.GetAllTaxicomps(isdeletedt, isblocked, isdeletedu)
 	if err != nil {
 
 		return txcms, err

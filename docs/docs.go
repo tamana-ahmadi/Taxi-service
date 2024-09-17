@@ -397,7 +397,7 @@ const docTemplate = `{
                         "schema": {
                             "type": "array",
                             "items": {
-                                "$ref": "#/definitions/models.TaxiComp"
+                                "$ref": "#/definitions/models.TaxiCompanies"
                             }
                         }
                     },
@@ -1214,6 +1214,20 @@ const docTemplate = `{
             "properties": {
                 "company_title": {
                     "type": "string"
+                },
+                "driver_id": {
+                    "type": "integer"
+                }
+            }
+        },
+        "models.TaxiCompanies": {
+            "type": "object",
+            "properties": {
+                "company_title": {
+                    "type": "string"
+                },
+                "driver": {
+                    "$ref": "#/definitions/models.User"
                 },
                 "driver_id": {
                     "type": "integer"

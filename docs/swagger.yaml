@@ -80,6 +80,15 @@ definitions:
       driver_id:
         type: integer
     type: object
+  models.TaxiCompanies:
+    properties:
+      company_title:
+        type: string
+      driver:
+        $ref: '#/definitions/models.User'
+      driver_id:
+        type: integer
+    type: object
   models.User:
     properties:
       created_at:
@@ -354,7 +363,7 @@ paths:
           description: OK
           schema:
             items:
-              $ref: '#/definitions/models.TaxiComp'
+              $ref: '#/definitions/models.TaxiCompanies'
             type: array
         "400":
           description: Bad Request
