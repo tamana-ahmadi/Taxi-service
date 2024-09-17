@@ -80,7 +80,7 @@ func GetAllTaxiComp(c *gin.Context) {
 		HandleError(c, errs.ErrPermissionDenied)
 		return
 	}
-	txcms, err := service.PrintAllTaxiComps(false, false, false)
+	txcms, err := service.PrintAllTaxiComps(false)
 	if err != nil {
 		HandleError(c, errs.ErrTaxicompsNotFound)
 		return
