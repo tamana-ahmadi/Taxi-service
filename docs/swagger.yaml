@@ -20,6 +20,15 @@ definitions:
       is_response:
         type: boolean
     type: object
+  models.GetAllTaxicomp:
+    properties:
+      company_title:
+        type: string
+      driver_id:
+        $ref: '#/definitions/models.User'
+      is_deleted:
+        type: boolean
+    type: object
   models.GetRoutes:
     properties:
       all_price:
@@ -354,7 +363,7 @@ paths:
           description: OK
           schema:
             items:
-              $ref: '#/definitions/models.TaxiComp'
+              $ref: '#/definitions/models.GetAllTaxicomp'
             type: array
         "400":
           description: Bad Request

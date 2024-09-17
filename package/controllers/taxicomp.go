@@ -60,7 +60,7 @@ func CreateTaxicomp(c *gin.Context) {
 // @ID get-all-taxi-companies
 // @Produce json
 // @Param q query string false "fill if you need search"
-// @Success 200 {array} models.TaxiComp
+// @Success 200 {array} models.GetAllTaxicomp
 // @Failure 400 404 {object} ErrorResponse
 // @Failure 500 {object} ErrorResponse
 // @Failure default {object} ErrorResponse
@@ -80,7 +80,7 @@ func GetAllTaxiComp(c *gin.Context) {
 		HandleError(c, errs.ErrPermissionDenied)
 		return
 	}
-	txcms, err := service.PrintAllTaxiComps(false)
+	txcms, err := service.PrintAllTaxiComps(false, false, false)
 	if err != nil {
 		HandleError(c, errs.ErrTaxicompsNotFound)
 		return
