@@ -56,12 +56,12 @@ func CreateRoute(c *gin.Context) {
 
 }
 
-// GetAllRoutes
-// @Summary Get All Routes
+// Report
+// @Summary Get Report
 // @Security AKA
-// @Tags routes
-// @Description get list of all routes
-// @ID get-all-routes
+// @Tags report
+// @Description get list of report
+// @ID get-report
 // @Produce json
 // @Param q query string false "fill if you need search"
 // @Param is_response query bool true "fill if you need search"
@@ -71,10 +71,19 @@ func CreateRoute(c *gin.Context) {
 // @Failure 500 {object} ErrorResponse
 // @Failure default {object} ErrorResponse
 // @Router /api/routes [get]
-func GetAllRoutes(c *gin.Context) {
+func Report(c *gin.Context) {
 	userID := c.GetUint(userIDCtx)
 	if userID == 0 {
 		HandleError(c, errs.ErrRoutesNotFound)
+		return
+	}
+	urole := c.GetString(userRoleCtx)
+	if urole == "" {
+		HandleError(c, errs.ErrValidationFailed)
+		return
+	}
+	if urole != "admin" {
+		HandleError(c, errs.ErrPermissionDenied)
 		return
 	}
 
@@ -90,7 +99,58 @@ func GetAllRoutes(c *gin.Context) {
 		HandleError(c, errs.ErrValidationFailed)
 		return
 	}
-	routes, err := service.PrintAllRoutes(isResp, false, false, false, price)
+	report, err := service.Printreport(isResp, false, false, false, price)
+	if err != nil {
+		HandleError(c, errs.ErrRoutesNotFound)
+		return
+	}
+	c.JSON(http.StatusOK, gin.H{"report": report})
+}
+
+// GetAllRoutes
+// @Summary Get All Routes
+// @Security AKA
+// @Tags routes
+// @Description get list of all routes
+// @ID get-all-routes
+// @Produce json
+// @Param q query string false "fill if you need search"
+// @Param is_response query bool true "fill if you need search"
+// @Param all_price query int true "fill if you need search"
+// @Success 200 {array} models.Route
+// @Failure 400 404 {object} ErrorResponse
+// @Failure 500 {object} ErrorResponse
+// @Failure default {object} ErrorResponse
+// @Router /api/routes [get]
+func GetAllRoutes(c *gin.Context) {
+	userID := c.GetUint(userIDCtx)
+	if userID == 0 {
+		HandleError(c, errs.ErrRoutesNotFound)
+		return
+	}
+	urole := c.GetString(userRoleCtx)
+	if urole == "" {
+		HandleError(c, errs.ErrValidationFailed)
+		return
+	}
+	if urole != "driver" && urole != "user" {
+		HandleError(c, errs.ErrPermissionDenied)
+		return
+	}
+
+	isRespStr := c.Query("is_response")
+	isResp, err := strconv.ParseBool(isRespStr)
+	if err != nil {
+		HandleError(c, errs.ErrValidationFailed)
+		return
+	}
+	priceStr := c.Query("all_price")
+	price, err := strconv.Atoi(priceStr)
+	if err != nil {
+		HandleError(c, errs.ErrValidationFailed)
+		return
+	}
+	routes, err := service.PrintAllRoutes(false, isResp, price)
 	if err != nil {
 		HandleError(c, errs.ErrRoutesNotFound)
 		return

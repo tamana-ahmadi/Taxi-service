@@ -51,6 +51,10 @@ func InitRoutes() *gin.Engine {
 		taxicompsG.PUT("/:id", UpdateTaxiCompByID)
 		taxicompsG.DELETE("/:id", DeleteTaxiCompByID)
 	}
+	reportG := apiG.Group("/report")
+	{
+		reportG.GET("", Report)
+	}
 	return router
 }
 func PingPong(c *gin.Context) {

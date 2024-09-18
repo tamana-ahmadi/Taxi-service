@@ -59,7 +59,7 @@ const docTemplate = `{
                         "schema": {
                             "type": "array",
                             "items": {
-                                "$ref": "#/definitions/models.GetRoutes"
+                                "$ref": "#/definitions/models.Route"
                             }
                         }
                     },
