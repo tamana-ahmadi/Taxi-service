@@ -70,7 +70,7 @@ func CreateRoute(c *gin.Context) {
 // @Failure 400 404 {object} ErrorResponse
 // @Failure 500 {object} ErrorResponse
 // @Failure default {object} ErrorResponse
-// @Router /api/routes [get]
+// @Router /api/report [get]
 func Report(c *gin.Context) {
 	userID := c.GetUint(userIDCtx)
 	if userID == 0 {

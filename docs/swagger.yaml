@@ -112,6 +112,51 @@ info:
   title: Taxi service API
   version: "1.0"
 paths:
+  /api/report:
+    get:
+      description: get list of report
+      operationId: get-report
+      parameters:
+      - description: fill if you need search
+        in: query
+        name: q
+        type: string
+      - description: fill if you need search
+        in: query
+        name: is_response
+        required: true
+        type: boolean
+      - description: fill if you need search
+        in: query
+        name: all_price
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/models.GetRoutes'
+            type: array
+        "400":
+          description: Bad Request
+          schema:
+            type: "404"
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/controllers.ErrorResponse'
+        default:
+          description: ""
+          schema:
+            $ref: '#/definitions/controllers.ErrorResponse'
+      security:
+      - AKA: []
+      summary: Get Report
+      tags:
+      - report
   /api/routes:
     get:
       description: get list of all routes
