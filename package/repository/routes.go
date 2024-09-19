@@ -13,8 +13,8 @@ func InsertRoutes(route models.Route) error {
 	}
 	return nil
 }
-func EditRoutes(from, into string, distance, price int, userid int, id int) error {
-	err := db.GetconnectDB().Where("id=?", id).Save(&models.Route{ID: id, From: from, Into: into, Distance: distance, Pricekm: price, DriverID: userid}).Error
+func EditRoutes(from, into string, distance, price int, isresp bool, userid int, id int) error {
+	err := db.GetconnectDB().Where("id=?", id).Save(&models.Route{ID: id, From: from, Into: into, Distance: distance, Pricekm: price, IsResponse: isresp, DriverID: userid}).Error
 	if err != nil {
 		logger.Error.Printf("[repository.EditRoutes]error in update route %s\n", err.Error())
 	}
@@ -55,7 +55,7 @@ func GetAllRoutesByID(isdeleted bool, id uint) (route []models.Route, err error)
 }
 
 func CheckRoutesAsResponse(isresp bool, cid, id int) error {
-	err := db.GetconnectDB().Model(&models.Route{}).Select("is_response", "client_id").Where("id=?", id).Save(models.Route{IsResponse: isresp, ClientID: cid}).Error
+	err := db.GetconnectDB().Model(&models.Route{}).Select("is_response", "client_id").Where("id=?", id).Updates(models.Route{IsResponse: isresp, ClientID: cid}).Error
 	if err != nil {
 		logger.Error.Printf("[repository.CheckRoutesAsResponse]error in checked route %s\n", err.Error())
 
