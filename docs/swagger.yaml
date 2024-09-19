@@ -108,8 +108,8 @@ definitions:
 host: localhost:8484
 info:
   contact: {}
-  description: API Server for  The traveler companion Application
-  title: The traveler companion API
+  description: API Server for Fellow traveler Application
+  title: Fellow traveler API
   version: "1.0"
 paths:
   /api/report:

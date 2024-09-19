@@ -17,9 +17,9 @@ import (
 	"github.com/joho/godotenv"
 )
 
-// @title  The traveler companion API
+// @title  Fellow traveler API
 // @version 1.0
-// @description API Server for  The traveler companion Application
+// @description API Server for Fellow traveler Application
 
 // @host localhost:8484
 // @BasePath /
