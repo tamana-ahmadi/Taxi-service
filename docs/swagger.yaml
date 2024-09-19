@@ -42,6 +42,8 @@ definitions:
         type: integer
       taxi_company:
         $ref: '#/definitions/models.TaxiComp'
+      taxicomp_id:
+        type: integer
     type: object
   models.Rating:
     properties:

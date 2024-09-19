@@ -1228,6 +1228,9 @@ const docTemplate = `{
                 },
                 "taxi_company": {
                     "$ref": "#/definitions/models.TaxiComp"
+                },
+                "taxicomp_id": {
+                    "type": "integer"
                 }
             }
         },
