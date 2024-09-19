@@ -1225,12 +1225,6 @@ const docTemplate = `{
                 },
                 "pricekm": {
                     "type": "integer"
-                },
-                "taxi_company": {
-                    "$ref": "#/definitions/models.TaxiComp"
-                },
-                "taxicomp_id": {
-                    "type": "integer"
                 }
             }
         },
@@ -1256,9 +1250,6 @@ const docTemplate = `{
                 },
                 "is_response": {
                     "type": "boolean"
-                },
-                "taxicomp_id": {
-                    "type": "integer"
                 }
             }
         },

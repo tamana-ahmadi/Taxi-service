@@ -1219,12 +1219,6 @@
                 },
                 "pricekm": {
                     "type": "integer"
-                },
-                "taxi_company": {
-                    "$ref": "#/definitions/models.TaxiComp"
-                },
-                "taxicomp_id": {
-                    "type": "integer"
                 }
             }
         },
@@ -1250,9 +1244,6 @@
                 },
                 "is_response": {
                     "type": "boolean"
-                },
-                "taxicomp_id": {
-                    "type": "integer"
                 }
             }
         },

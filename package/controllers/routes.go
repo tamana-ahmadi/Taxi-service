@@ -99,7 +99,7 @@ func Report(c *gin.Context) {
 		HandleError(c, errs.ErrValidationFailed)
 		return
 	}
-	report, err := service.Printreport(isResp, false, false, false, false, price)
+	report, err := service.Printreport(isResp, false, false, false, price)
 	if err != nil {
 		HandleError(c, errs.ErrRoutesNotFound)
 		return
