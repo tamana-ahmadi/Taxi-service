@@ -17,9 +17,9 @@ import (
 	"github.com/joho/godotenv"
 )
 
-// @title  Taxi service API
+// @title  The traveler companion API
 // @version 1.0
-// @description API Server for Taxi service  Application
+// @description API Server for  The traveler companion Application
 
 // @host localhost:8484
 // @BasePath /
