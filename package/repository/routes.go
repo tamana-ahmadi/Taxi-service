@@ -13,8 +13,8 @@ func InsertRoutes(route models.Route) error {
 	}
 	return nil
 }
-func EditRoutes(from, into string, distance, price int, isresp bool, userid int, id int) error {
-	err := db.GetconnectDB().Where("id=?", id).Save(&models.Route{ID: id, From: from, Into: into, Distance: distance, Pricekm: price, IsResponse: isresp, DriverID: userid}).Error
+func EditRoutes(from, into string, distance, price int, userid int, id int) error {
+	err := db.GetconnectDB().Where("id=?", id).Save(&models.Route{ID: id, From: from, Into: into, Distance: distance, Pricekm: price, DriverID: userid}).Error
 	if err != nil {
 		logger.Error.Printf("[repository.EditRoutes]error in update route %s\n", err.Error())
 	}
@@ -30,7 +30,7 @@ func SoftDeleteRoutes(isdeleted bool, id int) error {
 }
 
 func Report(isresp, isdeletedr, isdeletedt, isblocked, isdeletedu bool, price int) (route []models.GetRoutes, err error) {
-	err = db.GetconnectDB().Raw("Select t.comptitle, r.from, r.into, r.is_response, SUM(DISTINCT r.distance) as distance ,SUM(DISTINCT r.pricekm) as pricekm, SUM(r.all_price/2) as all_price, COUNT(DISTINCT CASE WHEN u.role='user' THEN u.id END) as client_id, COUNT(DISTINCT CASE WHEN u.role='driver' THEN u.id END) as driver_id FROM routes r, users u, taxicompanies t Where r.client_id=u.id OR r.driver_id=u.id AND r.taxicomp_id=t.id AND  r.is_response=? AND r.is_deleted=? AND t.is_deleted=? AND u.is_blocked=? AND u.is_deleted=? AND all_price<=? GROUP BY t.comp_title, r.from,r.into,r.is_response ORDER BY all_price DESC", isresp, isdeletedr, isdeletedt, isblocked, isdeletedu, price).Scan(&route).Error
+	err = db.GetconnectDB().Raw("Select t.comp_title, r.from, r.into, r.is_response, SUM(DISTINCT r.distance) as distance ,SUM(DISTINCT r.pricekm) as pricekm, SUM(r.all_price/2) as all_price, COUNT(DISTINCT CASE WHEN u.role='user' THEN u.id END) as client_id, COUNT(DISTINCT CASE WHEN u.role='driver' THEN u.id END) as driver_id FROM routes r, users u, taxicompanies t Where r.client_id=u.id OR r.driver_id=u.id AND r.taxicomp_id=t.id AND  r.is_response=? AND r.is_deleted=? AND t.is_deleted=? AND u.is_blocked=? AND u.is_deleted=? AND all_price<=? GROUP BY t.comp_title, r.from,r.into,r.is_response ORDER BY all_price DESC", isresp, isdeletedr, isdeletedt, isblocked, isdeletedu, price).Scan(&route).Error
 	if err != nil {
 		logger.Error.Printf("[repository.GetAllRoutes]error in report %s\n", err.Error())
 		return route, err
@@ -55,7 +55,7 @@ func GetAllRoutesByID(isdeleted bool, id uint) (route []models.Route, err error)
 }
 
 func CheckRoutesAsResponse(isresp bool, cid, id int) error {
-	err := db.GetconnectDB().Model(&models.Route{}).Select("is_response", "client_id").Where("id=?", id).Updates(models.Route{IsResponse: isresp, ClientID: cid}).Error
+	err := db.GetconnectDB().Model(&models.Route{}).Select("is_response", "client_id").Where("id=?", id).Save(models.Route{IsResponse: isresp, ClientID: cid}).Error
 	if err != nil {
 		logger.Error.Printf("[repository.CheckRoutesAsResponse]error in checked route %s\n", err.Error())
 
