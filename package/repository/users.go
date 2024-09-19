@@ -63,15 +63,6 @@ func GetAllUserByID(isdeleted bool, isblocked bool, id int) (user []models.User,
 	return user, nil
 }
 
-func GetUserByUsername(username string) (user models.User, err error) {
-	err = db.GetconnectDB().Where("username=?", username).First(&user).Error
-	if err != nil {
-		logger.Error.Printf("[service.getuserbyusername]error in getting user by username  %s\n", err.Error())
-		return user, translateErrors(err)
-	}
-	return user, nil
-}
-
 func GetUserByUsernameAndPassword(username, password string) (user models.User, err error) {
 	err = db.GetconnectDB().Where("username=? AND password=?", username, password).First(&user).Error
 	if err != nil {
