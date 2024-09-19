@@ -11,6 +11,8 @@ type Route struct {
 	AllPrice   int       `json:"-"`
 	ClientID   int       `gorm:"references users(id)" json:"-"`
 	DriverID   int       `gorm:"references users(id)" json:"-"`
+	TaxiCompID int       `gorm:"references taxicompanies(id)" json:"taxicomp_id"`
+	CompTitle  TaxiComp  `gorm:"foreignKey: TaxiCompID" json:"-"`
 	IsResponse bool      `gorm:"default false" json:"is_response"`
 	IsDeleted  bool      `gorm:"default false" json:"-"`
 	CreatedAt  time.Time `json:"-" gorm:"autoCreateTime"`
@@ -29,6 +31,8 @@ type GetRoutes struct {
 	AllPrice   int       `json:"all_price"`
 	ClientID   int       `gorm:"references users(id)" json:"client_id"`
 	DriverID   int       `gorm:"references users(id)" json:"driver_id"`
+	TaxiCompID int       `gorm:"references taxicompanies(id)" json:"-"`
+	CompTitle  TaxiComp  `gorm:"foreignKey: TaxiCompID" json:"taxi_company"`
 	IsResponse bool      `gorm:"default false" json:"is_response"`
 	IsDeleted  bool      `gorm:"default false" json:"is_deleted"`
 	CreatedAt  time.Time `json:"-" gorm:"autoCreateTime"`

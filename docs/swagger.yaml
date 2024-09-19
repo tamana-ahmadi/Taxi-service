@@ -40,6 +40,8 @@ definitions:
         type: boolean
       pricekm:
         type: integer
+      taxi_company:
+        $ref: '#/definitions/models.TaxiComp'
     type: object
   models.Rating:
     properties:
@@ -56,6 +58,8 @@ definitions:
         type: string
       is_response:
         type: boolean
+      taxicomp_id:
+        type: integer
     type: object
   models.SwagSignIn:
     properties:
