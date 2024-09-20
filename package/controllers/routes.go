@@ -234,7 +234,8 @@ func UpdateRouteByID(c *gin.Context) {
 		HandleError(c, errs.ErrValidationFailed)
 		return
 	}
-
+	route.Pricekm = 1
+	route.AllPrice = route.Distance * route.Pricekm
 	err = service.UpdateRoute(route, int(userID), id)
 	if err != nil {
 		HandleError(c, errs.ErrRoutesNotFound)
