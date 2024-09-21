@@ -102,10 +102,7 @@ func EditUsersRating(c *gin.Context) {
 		HandleError(c, errs.ErrValidationFailed)
 		return
 	}
-	if urole != "admin" {
-		HandleError(c, errs.ErrPermissionDenied)
-		return
-	}
+	
 	id, err := strconv.Atoi(c.Param("id"))
 	if err != nil {
 		HandleError(c, err)
