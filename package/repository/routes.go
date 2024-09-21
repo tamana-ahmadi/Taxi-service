@@ -55,6 +55,9 @@ func GetAllRoutesByID(isdeleted bool, id uint) (route []models.Route, err error)
 }
 
 func CheckRoutesAsResponse(isresp bool, cid, id int) error {
+	// 1. Get By ID
+	// 2. Update struct fields 
+	// 3. Call method Save of GORM
 	err := db.GetconnectDB().Model(&models.Route{}).Select("is_response", "client_id").Where("id=?", id).Updates(models.Route{IsResponse: isresp, ClientID: cid}).Error
 	if err != nil {
 		logger.Error.Printf("[repository.CheckRoutesAsResponse]error in checked route %s\n", err.Error())

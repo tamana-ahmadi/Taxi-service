@@ -41,6 +41,17 @@ definitions:
       pricekm:
         type: integer
     type: object
+  models.GetTaxiComp:
+    properties:
+      company_title:
+        type: string
+      driver_id:
+        type: integer
+      is_deleted:
+        type: boolean
+      user:
+        $ref: '#/definitions/models.User'
+    type: object
   models.Rating:
     properties:
       rating:
@@ -81,8 +92,6 @@ definitions:
         type: string
       driver_id:
         type: integer
-      user:
-        $ref: '#/definitions/models.User'
     type: object
   models.User:
     properties:
@@ -403,7 +412,7 @@ paths:
           description: OK
           schema:
             items:
-              $ref: '#/definitions/models.TaxiComp'
+              $ref: '#/definitions/models.GetTaxiComp'
             type: array
         "400":
           description: Bad Request
@@ -505,7 +514,7 @@ paths:
         "200":
           description: OK
           schema:
-            $ref: '#/definitions/models.TaxiComp'
+            $ref: '#/definitions/models.GetTaxiComp'
         "400":
           description: Bad Request
           schema:
