@@ -11,7 +11,10 @@ func AddRoute(routes models.Route) error {
 	if err != nil {
 		fmt.Println(err)
 	}
+	routes.Pricekm = 1
+	routes.AllPrice = routes.Distance * routes.Pricekm
 	return nil
+
 }
 func UpdateRoute(route models.Route, did, id int) error {
 	err := repository.EditRoutes(route.From, route.Into, route.Distance, route.Pricekm, route.IsResponse, did, id)
